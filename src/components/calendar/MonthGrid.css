@@ -1,0 +1,265 @@
+/* ===================================================
+   MonthGrid.css
+   =================================================== */
+
+.month-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+/* ── Navigation ─────────────────────────────────── */
+.month-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: #fafaf8;
+}
+
+.month-nav-center {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.month-nav-title {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: var(--text-main);
+}
+
+.month-nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    transition: all 0.15s;
+}
+.month-nav-btn:hover { background: var(--text-main); color: white; border-color: var(--text-main); }
+
+.month-today-btn {
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    background: white;
+    border-radius: 20px;
+    padding: 4px 12px;
+    cursor: pointer;
+    color: var(--text-main);
+    transition: all 0.15s;
+}
+.month-today-btn:hover { background: var(--text-main); color: white; border-color: var(--text-main); }
+
+/* ── Day Headers ────────────────────────────────── */
+.month-day-headers {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-bottom: 1px solid var(--border-color);
+    background: #fafaf8;
+}
+
+.month-day-header {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+}
+
+/* ── Grid ───────────────────────────────────────── */
+.month-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    flex: 1;
+    overflow-y: auto;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.month-cell {
+    min-height: 110px;
+    padding: 8px 8px 6px;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.15s;
+    position: relative;
+    overflow: hidden;
+}
+.month-cell:hover { background: #faf8f4; }
+.month-cell:nth-child(7n) { border-right: none; }
+.month-cell.empty { background: #fafaf8; cursor: default; }
+.month-cell.weekend { background: #fdfcf9; }
+.month-cell.today { background: linear-gradient(135deg, rgba(241,124,141,0.04) 0%, rgba(241,124,141,0.01) 100%); }
+.month-cell.selected { background: #fef8f9; outline: 2px solid var(--sidebar-active); outline-offset: -2px; }
+
+.month-cell-date {
+    margin-bottom: 6px;
+}
+
+.month-date-num {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.month-date-num.today-circle {
+    background: var(--text-main);
+    color: white;
+    font-weight: 700;
+}
+
+/* ── Event Chips ────────────────────────────────── */
+.month-cell-events {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.month-event-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.15s;
+    max-width: 100%;
+}
+.month-event-chip:hover { opacity: 0.8; transform: translateX(1px); }
+
+.month-chip-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+.month-chip-dot.done { background: rgba(0,0,0,0.15); }
+
+.month-chip-text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.month-more-badge {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 1px 4px;
+    margin-top: 1px;
+}
+
+/* ── Selected Day Panel ─────────────────────────── */
+.month-selected-panel {
+    padding: 14px 20px;
+    border-top: 1px solid var(--border-color);
+    background: #fafaf8;
+    min-height: 80px;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.month-selected-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.month-add-btn {
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--text-main);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.month-add-btn:hover { opacity: 0.8; }
+
+.month-selected-events {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.month-selected-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+.month-selected-item:hover { border-color: var(--sidebar-active); }
+
+.month-selected-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.month-selected-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.month-selected-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.month-selected-time {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.month-selected-empty {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 12px 0;
+}
+
+@media (max-width: 768px) {
+    .month-cell { min-height: 70px; padding: 4px; }
+    .month-chip-text { display: none; }
+    .month-event-chip { justify-content: center; padding: 2px 4px; }
+    .month-chip-dot { width: 7px; height: 7px; }
+}

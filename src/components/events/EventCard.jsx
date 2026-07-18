@@ -12,6 +12,11 @@ export default function EventCard({ event, top, height, onDragStart }) {
         setDetailEvent(event);
     };
 
+    let priorityColor = '';
+    if (event.priority === 'high') priorityColor = '🔴';
+    else if (event.priority === 'medium') priorityColor = '🟡';
+    else if (event.priority === 'low') priorityColor = '🟢';
+
     return (
         <div
             className={`event-card ${event.color} ${event.completed ? 'completed' : ''}`}
@@ -36,7 +41,11 @@ export default function EventCard({ event, top, height, onDragStart }) {
                 </div>
             )}
 
-            <div className="event-title">{event.title}</div>
+            <div className="event-title">
+                {event.completed ? <Icons.CheckCircle size={14} weight="fill" style={{ marginRight: '4px', verticalAlign: 'middle' }} /> : null}
+                {event.title}
+                {priorityColor && <span style={{ marginLeft: '4px', fontSize: '10px' }}>{priorityColor}</span>}
+            </div>
             {height > 70 && <div className="event-loc">{event.loc}</div>}
 
             {event.hasJoinDark && height > 100 && (

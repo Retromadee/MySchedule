@@ -16,6 +16,41 @@ export function TodoProvider({ children }) {
         loadEvents();
     }, []);
 
+    // Notification System
+    useEffect(() => {
+        if ('Notification' in window && Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+            Notification.requestPermission();
+        }
+
+        const checkReminders = () => {
+            if ('Notification' in window && Notification.permission === 'granted') {
+                const now = new Date();
+                const todayDayIndex = now.getDay() === 0 ? 7 : now.getDay();
+                
+                events.forEach(event => {
+                    if (event.completed || event.day !== todayDayIndex) return;
+                    
+                    const [startH, startM] = event.start.split(':').map(Number);
+                    const eventDate = new Date();
+                    eventDate.setHours(startH, startM, 0, 0);
+                    
+                    const diffMs = eventDate - now;
+                    const diffMins = Math.round(diffMs / 60000);
+                    
+                    // Remind if exactly 5 mins away
+                    if (diffMins === 5) {
+                        new Notification(`Upcoming: ${event.title}`, {
+                            body: `Starts at ${event.start} ${event.loc ? '- ' + event.loc : ''}`,
+                        });
+                    }
+                });
+            }
+        };
+
+        const intervalId = setInterval(checkReminders, 60000);
+        return () => clearInterval(intervalId);
+    }, [events]);
+
     const loadEvents = useCallback(() => {
         setEvents(StorageService.getEvents());
     }, []);

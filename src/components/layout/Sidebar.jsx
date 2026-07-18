@@ -2,12 +2,22 @@ import React from 'react';
 import './Sidebar.css';
 import { 
     SquaresFour, CalendarBlank, House, Code,
-    Headphones, Briefcase, Wallet, Gear, X, ListChecks
+    Headphones, Briefcase, Wallet, Gear, X, ListChecks, DownloadSimple
 } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
 
 export default function Sidebar({ isOpen, onClose }) {
-    const { activeFilter, setActiveFilter, activeRoute, setActiveRoute } = useTodo();
+    const { activeFilter, setActiveFilter, activeRoute, setActiveRoute, allEvents } = useTodo();
+
+    const handleExport = () => {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(allEvents, null, 2));
+        const downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", "lifesync_backup.json");
+        document.body.appendChild(downloadAnchorNode);
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+    };
 
     return (
         <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
@@ -87,6 +97,10 @@ export default function Sidebar({ isOpen, onClose }) {
             </div>
 
             <div className="sidebar-footer">
+                <div className="nav-item" onClick={handleExport}>
+                    <DownloadSimple size={20} />
+                    <span>Export Data</span>
+                </div>
                 <div className="nav-item" onClick={() => alert('Settings Modal: User Preferences coming soon!')}>
                     <Gear size={20} />
                     <span>Settings</span>

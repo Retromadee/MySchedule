@@ -1,0 +1,316 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_app",
+      "community": 1,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_app_app",
+      "community": 1,
+      "norm_label": "app()"
+    },
+    {
+      "label": "Sidebar.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/Sidebar.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "layout_sidebar",
+      "community": 1,
+      "norm_label": "sidebar.jsx"
+    },
+    {
+      "label": "Sidebar()",
+      "file_type": "code",
+      "source_file": "src/components/layout/Sidebar.jsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "layout_sidebar_sidebar",
+      "community": 1,
+      "norm_label": "sidebar()"
+    },
+    {
+      "label": "WeeklyPlanner.jsx",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner",
+      "community": 0,
+      "norm_label": "weeklyplanner.jsx"
+    },
+    {
+      "label": "DAY_NAMES",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_day_names",
+      "community": 0,
+      "norm_label": "day_names"
+    },
+    {
+      "label": "DAY_LETTERS",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_day_letters",
+      "community": 0,
+      "norm_label": "day_letters"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_formatdate",
+      "community": 2,
+      "norm_label": "formatdate()"
+    },
+    {
+      "label": "getChipClass()",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_getchipclass",
+      "community": 0,
+      "norm_label": "getchipclass()"
+    },
+    {
+      "label": "getChipLabel()",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_getchiplabel",
+      "community": 0,
+      "norm_label": "getchiplabel()"
+    },
+    {
+      "label": "ProgressRing()",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_progressring",
+      "community": 0,
+      "norm_label": "progressring()"
+    },
+    {
+      "label": "TaskItem()",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_taskitem",
+      "community": 0,
+      "norm_label": "taskitem()"
+    },
+    {
+      "label": "DayCard()",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_daycard",
+      "community": 0,
+      "norm_label": "daycard()"
+    },
+    {
+      "label": "WeeklyPlanner()",
+      "file_type": "code",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L145",
+      "_origin": "ast",
+      "id": "planner_weeklyplanner_weeklyplanner",
+      "community": 2,
+      "norm_label": "weeklyplanner()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "layout_sidebar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "planner_weeklyplanner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Sidebar.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "layout_sidebar",
+      "target": "layout_sidebar_sidebar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_day_letters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_day_names",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_daycard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_getchipclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_getchiplabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_progressring",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_taskitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L145",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner",
+      "target": "planner_weeklyplanner_weeklyplanner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner_weeklyplanner",
+      "target": "planner_weeklyplanner_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner_taskitem",
+      "target": "planner_weeklyplanner_getchipclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/planner/WeeklyPlanner.jsx",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "planner_weeklyplanner_taskitem",
+      "target": "planner_weeklyplanner_getchiplabel",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "cf66d6ccc9dc61a969c1793d072b37a160f3bb5f"
+}

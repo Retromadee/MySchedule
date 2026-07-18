@@ -27,6 +27,7 @@ export default function EventModal() {
     const [day, setDay] = useState(1);
     const [start, setStart] = useState('08:00');
     const [end, setEnd] = useState('09:00');
+    const [priority, setPriority] = useState('medium');
     const [notes, setNotes] = useState('');
 
     useEffect(() => {
@@ -37,6 +38,7 @@ export default function EventModal() {
             setDay(editingEvent.day || 1);
             setStart(editingEvent.start || '08:00');
             setEnd(editingEvent.end || '09:00');
+            setPriority(editingEvent.priority || 'medium');
             setNotes(editingEvent.notes || '');
         } else {
             setTitle('');
@@ -45,6 +47,7 @@ export default function EventModal() {
             setDay(1);
             setStart('08:00');
             setEnd('09:00');
+            setPriority('medium');
             setNotes('');
         }
     }, [editingEvent, isModalOpen]);
@@ -53,6 +56,12 @@ export default function EventModal() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Duration validation
+        if (start >= end) {
+            alert('End time must be after start time.');
+            return;
+        }
 
         const mapping = ICON_MAP[category] || { icon: 'CheckCircle', iconColor: '#333' };
         const color = COLOR_MAP[category] || 'grey';
@@ -67,6 +76,7 @@ export default function EventModal() {
             icon: mapping.icon,
             iconColor: mapping.iconColor,
             category,
+            priority,
             notes,
         };
 
@@ -106,6 +116,14 @@ export default function EventModal() {
                             <option value="music">🎵 Music & Events</option>
                             <option value="career">💼 Career & Admin</option>
                             <option value="finance">💰 Finances & Study</option>
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="taskPriority">Priority</label>
+                        <select id="taskPriority" value={priority} onChange={(e) => setPriority(e.target.value)}>
+                            <option value="low">🟢 Low</option>
+                            <option value="medium">🟡 Medium</option>
+                            <option value="high">🔴 High</option>
                         </select>
                     </div>
                     <div style={{ display: 'flex', gap: '10px' }}>

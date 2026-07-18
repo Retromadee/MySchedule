@@ -57,6 +57,18 @@ export default function EventDetail() {
                                 {detailEvent.category}
                             </span>
                         )}
+                        {detailEvent.priority && (
+                            <span
+                                className="detail-category-badge"
+                                style={{
+                                    background: detailEvent.priority === 'high' ? '#fee2e2' : detailEvent.priority === 'medium' ? '#fef3c7' : '#dcfce7',
+                                    color: detailEvent.priority === 'high' ? '#991b1b' : detailEvent.priority === 'medium' ? '#92400e' : '#166534',
+                                    marginLeft: '8px'
+                                }}
+                            >
+                                {detailEvent.priority} priority
+                            </span>
+                        )}
                     </div>
                     <button className="detail-close-btn" onClick={() => setDetailEvent(null)}>
                         <X size={18} weight="bold" />

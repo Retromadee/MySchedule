@@ -1,0 +1,142 @@
+{
+  ".oxlintrc.json": {
+    "mtime": 1784308128.717061,
+    "ast_hash": "5e6e3cea3e89137071c142dd7835b0ef",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1784308169.2474096,
+    "ast_hash": "32f66a9dd19092e6b0e0641da502d996",
+    "semantic_hash": ""
+  },
+  "src/App.jsx": {
+    "mtime": 1784356276.039272,
+    "ast_hash": "65225bb23273cbb1050969b609463f11",
+    "semantic_hash": ""
+  },
+  "src/components/calendar/CalendarGrid.jsx": {
+    "mtime": 1784340550.5756068,
+    "ast_hash": "21fb73ca5ede85be14e3e24fb7da024d",
+    "semantic_hash": ""
+  },
+  "src/components/calendar/MonthGrid.jsx": {
+    "mtime": 1784340576.7192457,
+    "ast_hash": "77b04964e4204f4c707e2ccc727abae0",
+    "semantic_hash": ""
+  },
+  "src/components/events/EventCard.jsx": {
+    "mtime": 1784351567.9327872,
+    "ast_hash": "585bf78bff691aa5ef0f9ced53cc308a",
+    "semantic_hash": ""
+  },
+  "src/components/events/EventDetail.jsx": {
+    "mtime": 1784334328.6295874,
+    "ast_hash": "52870e886d7683d5e56bc348b987d66b",
+    "semantic_hash": ""
+  },
+  "src/components/events/EventModal.jsx": {
+    "mtime": 1784334354.4165535,
+    "ast_hash": "ba64374205ec3d2a28e4cb6f1a60e28f",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Dashboard.jsx": {
+    "mtime": 1784351541.2214718,
+    "ast_hash": "57a37f5a2945378cc0762338c8c547b8",
+    "semantic_hash": ""
+  },
+  "src/components/layout/HeaderArea.jsx": {
+    "mtime": 1784340667.0789356,
+    "ast_hash": "199550c1132445bc6b605a3f81763c96",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Sidebar.jsx": {
+    "mtime": 1784356264.9564993,
+    "ast_hash": "c1735d6129f730b0e21220f26abc5255",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Topbar.jsx": {
+    "mtime": 1784340495.3107555,
+    "ast_hash": "081ac7140cf2648ed38537a9fb3a8b90",
+    "semantic_hash": ""
+  },
+  "src/components/planner/WeeklyPlanner.jsx": {
+    "mtime": 1784356252.7092552,
+    "ast_hash": "cbdeb7a8b900b1c439496da3f9be5aea",
+    "semantic_hash": ""
+  },
+  "src/main.jsx": {
+    "mtime": 1784308303.6936033,
+    "ast_hash": "762dfc584221b3494add122cd788cf06",
+    "semantic_hash": ""
+  },
+  "src/services/StorageService.js": {
+    "mtime": 1784351502.948667,
+    "ast_hash": "eb2e2a35e96674a8ff50a244cccc5ad4",
+    "semantic_hash": ""
+  },
+  "src/store/TodoContext.jsx": {
+    "mtime": 1784351519.0945275,
+    "ast_hash": "b8ea4d88e8c52ec3745dadc9f0115ad8",
+    "semantic_hash": ""
+  },
+  "src/utils/timeUtils.js": {
+    "mtime": 1784337780.479337,
+    "ast_hash": "7a758e4d5197e29d0ff8f494154a3480",
+    "semantic_hash": ""
+  },
+  "vite.config.js": {
+    "mtime": 1784308128.7199957,
+    "ast_hash": "88439104b3c207f17d33ef3160e3b080",
+    "semantic_hash": ""
+  },
+  ".agents/AGENTS.md": {
+    "mtime": 1784342810.4875584,
+    "ast_hash": "b75e2d2841deaddabcbf8348ef49cf76",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1784308128.7165,
+    "ast_hash": "75eb386f17caf77fd6fe3ce1d90968ee",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1784308128.7173543,
+    "ast_hash": "0c91463584c576dbc22f89f8eec0b5ae",
+    "semantic_hash": ""
+  },
+  "new-ui-template.html": {
+    "mtime": 1784304260.9951203,
+    "ast_hash": "5e08da34123d6657625828380ab75361",
+    "semantic_hash": ""
+  },
+  "weekly-schedule.html": {
+    "mtime": 1784307564.0523403,
+    "ast_hash": "a5241436aab12c53543c695ce9c87668",
+    "semantic_hash": ""
+  },
+  "public/favicon.svg": {
+    "mtime": 1784308128.7177474,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": ""
+  },
+  "public/icons.svg": {
+    "mtime": 1784308128.718036,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": ""
+  },
+  "src/assets/hero.png": {
+    "mtime": 1784308128.718922,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": ""
+  },
+  "src/assets/react.svg": {
+    "mtime": 1784308128.7191572,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": ""
+  },
+  "src/assets/vite.svg": {
+    "mtime": 1784308128.7193694,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
+  }
+}

@@ -45,6 +45,26 @@ export default function CalendarGrid() {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+        const handleNav = (e) => {
+            if (e.detail === 'prev') {
+                if (calendarView === 'day') {
+                    setSelectedDay(prev => { const d = new Date(prev); d.setDate(d.getDate() - 1); return d; });
+                } else {
+                    setWeekStart(prev => { const d = new Date(prev); d.setDate(d.getDate() - 7); return d; });
+                }
+            } else if (e.detail === 'next') {
+                if (calendarView === 'day') {
+                    setSelectedDay(next => { const d = new Date(next); d.setDate(d.getDate() + 1); return d; });
+                } else {
+                    setWeekStart(next => { const d = new Date(next); d.setDate(d.getDate() + 7); return d; });
+                }
+            }
+        };
+        window.addEventListener('calendarNav', handleNav);
+        return () => window.removeEventListener('calendarNav', handleNav);
+    }, [calendarView]);
+
     // --- Drag & Drop ---
     const handleDragStart = useCallback((e, event) => {
         e.dataTransfer.effectAllowed = 'move';
