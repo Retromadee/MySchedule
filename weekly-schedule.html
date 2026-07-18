@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Life Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --bg-color: #f7f4eb;
+            --sidebar-bg: #191919;
+            --sidebar-text: #969696;
+            --sidebar-active: #f17c8d;
+            --text-main: #1c1c1c;
+            --text-muted: #858585;
+            --border-color: #e4dec8;
+            
+            /* Card Colors */
+            --card-yellow: #f8db66;
+            --card-grey: #e8e6dd;
+            --card-blue: #b3c9fb;
+            --card-white: #ffffff;
+            
+            /* Tag Colors */
+            --tag-pink: #ffa4da;
+            --tag-purple: #cda2e1;
+            
+            --time-row-height: 80px; /* Each hour */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            width: 250px;
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin: 15px 0 15px 15px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 40px;
+            padding-left: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-dot {
+            width: 24px;
+            height: 24px;
+            background-color: var(--sidebar-active);
+            border-radius: 50%;
+            position: absolute;
+            right: -12px;
+            top: 30px;
+            border: 4px solid var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .nav-section {
+            margin-bottom: 30px;
+        }
+
+        .nav-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            opacity: 0.6;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            margin-right: 12px;
+        }
+
+        .nav-item:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-item.active {
+            color: var(--sidebar-active);
+            border-left: 3px solid var(--sidebar-active);
+            border-radius: 0 8px 8px 0;
+            background: linear-gradient(90deg, rgba(241, 124, 141, 0.1) 0%, transparent 100%);
+            margin-left: -20px;
+            padding-left: 27px;
+        }
+
+        .nav-bottom {
+            margin-top: auto;
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 40px;
+            overflow-y: auto;
+        }
+
+        /* Topbar */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 30px;
+            padding: 8px 20px;
+            width: 500px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .search-container i {
+            color: var(--sidebar-active);
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        .search-container input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+        }
+
+        .top-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #1c1c1c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Header area */
+        .header-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header-left h1 {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        
+        .date-picker-btn {
+            background-color: #1c1c1c;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .add-event-btn {
+            background-color: #1c1c1c;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .view-toggles {
+            display: flex;
+            background-color: transparent;
+            border-radius: 20px;
+            padding: 4px;
+            gap: 5px;
+        }
+
+        .toggle-btn {
+            padding: 6px 15px;
+            border-radius: 15px;
+            border: none;
+            background: transparent;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .toggle-btn.active {
+            background-color: #1c1c1c;
+            color: white;
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 8px;
+        }
+        .header-icons .icon-btn {
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Calendar Area */
+        .calendar-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background-color: transparent;
+        }
+
+        .calendar-header {
+            display: flex;
+            margin-bottom: 10px;
+            padding-left: 60px; /* Space for time column */
+        }
+
+        .day-col-header {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .day-name {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .day-date {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .day-col-header.active .day-name,
+        .day-col-header.active .day-date {
+            color: white;
+        }
+
+        .day-col-header.active {
+            background-color: #1c1c1c;
+            border-radius: 15px;
+            padding: 15px 5px;
+        }
+
+        .calendar-grid {
+            display: flex;
+            flex: 1;
+            position: relative;
+            overflow-y: auto;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .time-col {
+            width: 60px;
+            flex-shrink: 0;
+            border-right: 1px dashed var(--border-color);
+        }
+
+        .time-slot {
+            height: var(--time-row-height);
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding-right: 15px;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 500;
+            transform: translateY(-8px); /* Align text with line */
+        }
+        
+        /* Grid Lines */
+        .grid-lines-container {
+            position: absolute;
+            top: 0;
+            left: 60px;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+        
+        .grid-line-row {
+            height: calc(var(--time-row-height) / 2); /* 30 min intervals */
+            border-bottom: 1px dashed var(--border-color);
+            opacity: 0.5;
+        }
+        .grid-line-row:nth-child(even) {
+            opacity: 0; /* Only show hour lines if desired, or keep for half hours */
+        }
+        
+        .grid-line-col-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+        }
+        .grid-line-col {
+            flex: 1;
+            border-right: 1px solid rgba(228, 222, 200, 0.4);
+        }
+        .grid-line-col:last-child {
+            border-right: none;
+        }
+        
+        /* Current Time Line */
+        .current-time-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 25%; /* Dynamically set */
+            border-bottom: 2px dashed var(--sidebar-active);
+            z-index: 10;
+            pointer-events: none;
+        }
+        .current-time-label {
+            position: absolute;
+            left: 20px;
+            top: -8px;
+            background: var(--bg-color);
+            color: var(--sidebar-active);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 0 4px;
+        }
+
+        /* Days Columns Container */
+        .days-container {
+            display: flex;
+            flex: 1;
+            position: relative;
+        }
+
+        .day-col {
+            flex: 1;
+            position: relative;
+            padding: 0 8px;
+        }
+
+        /* Event Card */
+        .event-card {
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .event-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .event-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .event-loc {
+            font-size: 11px;
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .event-time {
+            font-size: 11px;
+            color: rgba(0, 0, 0, 0.5);
+            margin-top: auto;
+        }
+
+        .event-tag {
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            width: max-content;
+        }
+
+        .event-card.yellow { background-color: var(--card-yellow); }
+        .event-card.grey { background-color: var(--card-grey); }
+        .event-card.blue { background-color: var(--card-blue); }
+        .event-card.white { background-color: var(--card-white); }
+        
+        .join-btn {
+            background-color: rgba(0,0,0,0.1);
+            border: none;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            margin-top: 10px;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+        .join-btn:hover { background-color: rgba(0,0,0,0.2); }
+        .join-btn.dark { background-color: #111; color: white; }
+        .join-btn.dark:hover { background-color: #333; }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        .modal {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 400px;
+        }
+        .modal h2 { margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 14px; }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .btn-submit {
+            background: #1c1c1c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            LifeSync
+            <div class="logo-dot"><i class="ph ph-caret-right"></i></div>
+        </div>
+        
+        <div class="nav-section">
+            <div class="nav-title">General</div>
+            <div class="nav-item"><i class="ph ph-squares-four"></i> Dashboard</div>
+            <div class="nav-item active"><i class="ph ph-calendar-blank"></i> Schedule</div>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-title">Focus Areas</div>
+            <div class="nav-item"><i class="ph ph-house"></i> Housing Search</div>
+            <div class="nav-item"><i class="ph ph-code"></i> Projects (Mahir & Uni)</div>
+            <div class="nav-item"><i class="ph ph-headphones"></i> Music & Events</div>
+            <div class="nav-item"><i class="ph ph-briefcase"></i> Career & Admin</div>
+            <div class="nav-item"><i class="ph ph-wallet"></i> Finances & Study</div>
+        </div>
+
+        <div class="nav-bottom">
+            <div class="nav-item"><i class="ph ph-gear"></i> Settings</div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content main-content">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="search-container">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" placeholder="Search tasks, gigs, and projects...">
+            </div>
+            
+            <div class="top-actions">
+                <button class="action-btn"><i class="ph ph-user"></i></button>
+                <button class="action-btn"><i class="ph ph-bell"></i></button>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header-area">
+            <div class="header-left">
+                <h1>Stay on track.</h1>
+                <button class="date-picker-btn">This Week <i class="ph ph-caret-down"></i></button>
+            </div>
+            <div class="header-right">
+                <button class="add-event-btn" id="addBtn">Add Task</button>
+                <div class="header-icons">
+                    <button class="icon-btn" onclick="renderEvents()"><i class="ph ph-arrows-clockwise"></i></button>
+                </div>
+                <div class="view-toggles">
+                    <button class="toggle-btn">Today</button>
+                    <button class="toggle-btn active">Week</button>
+                    <button class="toggle-btn">Month</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <div class="day-col-header">
+                    <span class="day-name">M</span>
+                    <span class="day-date">Mon</span>
+                </div>
+                <div class="day-col-header">
+                    <span class="day-name">T</span>
+                    <span class="day-date">Tue</span>
+                </div>
+                <div class="day-col-header">
+                    <span class="day-name">W</span>
+                    <span class="day-date">Wed</span>
+                </div>
+                <div class="day-col-header active">
+                    <span class="day-name">T</span>
+                    <span class="day-date">Thu</span>
+                </div>
+                <div class="day-col-header">
+                    <span class="day-name">F</span>
+                    <span class="day-date">Fri</span>
+                </div>
+                <div class="day-col-header">
+                    <span class="day-name">S</span>
+                    <span class="day-date">Sat</span>
+                </div>
+                <div class="day-col-header" style="opacity: 0.4;">
+                    <span class="day-name">S</span>
+                    <span class="day-date">Sun</span>
+                </div>
+            </div>
+
+            <div class="calendar-grid">
+                <!-- Time Column -->
+                <div class="time-col">
+                    <div class="time-slot">07:00</div>
+                    <div class="time-slot">08:00</div>
+                    <div class="time-slot">09:00</div>
+                    <div class="time-slot">10:00</div>
+                    <div class="time-slot">11:00</div>
+                    <div class="time-slot">12:00</div>
+                    <div class="time-slot">13:00</div>
+                    <div class="time-slot">14:00</div>
+                    <div class="time-slot">15:00</div>
+                </div>
+                
+                <!-- Background grid lines -->
+                <div class="grid-lines-container" id="gridLines"></div>
+
+                <!-- Current Time Indicator -->
+                <div class="current-time-line">
+                    <span class="current-time-label">08:15</span>
+                </div>
+
+                <!-- Events Columns -->
+                <div class="days-container" id="eventsContainer">
+                    <div class="day-col" id="col-1"></div> <!-- Mon -->
+                    <div class="day-col" id="col-2"></div> <!-- Tue -->
+                    <div class="day-col" id="col-3"></div> <!-- Wed -->
+                    <div class="day-col" id="col-4"></div> <!-- Thu -->
+                    <div class="day-col" id="col-5"></div> <!-- Fri -->
+                    <div class="day-col" id="col-6"></div> <!-- Sat -->
+                    <div class="day-col" id="col-7"></div> <!-- Sun -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Task Modal -->
+    <div class="modal-overlay" id="addModal">
+        <div class="modal">
+            <h2>Add New Task</h2>
+            <form id="addForm">
+                <div class="form-group">
+                    <label>Task Title</label>
+                    <input type="text" id="taskTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Description / Location</label>
+                    <input type="text" id="taskDesc">
+                </div>
+                <div class="form-group">
+                    <label>Category Color</label>
+                    <select id="taskColor">
+                        <option value="blue">Blue (Housing / Finance)</option>
+                        <option value="grey">Grey (Projects / Admin)</option>
+                        <option value="yellow">Yellow (Music / Promo)</option>
+                        <option value="white">White (General / Tags)</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label>Day (1-7)</label>
+                        <input type="number" id="taskDay" min="1" max="7" value="1" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>Start Time</label>
+                        <input type="time" id="taskStart" value="08:00" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>End Time</label>
+                        <input type="time" id="taskEnd" value="09:00" required>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <button type="button" class="btn-submit" id="closeModal" style="background: #eee; color: #333;">Cancel</button>
+                    <button type="submit" class="btn-submit">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const START_HOUR = 7;
+        const END_HOUR = 15;
+        const MIN_PER_HOUR = 60;
+        const ROW_HEIGHT = 80; // pixels per hour
+        const PIXELS_PER_MIN = ROW_HEIGHT / MIN_PER_HOUR;
+
+        const defaultEvents = [
+            // Monday
+            { id: 1, day: 1, start: '08:00', end: '10:00', title: 'Apartment Hunting', loc: 'Viewings (Budget: £350)', color: 'blue', icon: 'ph-house', iconColor: '#4d72d6' },
+            { id: 2, day: 1, start: '10:15', end: '11:30', title: 'Mahir App Dev', loc: 'Bulk SMS Logic', color: 'grey', icon: 'ph-code', iconColor: '#333' },
+            
+            // Tuesday
+            { id: 3, day: 2, start: '07:30', end: '09:00', title: 'Study Grind', loc: 'Check sources', color: 'yellow', icon: 'ph-book-open', iconColor: '#000' },
+            { id: 4, day: 2, start: '09:30', end: '11:00', title: 'Uni Agency Work', loc: 'Recruit & Follow-ups', color: 'white', tag: 'Scholarships', tagColor: 'blue' },
+            
+            // Wednesday
+            { id: 5, day: 3, start: '08:00', end: '09:30', title: 'Studio Session', loc: 'Meet with Ed, Slim, Jamal...', color: 'grey', icon: 'ph-headphones', iconColor: '#333', hasJoinDark: true },
+            { id: 6, day: 3, start: '09:45', end: '10:30', title: 'Admin & Finance', loc: 'Remind Manun for Eagles Gig Pay', color: 'blue', icon: 'ph-wallet', iconColor: '#4d72d6' },
+            
+            // Thursday
+            { id: 7, day: 4, start: '07:00', end: '09:00', title: 'Mahir App Dev', loc: 'Company Categories SMS', color: 'grey', icon: 'ph-code', iconColor: '#333' },
+            { id: 8, day: 4, start: '09:30', end: '11:00', title: 'Job Apps', loc: 'Apply at CIFA & Internship', color: 'white', tag: 'Career', tagColor: 'pink' },
+            
+            // Friday
+            { id: 9, day: 5, start: '08:00', end: '09:30', title: 'GQOM Promo', loc: 'Video shoot & biography outline', color: 'yellow', icon: 'ph-video-camera', iconColor: '#000' },
+            { id: 10, day: 5, start: '10:00', end: '11:30', title: 'Event Planning', loc: 'Gigs with Sly, Miro, Nitefreak', color: 'blue', icon: 'ph-calendar-star', iconColor: '#4d72d6' },
+            
+            // Saturday
+            { id: 11, day: 6, start: '08:00', end: '10:00', title: 'Cleaning & Washing', loc: 'Home', color: 'grey', icon: 'ph-broom', iconColor: '#333' },
+            { id: 12, day: 6, start: '10:30', end: '11:30', title: 'Music Collab', loc: 'Pending track with Pex Worst', color: 'white', tag: 'Studio', tagColor: 'purple' },
+        ];
+
+        // Local Database Manager
+        const LocalDB = {
+            getEvents: function() {
+                const stored = localStorage.getItem('personalEvents');
+                if (stored) {
+                    return JSON.parse(stored);
+                }
+                this.saveEvents(defaultEvents);
+                return defaultEvents;
+            },
+            saveEvents: function(events) {
+                localStorage.setItem('personalEvents', JSON.stringify(events));
+            },
+            addEvent: function(event) {
+                const events = this.getEvents();
+                event.id = Date.now();
+                events.push(event);
+                this.saveEvents(events);
+            }
+        };
+
+        function calcTop(timeStr) {
+            const [hours, mins] = timeStr.split(':').map(Number);
+            const totalMins = (hours - START_HOUR) * 60 + mins;
+            return totalMins * PIXELS_PER_MIN;
+        }
+
+        function calcHeight(startStr, endStr) {
+            const startTop = calcTop(startStr);
+            const endTop = calcTop(endStr);
+            return endTop - startTop;
+        }
+
+        function renderGridLines() {
+            const container = document.getElementById('gridLines');
+            const totalHours = END_HOUR - START_HOUR + 1;
+            
+            let html = '';
+            for (let i = 0; i < totalHours * 2; i++) {
+                html += `<div class="grid-line-row" style="top: ${i * ROW_HEIGHT/2}px; position: absolute; width: 100%;"></div>`;
+            }
+            
+            html += `<div class="grid-line-col-container">`;
+            for(let i = 0; i < 7; i++) {
+                html += `<div class="grid-line-col"></div>`;
+            }
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        function renderEvents() {
+            // Clear existing columns
+            for(let i=1; i<=7; i++) {
+                const col = document.getElementById(`col-${i}`);
+                if(col) col.innerHTML = '';
+            }
+
+            const events = LocalDB.getEvents();
+            
+            events.forEach(event => {
+                const col = document.getElementById(`col-${event.day}`);
+                if (!col) return;
+
+                const top = calcTop(event.start);
+                const height = calcHeight(event.start, event.end);
+
+                // Skip rendering if outside grid
+                if(top < 0) return;
+
+                let cardHtml = `
+                    <div class="event-card ${event.color}" style="top: ${top}px; height: ${height}px;">
+                `;
+
+                if (event.tag) {
+                    cardHtml += `<div class="event-tag" style="background-color: var(--tag-${event.tagColor || 'pink'});">${event.tag}</div>`;
+                }
+
+                if (event.icon) {
+                    cardHtml += `<div class="event-icon" style="color: ${event.iconColor || '#333'};"><i class="ph ${event.icon}"></i></div>`;
+                }
+
+                cardHtml += `
+                    <div class="event-title">${event.title}</div>
+                    <div class="event-loc">${event.loc}</div>
+                `;
+
+                if (event.hasJoinDark) {
+                     cardHtml += `<button class="join-btn dark" style="margin-top: auto;">Open</button>`;
+                }
+
+                if (height >= 60) {
+                     cardHtml += `<div class="event-time" style="margin-top:auto;">${event.start}-${event.end}</div>`;
+                }
+
+                cardHtml += `</div>`;
+                col.innerHTML += cardHtml;
+            });
+        }
+        
+        function setTimeIndicator() {
+            const line = document.querySelector('.current-time-line');
+            const now = new Date();
+            const h = now.getHours();
+            const m = now.getMinutes();
+            if (h >= START_HOUR && h <= END_HOUR) {
+                const top = calcTop(`${h}:${m < 10 ? '0'+m : m}`);
+                line.style.top = top + 'px';
+                document.querySelector('.current-time-label').textContent = `${h}:${m < 10 ? '0'+m : m}`;
+            } else {
+                line.style.display = 'none'; // Outside working hours
+            }
+        }
+
+        // Modal Logic
+        const modal = document.getElementById('addModal');
+        document.getElementById('addBtn').addEventListener('click', () => modal.style.display = 'flex');
+        document.getElementById('closeModal').addEventListener('click', () => modal.style.display = 'none');
+        
+        document.getElementById('addForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newEvent = {
+                title: document.getElementById('taskTitle').value,
+                loc: document.getElementById('taskDesc').value,
+                color: document.getElementById('taskColor').value,
+                day: parseInt(document.getElementById('taskDay').value),
+                start: document.getElementById('taskStart').value,
+                end: document.getElementById('taskEnd').value
+            };
+            
+            // Add icon mapping based on color
+            if(newEvent.color === 'blue') { newEvent.icon = 'ph-check-circle'; newEvent.iconColor = '#4d72d6'; }
+            if(newEvent.color === 'yellow') { newEvent.icon = 'ph-star'; newEvent.iconColor = '#000'; }
+            if(newEvent.color === 'grey') { newEvent.icon = 'ph-briefcase'; newEvent.iconColor = '#333'; }
+
+            LocalDB.addEvent(newEvent);
+            renderEvents();
+            modal.style.display = 'none';
+            e.target.reset();
+        });
+
+        // Initialize
+        renderGridLines();
+        renderEvents();
+        setTimeIndicator();
+        setInterval(setTimeIndicator, 60000); // Update line every minute
+    </script>
+</body>
+</html>

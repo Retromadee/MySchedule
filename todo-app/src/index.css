@@ -1,0 +1,58 @@
+:root {
+  --bg-color: #f7f4eb;
+  --sidebar-bg: #191919;
+  --sidebar-text: #969696;
+  --sidebar-active: #f17c8d;
+  --text-main: #1c1c1c;
+  --text-muted: #858585;
+  --border-color: #e4dec8;
+  
+  /* Card Colors */
+  --card-yellow: #f8db66;
+  --card-grey: #e8e6dd;
+  --card-blue: #b3c9fb;
+  --card-white: #ffffff;
+  
+  /* Tag Colors */
+  --tag-pink: #ffa4da;
+  --tag-purple: #cda2e1;
+  
+  --time-row-height: 80px;
+  --sidebar-width: 250px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, #root {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  height: 100vh;
+  height: 100dvh; /* dynamic viewport height for mobile */
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
+
+/* ============ MOBILE RESPONSIVE ============ */
+
+@media (max-width: 768px) {
+  :root {
+    --time-row-height: 60px;
+    --sidebar-width: 0px;
+  }
+
+  body, #root {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,114 @@
+.header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.header-left h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.date-picker-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s;
+}
+.date-picker-btn:hover {
+    opacity: 0.9;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.add-event-btn {
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+.add-event-btn:hover {
+    background-color: #333;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+.icon-btn:hover {
+    transform: rotate(180deg);
+}
+
+.view-toggles {
+    display: flex;
+    gap: 15px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 6px 12px;
+}
+
+.toggle-btn.active {
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .header-area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .header-left h1 {
+        font-size: 28px;
+    }
+}
