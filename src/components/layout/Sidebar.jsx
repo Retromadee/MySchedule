@@ -1,8 +1,8 @@
 import React from 'react';
 import './Sidebar.css';
 import { 
-    SquaresFour, CalendarBlank, House, Code, 
-    Headphones, Briefcase, Wallet, Gear, X
+    SquaresFour, CalendarBlank, House, Code,
+    Headphones, Briefcase, Wallet, Gear, X, ListChecks
 } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
 
@@ -36,6 +36,13 @@ export default function Sidebar({ isOpen, onClose }) {
                 >
                     <CalendarBlank size={20} />
                     <span>Schedule</span>
+                </div>
+                <div 
+                    className={`nav-item ${activeRoute === 'planner' ? 'active' : ''}`}
+                    onClick={() => { setActiveRoute('planner'); onClose?.(); }}
+                >
+                    <ListChecks size={20} />
+                    <span>Weekly Planner</span>
                 </div>
             </div>
 

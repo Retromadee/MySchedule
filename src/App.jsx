@@ -7,6 +7,7 @@ import MonthGrid from './components/calendar/MonthGrid';
 import Dashboard from './components/layout/Dashboard';
 import EventModal from './components/events/EventModal';
 import EventDetail from './components/events/EventDetail';
+import WeeklyPlanner from './components/planner/WeeklyPlanner';
 import { useTodo } from './store/TodoContext';
 import './App.css';
 
@@ -31,6 +32,8 @@ export default function App() {
                 
                 {activeRoute === 'dashboard' ? (
                     <Dashboard />
+                ) : activeRoute === 'planner' ? (
+                    <WeeklyPlanner />
                 ) : (
                     calendarView === 'month' ? <MonthGrid /> : <CalendarGrid />
                 )}

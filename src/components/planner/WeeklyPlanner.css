@@ -1,0 +1,394 @@
+/* ===================================================
+   Weekly Planner — WeeklyPlanner.css
+   =================================================== */
+
+.planner-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 24px;
+    overflow-y: auto;
+    padding-bottom: 40px;
+}
+
+/* ─── Week Navigation ─────────────────────────── */
+.planner-week-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.planner-week-nav-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: white;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    transition: all 0.18s ease;
+}
+.planner-week-nav-btn:hover {
+    background: var(--text-main);
+    color: white;
+    border-color: var(--text-main);
+}
+
+.planner-week-label {
+    font-size: 15px;
+    font-weight: 600;
+    flex: 1;
+    color: var(--text-main);
+    letter-spacing: -0.3px;
+}
+
+.planner-week-today-btn {
+    background: var(--text-main);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.18s;
+}
+.planner-week-today-btn:hover {
+    opacity: 0.8;
+}
+
+/* ─── Week Progress Map ───────────────────────── */
+.planner-progress-map {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.planner-day-tile {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+.planner-day-tile:hover {
+    border-color: var(--sidebar-active);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(241, 124, 141, 0.12);
+}
+
+.planner-day-tile.today {
+    background: var(--text-main);
+    border-color: var(--text-main);
+}
+.planner-day-tile.today .planner-tile-day,
+.planner-day-tile.today .planner-tile-date,
+.planner-day-tile.today .planner-tile-count {
+    color: white;
+}
+.planner-day-tile.today .planner-tile-bar-track {
+    background: rgba(255, 255, 255, 0.2);
+}
+.planner-day-tile.today .planner-tile-bar-fill {
+    background: var(--sidebar-active);
+}
+
+.planner-day-tile.all-done {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+.planner-day-tile.all-done .planner-tile-bar-fill {
+    background: #22c55e;
+}
+
+.planner-tile-day {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+}
+
+.planner-tile-date {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.planner-tile-count {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.planner-tile-bar-track {
+    width: 100%;
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 2px;
+}
+.planner-tile-bar-fill {
+    height: 100%;
+    background: var(--sidebar-active);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+/* ─── Day Columns Grid ────────────────────────── */
+.planner-days-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 900px) {
+    .planner-days-grid {
+        grid-template-columns: 1fr;
+    }
+    .planner-progress-map {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ─── Day Column Card ─────────────────────────── */
+.planner-day-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    scroll-margin-top: 20px;
+}
+.planner-day-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.planner-day-card.today-card {
+    border-color: var(--sidebar-active);
+    box-shadow: 0 0 0 2px rgba(241, 124, 141, 0.15);
+}
+
+/* Card Header */
+.planner-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid var(--border-color);
+    background: #fafaf8;
+}
+
+.planner-card-header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.planner-card-day-name {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+.planner-card-day-date {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.planner-card-header.today-header {
+    background: linear-gradient(135deg, rgba(241, 124, 141, 0.08) 0%, rgba(241, 124, 141, 0.02) 100%);
+}
+.planner-card-header.today-header .planner-card-day-name {
+    color: var(--sidebar-active);
+}
+
+/* Circular Progress Ring */
+.planner-ring {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+}
+.planner-ring svg {
+    transform: rotate(-90deg);
+}
+.planner-ring-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 4;
+}
+.planner-ring-fill {
+    fill: none;
+    stroke: var(--sidebar-active);
+    stroke-width: 4;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+.planner-ring-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Progress Bar within card */
+.planner-card-progress-bar {
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 0;
+    overflow: hidden;
+}
+.planner-card-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sidebar-active), #ff9ab2);
+    transition: width 0.4s ease;
+}
+.planner-day-card.today-card .planner-card-progress-fill {
+    background: linear-gradient(90deg, var(--sidebar-active), #ff6b8a);
+}
+.planner-day-card.all-done-card .planner-card-progress-fill {
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+/* Task List */
+.planner-task-list {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 16px;
+    gap: 8px;
+}
+
+/* Individual Task Item */
+.planner-task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    background: #fafaf8;
+    user-select: none;
+}
+.planner-task-item:hover {
+    background: #f5f3ee;
+    border-color: var(--border-color);
+}
+.planner-task-item.completed {
+    opacity: 0.55;
+    background: #f9f9f9;
+}
+
+/* Custom Checkbox */
+.planner-checkbox {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    background: white;
+}
+.planner-task-item:hover .planner-checkbox {
+    border-color: var(--sidebar-active);
+}
+.planner-checkbox.checked {
+    background: var(--sidebar-active);
+    border-color: var(--sidebar-active);
+}
+.planner-checkbox-tick {
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-1px);
+    display: none;
+}
+.planner-checkbox.checked .planner-checkbox-tick {
+    display: block;
+}
+
+/* Task Info */
+.planner-task-info {
+    flex: 1;
+    min-width: 0;
+}
+.planner-task-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: text-decoration 0.1s;
+}
+.planner-task-item.completed .planner-task-title {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+.planner-task-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Category chip */
+.planner-task-chip {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    letter-spacing: 0.2px;
+}
+.chip-blue   { background: #dbeafe; color: #1d4ed8; }
+.chip-grey   { background: #f3f4f6; color: #374151; }
+.chip-yellow { background: #fef9c3; color: #854d0e; }
+.chip-white  { background: #f9fafb; color: #374151; border: 1px solid #e5e7eb; }
+.chip-housing { background: #dbeafe; color: #1d4ed8; }
+.chip-projects { background: #f3f4f6; color: #374151; }
+.chip-music   { background: #fce7f3; color: #9d174d; }
+.chip-career  { background: #fef9c3; color: #854d0e; }
+.chip-finance { background: #d1fae5; color: #065f46; }
+
+/* Empty State */
+.planner-empty {
+    padding: 28px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.planner-empty-icon {
+    font-size: 32px;
+    opacity: 0.3;
+}
