@@ -9,15 +9,20 @@ import {
 } from '../../utils/timeUtils';
 
 export default function CalendarGrid() {
-    const { events, updateEvent } = useTodo();
+    const { events, updateEvent, calendarView } = useTodo();
     const [currentTimeData, setCurrentTimeData] = useState({ top: 0, label: '', visible: false });
     const [dragState, setDragState] = useState(null); // { eventId, originDay, startY, originalTop }
+    const [selectedDay, setSelectedDay] = useState(new Date());
     const gridRef = useRef(null);
 
     // Real date-aware week
     const [weekStart, setWeekStart] = useState(() => getMonday(new Date()));
-    const weekDays = getWeekDays(weekStart);
+    let weekDays = getWeekDays(weekStart);
     const today = new Date();
+    
+    if (calendarView === 'day') {
+        weekDays = [selectedDay];
+    }
 
     useEffect(() => {
         const updateTime = () => {
@@ -83,21 +88,40 @@ export default function CalendarGrid() {
             {/* Week Navigation */}
             <div className="week-nav">
                 <button className="week-nav-btn" onClick={() => {
-                    const prev = new Date(weekStart);
-                    prev.setDate(prev.getDate() - 7);
-                    setWeekStart(prev);
+                    if (calendarView === 'day') {
+                        const prev = new Date(selectedDay);
+                        prev.setDate(prev.getDate() - 1);
+                        setSelectedDay(prev);
+                    } else {
+                        const prev = new Date(weekStart);
+                        prev.setDate(prev.getDate() - 7);
+                        setWeekStart(prev);
+                    }
                 }}>‹</button>
                 <span className="week-nav-label">
-                    {weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} — {
-                        new Date(weekStart.getTime() + 6 * 86400000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+                    {calendarView === 'day' ? 
+                        selectedDay.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }) 
+                        : 
+                        `${weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} — ${
+                            new Date(weekStart.getTime() + 6 * 86400000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+                        }`
                     }
                 </span>
                 <button className="week-nav-btn" onClick={() => {
-                    const next = new Date(weekStart);
-                    next.setDate(next.getDate() + 7);
-                    setWeekStart(next);
+                    if (calendarView === 'day') {
+                        const next = new Date(selectedDay);
+                        next.setDate(next.getDate() + 1);
+                        setSelectedDay(next);
+                    } else {
+                        const next = new Date(weekStart);
+                        next.setDate(next.getDate() + 7);
+                        setWeekStart(next);
+                    }
                 }}>›</button>
-                <button className="week-nav-today" onClick={() => setWeekStart(getMonday(new Date()))}>
+                <button className="week-nav-today" onClick={() => {
+                    if (calendarView === 'day') setSelectedDay(new Date());
+                    else setWeekStart(getMonday(new Date()));
+                }}>
                     Today
                 </button>
             </div>
@@ -105,10 +129,11 @@ export default function CalendarGrid() {
             <div className="calendar-header">
                 {weekDays.map((date, idx) => {
                     const isToday = isSameDay(date, today);
+                    const realDayIndex = date.getDay() === 0 ? 7 : date.getDay(); // 1-7
                     return (
-                        <div key={idx} className={`day-col-header ${isToday ? 'active' : ''}`} style={idx === 6 ? { opacity: 0.4 } : {}}>
-                            <span className="day-name">{DAY_NAMES_SHORT[idx].charAt(0)}</span>
-                            <span className="day-date">{DAY_NAMES_SHORT[idx]} {formatDateLabel(date)}</span>
+                        <div key={idx} className={`day-col-header ${isToday ? 'active' : ''}`} style={realDayIndex === 7 ? { opacity: 0.4 } : {}}>
+                            <span className="day-name">{DAY_NAMES_SHORT[realDayIndex - 1]?.charAt(0) || date.toLocaleDateString('en-US', {weekday: 'short'})}</span>
+                            <span className="day-date">{date.toLocaleDateString('en-US', {weekday: 'short'})} {formatDateLabel(date)}</span>
                         </div>
                     );
                 })}
@@ -137,14 +162,15 @@ export default function CalendarGrid() {
                 )}
 
                 <div className="days-container">
-                    {weekDays.map((_, dayIndex) => {
-                        const dayEvents = events.filter(e => e.day === dayIndex + 1);
+                    {weekDays.map((date, idx) => {
+                        const realDayIndex = date.getDay() === 0 ? 7 : date.getDay(); // 1-7 for matching events
+                        const dayEvents = events.filter(e => e.day === realDayIndex);
                         return (
                             <div
-                                key={dayIndex}
+                                key={idx}
                                 className={`day-col ${dragState ? 'drag-active' : ''}`}
                                 onDragOver={handleDragOver}
-                                onDrop={(e) => handleDrop(e, dayIndex + 1)}
+                                onDrop={(e) => handleDrop(e, realDayIndex)}
                             >
                                 {dayEvents.map(event => {
                                     const top = calcTop(event.start);

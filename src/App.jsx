@@ -3,13 +3,15 @@ import Sidebar from './components/layout/Sidebar';
 import Topbar from './components/layout/Topbar';
 import HeaderArea from './components/layout/HeaderArea';
 import CalendarGrid from './components/calendar/CalendarGrid';
+import MonthGrid from './components/calendar/MonthGrid';
+import Dashboard from './components/layout/Dashboard';
 import EventModal from './components/events/EventModal';
 import EventDetail from './components/events/EventDetail';
 import { useTodo } from './store/TodoContext';
 import './App.css';
 
 export default function App() {
-    const { openAddModal, loadEvents, activeFilter } = useTodo();
+    const { openAddModal, loadEvents, activeFilter, activeRoute, calendarView } = useTodo();
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
@@ -26,7 +28,12 @@ export default function App() {
                     onRefresh={loadEvents}
                     activeFilter={activeFilter}
                 />
-                <CalendarGrid />
+                
+                {activeRoute === 'dashboard' ? (
+                    <Dashboard />
+                ) : (
+                    calendarView === 'month' ? <MonthGrid /> : <CalendarGrid />
+                )}
             </main>
             <EventModal />
             <EventDetail />

@@ -11,6 +11,8 @@ const FILTER_LABELS = {
 };
 
 export default function HeaderArea({ onAddClick, onRefresh, activeFilter }) {
+    const { calendarView, setCalendarView } = useTodo();
+    
     return (
         <div className="header-area">
             <div className="header-left">
@@ -35,9 +37,18 @@ export default function HeaderArea({ onAddClick, onRefresh, activeFilter }) {
                     </button>
                 </div>
                 <div className="view-toggles">
-                    <button className="toggle-btn">Today</button>
-                    <button className="toggle-btn active">Week</button>
-                    <button className="toggle-btn">Month</button>
+                    <button 
+                        className={`toggle-btn ${calendarView === 'day' ? 'active' : ''}`}
+                        onClick={() => setCalendarView('day')}
+                    >Day</button>
+                    <button 
+                        className={`toggle-btn ${calendarView === 'week' ? 'active' : ''}`}
+                        onClick={() => setCalendarView('week')}
+                    >Week</button>
+                    <button 
+                        className={`toggle-btn ${calendarView === 'month' ? 'active' : ''}`}
+                        onClick={() => setCalendarView('month')}
+                    >Month</button>
                 </div>
             </div>
         </div>
