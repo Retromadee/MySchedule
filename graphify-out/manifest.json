@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "src/App.jsx": {
-    "mtime": 1784373894.019535,
-    "ast_hash": "9a00cafc52a6db9a2635113f42aef5ab",
+    "mtime": 1784374599.8033752,
+    "ast_hash": "b6f9b223432835f21ac2f356802b5459",
     "semantic_hash": ""
   },
   "src/components/calendar/CalendarGrid.jsx": {
@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/HeaderArea.jsx": {
-    "mtime": 1784340667.0789356,
-    "ast_hash": "199550c1132445bc6b605a3f81763c96",
+    "mtime": 1784374597.7324495,
+    "ast_hash": "b9e2fc729036b7b639865b78a830ef82",
     "semantic_hash": ""
   },
   "src/components/layout/Sidebar.jsx": {
