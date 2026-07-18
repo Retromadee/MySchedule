@@ -14,7 +14,7 @@ export default function EventCard({ event, top, height, onDragStart }) {
 
     return (
         <div
-            className={`event-card ${event.color}`}
+            className={`event-card ${event.color} ${event.completed ? 'completed' : ''}`}
             style={{ top: `${top}px`, height: `${height}px` }}
             onClick={handleClick}
             draggable

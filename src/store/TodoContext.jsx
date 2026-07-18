@@ -36,6 +36,13 @@ export function TodoProvider({ children }) {
         setDetailEvent(null);
     }, [loadEvents]);
 
+    const toggleEventCompletion = useCallback((eventId) => {
+        const eventToUpdate = events.find(e => e.id === eventId);
+        if (eventToUpdate) {
+            updateEvent({ ...eventToUpdate, completed: !eventToUpdate.completed });
+        }
+    }, [events, updateEvent]);
+
     const openEditModal = useCallback((event) => {
         setEditingEvent(event);
         setIsModalOpen(true);
@@ -64,6 +71,7 @@ export function TodoProvider({ children }) {
             addEvent,
             updateEvent,
             deleteEvent,
+            toggleEventCompletion,
             isModalOpen,
             setIsModalOpen,
             editingEvent,
