@@ -24,13 +24,223 @@
       "norm_label": "app()"
     },
     {
+      "label": "CalendarGrid.jsx",
+      "file_type": "code",
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "calendar_calendargrid",
+      "community": 4,
+      "norm_label": "calendargrid.jsx"
+    },
+    {
+      "label": "CalendarGrid()",
+      "file_type": "code",
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "calendar_calendargrid_calendargrid",
+      "community": 4,
+      "norm_label": "calendargrid()"
+    },
+    {
+      "label": "MonthGrid.jsx",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "calendar_monthgrid",
+      "community": 2,
+      "norm_label": "monthgrid.jsx"
+    },
+    {
+      "label": "DAY_HEADERS",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_day_headers",
+      "community": 2,
+      "norm_label": "day_headers"
+    },
+    {
+      "label": "CATEGORY_COLORS",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_category_colors",
+      "community": 2,
+      "norm_label": "category_colors"
+    },
+    {
+      "label": "getMonthStart()",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_getmonthstart",
+      "community": 2,
+      "norm_label": "getmonthstart()"
+    },
+    {
+      "label": "buildMonthGrid()",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_buildmonthgrid",
+      "community": 2,
+      "norm_label": "buildmonthgrid()"
+    },
+    {
+      "label": "MONTH_NAMES",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_month_names",
+      "community": 2,
+      "norm_label": "month_names"
+    },
+    {
+      "label": "MonthGrid()",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_monthgrid",
+      "community": 2,
+      "norm_label": "monthgrid()"
+    },
+    {
+      "label": "EventCard.jsx",
+      "file_type": "code",
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "events_eventcard",
+      "community": 4,
+      "norm_label": "eventcard.jsx"
+    },
+    {
+      "label": "EventCard()",
+      "file_type": "code",
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "events_eventcard_eventcard",
+      "community": 4,
+      "norm_label": "eventcard()"
+    },
+    {
+      "label": "EventDetail.jsx",
+      "file_type": "code",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "events_eventdetail",
+      "community": 5,
+      "norm_label": "eventdetail.jsx"
+    },
+    {
+      "label": "CATEGORY_COLORS",
+      "file_type": "code",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "events_eventdetail_category_colors",
+      "community": 5,
+      "norm_label": "category_colors"
+    },
+    {
+      "label": "DAY_NAMES",
+      "file_type": "code",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "events_eventdetail_day_names",
+      "community": 5,
+      "norm_label": "day_names"
+    },
+    {
+      "label": "EventDetail()",
+      "file_type": "code",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "events_eventdetail_eventdetail",
+      "community": 5,
+      "norm_label": "eventdetail()"
+    },
+    {
+      "label": "EventModal.jsx",
+      "file_type": "code",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "events_eventmodal",
+      "community": 6,
+      "norm_label": "eventmodal.jsx"
+    },
+    {
+      "label": "ICON_MAP",
+      "file_type": "code",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "events_eventmodal_icon_map",
+      "community": 6,
+      "norm_label": "icon_map"
+    },
+    {
+      "label": "COLOR_MAP",
+      "file_type": "code",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "events_eventmodal_color_map",
+      "community": 6,
+      "norm_label": "color_map"
+    },
+    {
+      "label": "EventModal()",
+      "file_type": "code",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "events_eventmodal_eventmodal",
+      "community": 6,
+      "norm_label": "eventmodal()"
+    },
+    {
+      "label": "Dashboard.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "layout_dashboard",
+      "community": 1,
+      "norm_label": "dashboard.jsx"
+    },
+    {
+      "label": "Dashboard()",
+      "file_type": "code",
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "layout_dashboard_dashboard",
+      "community": 1,
+      "norm_label": "dashboard()"
+    },
+    {
       "label": "Sidebar.jsx",
       "file_type": "code",
       "source_file": "src/components/layout/Sidebar.jsx",
       "source_location": "L1",
       "_origin": "ast",
       "id": "layout_sidebar",
-      "community": 1,
+      "community": 7,
       "norm_label": "sidebar.jsx"
     },
     {
@@ -40,8 +250,78 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "layout_sidebar_sidebar",
-      "community": 1,
+      "community": 7,
       "norm_label": "sidebar()"
+    },
+    {
+      "label": "StorageService.js",
+      "file_type": "code",
+      "source_file": "src/services/StorageService.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "services_storageservice",
+      "community": 3,
+      "norm_label": "storageservice.js"
+    },
+    {
+      "label": "defaultEvents",
+      "file_type": "code",
+      "source_file": "src/services/StorageService.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "services_storageservice_defaultevents",
+      "community": 3,
+      "norm_label": "defaultevents"
+    },
+    {
+      "label": "StorageService",
+      "file_type": "code",
+      "source_file": "src/services/StorageService.js",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "services_storageservice_storageservice",
+      "community": 3,
+      "norm_label": "storageservice"
+    },
+    {
+      "label": "TodoContext.jsx",
+      "file_type": "code",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "store_todocontext",
+      "community": 3,
+      "norm_label": "todocontext.jsx"
+    },
+    {
+      "label": "TodoContext",
+      "file_type": "code",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "store_todocontext_todocontext",
+      "community": 3,
+      "norm_label": "todocontext"
+    },
+    {
+      "label": "TodoProvider()",
+      "file_type": "code",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "store_todocontext_todoprovider",
+      "community": 3,
+      "norm_label": "todoprovider()"
+    },
+    {
+      "label": "useTodo()",
+      "file_type": "code",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L131",
+      "_origin": "ast",
+      "id": "store_todocontext_usetodo",
+      "community": 4,
+      "norm_label": "usetodo()"
     },
     {
       "label": "WeeklyPlanner.jsx",
@@ -49,9 +329,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "planner_weeklyplanner",
       "community": 0,
-      "norm_label": "weeklyplanner.jsx"
+      "norm_label": "weeklyplanner.jsx",
+      "id": "planner_weeklyplanner"
     },
     {
       "label": "DAY_NAMES",
@@ -59,9 +339,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_day_names",
       "community": 0,
-      "norm_label": "day_names"
+      "norm_label": "day_names",
+      "id": "planner_weeklyplanner_day_names"
     },
     {
       "label": "DAY_LETTERS",
@@ -69,9 +349,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_day_letters",
       "community": 0,
-      "norm_label": "day_letters"
+      "norm_label": "day_letters",
+      "id": "planner_weeklyplanner_day_letters"
     },
     {
       "label": "formatDate()",
@@ -79,9 +359,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_formatdate",
-      "community": 2,
-      "norm_label": "formatdate()"
+      "community": 0,
+      "norm_label": "formatdate()",
+      "id": "planner_weeklyplanner_formatdate"
     },
     {
       "label": "getChipClass()",
@@ -89,9 +369,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_getchipclass",
       "community": 0,
-      "norm_label": "getchipclass()"
+      "norm_label": "getchipclass()",
+      "id": "planner_weeklyplanner_getchipclass"
     },
     {
       "label": "getChipLabel()",
@@ -99,9 +379,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_getchiplabel",
       "community": 0,
-      "norm_label": "getchiplabel()"
+      "norm_label": "getchiplabel()",
+      "id": "planner_weeklyplanner_getchiplabel"
     },
     {
       "label": "ProgressRing()",
@@ -109,9 +389,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_progressring",
       "community": 0,
-      "norm_label": "progressring()"
+      "norm_label": "progressring()",
+      "id": "planner_weeklyplanner_progressring"
     },
     {
       "label": "TaskItem()",
@@ -119,9 +399,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_taskitem",
       "community": 0,
-      "norm_label": "taskitem()"
+      "norm_label": "taskitem()",
+      "id": "planner_weeklyplanner_taskitem"
     },
     {
       "label": "DayCard()",
@@ -129,9 +409,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L91",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_daycard",
       "community": 0,
-      "norm_label": "daycard()"
+      "norm_label": "daycard()",
+      "id": "planner_weeklyplanner_daycard"
     },
     {
       "label": "WeeklyPlanner()",
@@ -139,9 +419,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L145",
       "_origin": "ast",
-      "id": "planner_weeklyplanner_weeklyplanner",
-      "community": 2,
-      "norm_label": "weeklyplanner()"
+      "community": 0,
+      "norm_label": "weeklyplanner()",
+      "id": "planner_weeklyplanner_weeklyplanner"
     }
   ],
   "links": [
@@ -150,11 +430,66 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L2",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "src_app",
-      "target": "layout_sidebar",
+      "target": "calendar_calendargrid",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "calendar_monthgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "events_eventdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "events_eventmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "layout_dashboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "layout_sidebar"
     },
     {
       "relation": "imports_from",
@@ -163,9 +498,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "planner_weeklyplanner",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner"
     },
     {
       "relation": "contains",
@@ -173,9 +508,401 @@
       "source_file": "src/App.jsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "src_app_app",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "store_todocontext",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "store_todocontext_usetodo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "calendar_calendargrid",
+      "target": "calendar_calendargrid_calendargrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "calendar_calendargrid",
+      "target": "events_eventcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "calendar_calendargrid",
+      "target": "store_todocontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "calendar_calendargrid",
+      "target": "store_todocontext_usetodo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "calendar_calendargrid_calendargrid",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "calendar_monthgrid",
+      "target": "calendar_monthgrid_buildmonthgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "calendar_monthgrid",
+      "target": "calendar_monthgrid_category_colors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "calendar_monthgrid",
+      "target": "calendar_monthgrid_day_headers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "calendar_monthgrid",
+      "target": "calendar_monthgrid_getmonthstart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "calendar_monthgrid",
+      "target": "calendar_monthgrid_month_names",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "calendar_monthgrid",
+      "target": "calendar_monthgrid_monthgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "calendar_monthgrid",
+      "target": "store_todocontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "calendar_monthgrid",
+      "target": "store_todocontext_usetodo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "calendar_monthgrid_monthgrid",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "events_eventcard",
+      "target": "events_eventcard_eventcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "events_eventcard",
+      "target": "store_todocontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "events_eventcard",
+      "target": "store_todocontext_usetodo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "events_eventcard_eventcard",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "events_eventdetail",
+      "target": "events_eventdetail_category_colors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "events_eventdetail",
+      "target": "events_eventdetail_day_names",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "events_eventdetail",
+      "target": "events_eventdetail_eventdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "events_eventdetail",
+      "target": "store_todocontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "events_eventdetail",
+      "target": "store_todocontext_usetodo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "events_eventdetail_eventdetail",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "events_eventmodal",
+      "target": "events_eventmodal_color_map",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "events_eventmodal",
+      "target": "events_eventmodal_eventmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "events_eventmodal",
+      "target": "events_eventmodal_icon_map",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "events_eventmodal",
+      "target": "store_todocontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "events_eventmodal",
+      "target": "store_todocontext_usetodo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "events_eventmodal_eventmodal",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "layout_dashboard",
+      "target": "layout_dashboard_dashboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "layout_dashboard",
+      "target": "store_todocontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "layout_dashboard",
+      "target": "store_todocontext_usetodo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "layout_dashboard_dashboard",
+      "target": "store_todocontext_usetodo"
     },
     {
       "relation": "contains",
@@ -183,8 +910,113 @@
       "source_file": "src/components/layout/Sidebar.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "layout_sidebar",
-      "target": "layout_sidebar_sidebar",
+      "target": "layout_sidebar_sidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Sidebar.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "layout_sidebar",
+      "target": "store_todocontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Sidebar.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "layout_sidebar",
+      "target": "store_todocontext_usetodo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/Sidebar.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "layout_sidebar_sidebar",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/StorageService.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_storageservice",
+      "target": "services_storageservice_defaultevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/StorageService.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "services_storageservice",
+      "target": "services_storageservice_storageservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "store_todocontext",
+      "target": "services_storageservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "store_todocontext",
+      "target": "services_storageservice_storageservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "store_todocontext",
+      "target": "store_todocontext_todocontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "store_todocontext",
+      "target": "store_todocontext_todoprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "store_todocontext",
+      "target": "store_todocontext_usetodo",
       "confidence_score": 1.0
     },
     {
@@ -193,9 +1025,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_day_letters",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_day_letters"
     },
     {
       "relation": "contains",
@@ -203,9 +1035,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_day_names",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_day_names"
     },
     {
       "relation": "contains",
@@ -213,9 +1045,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_daycard",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_daycard"
     },
     {
       "relation": "contains",
@@ -223,9 +1055,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_formatdate",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_formatdate"
     },
     {
       "relation": "contains",
@@ -233,9 +1065,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_getchipclass",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_getchipclass"
     },
     {
       "relation": "contains",
@@ -243,9 +1075,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_getchiplabel",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_getchiplabel"
     },
     {
       "relation": "contains",
@@ -253,9 +1085,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_progressring",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_progressring"
     },
     {
       "relation": "contains",
@@ -263,9 +1095,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_taskitem",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_taskitem"
     },
     {
       "relation": "contains",
@@ -273,9 +1105,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L145",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner",
-      "target": "planner_weeklyplanner_weeklyplanner",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_weeklyplanner"
     },
     {
       "relation": "calls",
@@ -284,9 +1116,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner_weeklyplanner",
-      "target": "planner_weeklyplanner_formatdate",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_formatdate"
     },
     {
       "relation": "calls",
@@ -295,9 +1127,9 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner_taskitem",
-      "target": "planner_weeklyplanner_getchipclass",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_getchipclass"
     },
     {
       "relation": "calls",
@@ -306,11 +1138,11 @@
       "source_file": "src/components/planner/WeeklyPlanner.jsx",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "planner_weeklyplanner_taskitem",
-      "target": "planner_weeklyplanner_getchiplabel",
-      "confidence_score": 1.0
+      "target": "planner_weeklyplanner_getchiplabel"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "cf66d6ccc9dc61a969c1793d072b37a160f3bb5f"
+  "built_at_commit": "171a9ac5e3c04087761f667a44866ab2241413de"
 }

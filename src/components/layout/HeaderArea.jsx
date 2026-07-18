@@ -11,7 +11,7 @@ const FILTER_LABELS = {
     finance: '💰 Finances & Study',
 };
 
-export default function HeaderArea({ onAddClick, onRefresh, activeFilter }) {
+export default function HeaderArea({ onAddClick, onRefresh, activeFilter, onClearFilter }) {
     const { calendarView, setCalendarView } = useTodo();
     
     return (
@@ -21,7 +21,7 @@ export default function HeaderArea({ onAddClick, onRefresh, activeFilter }) {
                     {activeFilter ? FILTER_LABELS[activeFilter] || 'Filtered' : 'Stay on track.'}
                 </h1>
                 {activeFilter ? (
-                    <button className="date-picker-btn" onClick={onRefresh} style={{ background: 'var(--sidebar-active)', color: 'white' }}>
+                    <button className="date-picker-btn" onClick={onClearFilter} style={{ background: 'var(--sidebar-active)', color: 'white' }}>
                         <X size={14} weight="bold" /> Clear Filter
                     </button>
                 ) : (

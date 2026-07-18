@@ -12,7 +12,7 @@ import { useTodo } from './store/TodoContext';
 import './App.css';
 
 export default function App() {
-    const { openAddModal, loadEvents, activeFilter, activeRoute, calendarView, setIsModalOpen, setDetailEvent } = useTodo();
+    const { openAddModal, loadEvents, activeFilter, setActiveFilter, activeRoute, calendarView, setIsModalOpen, setDetailEvent } = useTodo();
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     useEffect(() => {
@@ -59,6 +59,7 @@ export default function App() {
                     onAddClick={openAddModal}
                     onRefresh={loadEvents}
                     activeFilter={activeFilter}
+                    onClearFilter={() => setActiveFilter(null)}
                 />
                 
                 {activeRoute === 'dashboard' ? (
