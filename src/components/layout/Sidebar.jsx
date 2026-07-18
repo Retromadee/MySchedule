@@ -7,7 +7,7 @@ import {
 import { useTodo } from '../../store/TodoContext';
 
 export default function Sidebar({ isOpen, onClose }) {
-    const { activeFilter, setActiveFilter } = useTodo();
+    const { activeFilter, setActiveFilter, activeRoute, setActiveRoute } = useTodo();
 
     return (
         <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
@@ -23,11 +23,17 @@ export default function Sidebar({ isOpen, onClose }) {
 
             <div className="sidebar-section">
                 <div className="section-title">GENERAL</div>
-                <div className="nav-item">
+                <div 
+                    className={`nav-item ${activeRoute === 'dashboard' ? 'active' : ''}`}
+                    onClick={() => { setActiveRoute('dashboard'); onClose?.(); }}
+                >
                     <SquaresFour size={20} />
                     <span>Dashboard</span>
                 </div>
-                <div className="nav-item active">
+                <div 
+                    className={`nav-item ${activeRoute === 'schedule' ? 'active' : ''}`}
+                    onClick={() => { setActiveRoute('schedule'); onClose?.(); }}
+                >
                     <CalendarBlank size={20} />
                     <span>Schedule</span>
                 </div>
@@ -74,7 +80,7 @@ export default function Sidebar({ isOpen, onClose }) {
             </div>
 
             <div className="sidebar-footer">
-                <div className="nav-item">
+                <div className="nav-item" onClick={() => alert('Settings Modal: User Preferences coming soon!')}>
                     <Gear size={20} />
                     <span>Settings</span>
                 </div>

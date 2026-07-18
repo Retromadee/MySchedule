@@ -40,7 +40,16 @@ export default function EventCard({ event, top, height, onDragStart }) {
             {height > 70 && <div className="event-loc">{event.loc}</div>}
 
             {event.hasJoinDark && height > 100 && (
-                <button className="join-btn dark" style={{ marginTop: 'auto' }} onClick={(e) => e.stopPropagation()}>Open</button>
+                <button 
+                    className="join-btn dark" 
+                    style={{ marginTop: 'auto' }} 
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setDetailEvent(event);
+                    }}
+                >
+                    Open
+                </button>
             )}
 
             {height >= 60 && (

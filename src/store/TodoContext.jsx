@@ -9,6 +9,8 @@ export function TodoProvider({ children }) {
     const [editingEvent, setEditingEvent] = useState(null);
     const [detailEvent, setDetailEvent] = useState(null);
     const [activeFilter, setActiveFilter] = useState(null); // category filter from sidebar
+    const [calendarView, setCalendarView] = useState('week'); // 'day', 'week', 'month'
+    const [activeRoute, setActiveRoute] = useState('schedule'); // 'schedule', 'dashboard'
 
     useEffect(() => {
         loadEvents();
@@ -72,6 +74,10 @@ export function TodoProvider({ children }) {
             setDetailEvent,
             activeFilter,
             setActiveFilter,
+            calendarView,
+            setCalendarView,
+            activeRoute,
+            setActiveRoute,
             resetEvents
         }}>
             {children}

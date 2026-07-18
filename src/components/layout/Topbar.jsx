@@ -76,8 +76,8 @@ export default function Topbar({ onMenuToggle }) {
             </div>
 
             <div className="top-actions">
-                <button className="action-btn"><User size={20} /></button>
-                <button className="action-btn"><Bell size={20} /></button>
+                <button className="action-btn" onClick={() => alert('User Profile & Preferences coming soon!')}><User size={20} /></button>
+                <button className="action-btn" onClick={() => alert('You have 0 new notifications')}><Bell size={20} /></button>
             </div>
         </div>
     );
