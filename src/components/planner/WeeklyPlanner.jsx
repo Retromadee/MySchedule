@@ -149,10 +149,17 @@ export default function WeeklyPlanner() {
     const weekDays = getWeekDays(weekStart);
     const dayCardRefs = useRef([]);
 
-    // Build per-day stats
+    // Build per-day stats — supports date-specific and recurring weekday events
     const dayStats = weekDays.map((date, i) => {
         const dayIndex = date.getDay() === 0 ? 7 : date.getDay();
-        const dayEvents = events.filter(e => e.day === dayIndex);
+        const yyyy = date.getFullYear();
+        const mm = String(date.getMonth() + 1).padStart(2, '0');
+        const dd = String(date.getDate()).padStart(2, '0');
+        const formattedDate = `${yyyy}-${mm}-${dd}`;
+
+        const dayEvents = events.filter(e =>
+            e.date ? e.date === formattedDate : e.day === dayIndex
+        );
         const completed = dayEvents.filter(e => e.completed).length;
         const total = dayEvents.length;
         const percent = total === 0 ? 0 : (completed / total) * 100;

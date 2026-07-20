@@ -15,13 +15,13 @@
     "semantic_hash": ""
   },
   "src/components/calendar/CalendarGrid.jsx": {
-    "mtime": 1784373912.5363302,
-    "ast_hash": "f7a14faca923e7b6f7aef055ad7b9b4e",
+    "mtime": 1784547203.4326124,
+    "ast_hash": "526dc09506ea75d0d722146987cc2782",
     "semantic_hash": ""
   },
   "src/components/calendar/MonthGrid.jsx": {
-    "mtime": 1784373903.9317691,
-    "ast_hash": "bed5456a1a68b363daa6ee17a5f3fbaf",
+    "mtime": 1784547225.5612197,
+    "ast_hash": "d1117397b576893303535e0d03a1e36a",
     "semantic_hash": ""
   },
   "src/components/events/EventCard.jsx": {
@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "src/components/events/EventModal.jsx": {
-    "mtime": 1784373756.2651625,
-    "ast_hash": "e7ddc1561578f95f44f1dcea051ea31d",
+    "mtime": 1784547197.311717,
+    "ast_hash": "b1dbf6847335ea5d361e428ddb4e5ce2",
     "semantic_hash": ""
   },
   "src/components/layout/Dashboard.jsx": {
@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/Sidebar.jsx": {
-    "mtime": 1784373929.9807212,
-    "ast_hash": "7ce09ff43b0a2fb83e2c00b8ef22fe1d",
+    "mtime": 1784386613.8501318,
+    "ast_hash": "f3b3c871278d6962215f57288b5d7973",
     "semantic_hash": ""
   },
   "src/components/layout/Topbar.jsx": {
@@ -70,13 +70,13 @@
     "semantic_hash": ""
   },
   "src/services/StorageService.js": {
-    "mtime": 1784373742.9011302,
-    "ast_hash": "452672e8ccb6d25ed45e5c9a2479dc99",
+    "mtime": 1784547237.4532533,
+    "ast_hash": "965c23ee3bf7a758a1ad17063633b6f9",
     "semantic_hash": ""
   },
   "src/store/TodoContext.jsx": {
-    "mtime": 1784373992.2481909,
-    "ast_hash": "f220920c82955ab587417c360e73d431",
+    "mtime": 1784547182.6549926,
+    "ast_hash": "9f4abc09575d6e679de1ab5b6256dea4",
     "semantic_hash": ""
   },
   "src/utils/timeUtils.js": {
@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   ".agents/AGENTS.md": {
-    "mtime": 1784374852.869095,
-    "ast_hash": "e34bad39fa1ffbfffb48ddfc13fa4343",
+    "mtime": 1784548042.3358727,
+    "ast_hash": "f2aaf59a953da61be1beb817a10bb4a5",
     "semantic_hash": ""
   },
   "README.md": {

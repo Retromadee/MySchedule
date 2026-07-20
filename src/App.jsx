@@ -8,12 +8,14 @@ import Dashboard from './components/layout/Dashboard';
 import EventModal from './components/events/EventModal';
 import EventDetail from './components/events/EventDetail';
 import WeeklyPlanner from './components/planner/WeeklyPlanner';
+import SettingsModal from './components/layout/SettingsModal';
 import { useTodo } from './store/TodoContext';
 import './App.css';
 
 export default function App() {
     const { openAddModal, loadEvents, activeFilter, setActiveFilter, activeRoute, calendarView, setIsModalOpen, setDetailEvent } = useTodo();
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [settingsOpen, setSettingsOpen] = useState(false);
 
     useEffect(() => {
         const handleKeyDown = (e) => {
@@ -31,6 +33,7 @@ export default function App() {
             } else if (e.key === 'Escape') {
                 setIsModalOpen(false);
                 setDetailEvent(null);
+                setSettingsOpen(false);
             } else if (e.key === '/') {
                 e.preventDefault();
                 const searchInput = document.querySelector('.search-container input');
@@ -52,9 +55,16 @@ export default function App() {
             {sidebarOpen && (
                 <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} />
             )}
-            <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+            <Sidebar
+                isOpen={sidebarOpen}
+                onClose={() => setSidebarOpen(false)}
+                onSettingsOpen={() => setSettingsOpen(true)}
+            />
             <main className="main-content">
-                <Topbar onMenuToggle={() => setSidebarOpen(prev => !prev)} />
+                <Topbar
+                    onMenuToggle={() => setSidebarOpen(prev => !prev)}
+                    onSettingsOpen={() => setSettingsOpen(true)}
+                />
                 <HeaderArea
                     onAddClick={openAddModal}
                     onRefresh={loadEvents}
@@ -72,6 +82,7 @@ export default function App() {
             </main>
             <EventModal />
             <EventDetail />
+            <SettingsModal isOpen={settingsOpen} onClose={() => setSettingsOpen(false)} />
         </div>
     );
 }

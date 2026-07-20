@@ -4,14 +4,234 @@
   "graph": {},
   "nodes": [
     {
+      "label": "CalendarGrid.jsx",
+      "file_type": "code",
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "calendar_calendargrid",
+      "community": 4,
+      "norm_label": "calendargrid.jsx"
+    },
+    {
+      "label": "CalendarGrid()",
+      "file_type": "code",
+      "source_file": "src/components/calendar/CalendarGrid.jsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "calendar_calendargrid_calendargrid",
+      "community": 4,
+      "norm_label": "calendargrid()"
+    },
+    {
+      "label": "MonthGrid.jsx",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "calendar_monthgrid",
+      "community": 2,
+      "norm_label": "monthgrid.jsx"
+    },
+    {
+      "label": "DAY_HEADERS",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_day_headers",
+      "community": 2,
+      "norm_label": "day_headers"
+    },
+    {
+      "label": "CATEGORY_COLORS",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_category_colors",
+      "community": 2,
+      "norm_label": "category_colors"
+    },
+    {
+      "label": "getMonthStart()",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_getmonthstart",
+      "community": 2,
+      "norm_label": "getmonthstart()"
+    },
+    {
+      "label": "buildMonthGrid()",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_buildmonthgrid",
+      "community": 2,
+      "norm_label": "buildmonthgrid()"
+    },
+    {
+      "label": "MONTH_NAMES",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_month_names",
+      "community": 2,
+      "norm_label": "month_names"
+    },
+    {
+      "label": "MonthGrid()",
+      "file_type": "code",
+      "source_file": "src/components/calendar/MonthGrid.jsx",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "calendar_monthgrid_monthgrid",
+      "community": 2,
+      "norm_label": "monthgrid()"
+    },
+    {
+      "label": "EventModal.jsx",
+      "file_type": "code",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "events_eventmodal",
+      "community": 6,
+      "norm_label": "eventmodal.jsx"
+    },
+    {
+      "label": "ICON_MAP",
+      "file_type": "code",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "events_eventmodal_icon_map",
+      "community": 6,
+      "norm_label": "icon_map"
+    },
+    {
+      "label": "COLOR_MAP",
+      "file_type": "code",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "events_eventmodal_color_map",
+      "community": 6,
+      "norm_label": "color_map"
+    },
+    {
+      "label": "EventModal()",
+      "file_type": "code",
+      "source_file": "src/components/events/EventModal.jsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "events_eventmodal_eventmodal",
+      "community": 6,
+      "norm_label": "eventmodal()"
+    },
+    {
+      "label": "Sidebar.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/Sidebar.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "layout_sidebar",
+      "community": 11,
+      "norm_label": "sidebar.jsx"
+    },
+    {
+      "label": "Sidebar()",
+      "file_type": "code",
+      "source_file": "src/components/layout/Sidebar.jsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "layout_sidebar_sidebar",
+      "community": 11,
+      "norm_label": "sidebar()"
+    },
+    {
+      "label": "StorageService.js",
+      "file_type": "code",
+      "source_file": "src/services/StorageService.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "services_storageservice",
+      "community": 3,
+      "norm_label": "storageservice.js"
+    },
+    {
+      "label": "defaultEvents",
+      "file_type": "code",
+      "source_file": "src/services/StorageService.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "services_storageservice_defaultevents",
+      "community": 3,
+      "norm_label": "defaultevents"
+    },
+    {
+      "label": "StorageService",
+      "file_type": "code",
+      "source_file": "src/services/StorageService.js",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "services_storageservice_storageservice",
+      "community": 3,
+      "norm_label": "storageservice"
+    },
+    {
+      "label": "TodoContext.jsx",
+      "file_type": "code",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "store_todocontext",
+      "community": 10,
+      "norm_label": "todocontext.jsx"
+    },
+    {
+      "label": "TodoContext",
+      "file_type": "code",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "store_todocontext_todocontext",
+      "community": 10,
+      "norm_label": "todocontext"
+    },
+    {
+      "label": "TodoProvider()",
+      "file_type": "code",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "store_todocontext_todoprovider",
+      "community": 9,
+      "norm_label": "todoprovider()"
+    },
+    {
+      "label": "useTodo()",
+      "file_type": "code",
+      "source_file": "src/store/TodoContext.jsx",
+      "source_location": "L141",
+      "_origin": "ast",
+      "id": "store_todocontext_usetodo",
+      "community": 4,
+      "norm_label": "usetodo()"
+    },
+    {
       "label": "AGENTS.md",
       "file_type": "document",
       "source_file": ".agents/AGENTS.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agents_agents",
       "community": 12,
-      "norm_label": "agents.md"
+      "norm_label": "agents.md",
+      "id": "agents_agents"
     },
     {
       "label": "General Guidelines",
@@ -19,9 +239,9 @@
       "source_file": ".agents/AGENTS.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agents_agents_general_guidelines",
       "community": 12,
-      "norm_label": "general guidelines"
+      "norm_label": "general guidelines",
+      "id": "agents_agents_general_guidelines"
     },
     {
       "label": "package.json",
@@ -29,9 +249,9 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "package",
       "community": 7,
-      "norm_label": "package.json"
+      "norm_label": "package.json",
+      "id": "package"
     },
     {
       "label": "name",
@@ -39,9 +259,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "package_name",
       "community": 7,
-      "norm_label": "name"
+      "norm_label": "name",
+      "id": "package_name"
     },
     {
       "label": "private",
@@ -49,9 +269,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "package_private",
       "community": 7,
-      "norm_label": "private"
+      "norm_label": "private",
+      "id": "package_private"
     },
     {
       "label": "version",
@@ -59,9 +279,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "package_version",
       "community": 7,
-      "norm_label": "version"
+      "norm_label": "version",
+      "id": "package_version"
     },
     {
       "label": "type",
@@ -69,9 +289,9 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "package_type",
       "community": 7,
-      "norm_label": "type"
+      "norm_label": "type",
+      "id": "package_type"
     },
     {
       "label": "scripts",
@@ -79,9 +299,9 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "package_scripts",
       "community": 7,
-      "norm_label": "scripts"
+      "norm_label": "scripts",
+      "id": "package_scripts"
     },
     {
       "label": "dev",
@@ -89,9 +309,9 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "package_scripts_dev",
       "community": 7,
-      "norm_label": "dev"
+      "norm_label": "dev",
+      "id": "package_scripts_dev"
     },
     {
       "label": "build",
@@ -99,9 +319,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "package_scripts_build",
       "community": 7,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "package_scripts_build"
     },
     {
       "label": "lint",
@@ -109,9 +329,9 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "package_scripts_lint",
       "community": 7,
-      "norm_label": "lint"
+      "norm_label": "lint",
+      "id": "package_scripts_lint"
     },
     {
       "label": "preview",
@@ -119,9 +339,9 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "package_scripts_preview",
       "community": 7,
-      "norm_label": "preview"
+      "norm_label": "preview",
+      "id": "package_scripts_preview"
     },
     {
       "label": "dependencies",
@@ -129,9 +349,9 @@
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "package_dependencies",
       "community": 7,
-      "norm_label": "dependencies"
+      "norm_label": "dependencies",
+      "id": "package_dependencies"
     },
     {
       "label": "@phosphor-icons/react",
@@ -139,9 +359,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "package_dependencies_phosphor_icons_react",
       "community": 7,
-      "norm_label": "@phosphor-icons/react"
+      "norm_label": "@phosphor-icons/react",
+      "id": "package_dependencies_phosphor_icons_react"
     },
     {
       "label": "react",
@@ -149,9 +369,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "package_dependencies_react",
       "community": 7,
-      "norm_label": "react"
+      "norm_label": "react",
+      "id": "package_dependencies_react"
     },
     {
       "label": "react-dom",
@@ -159,9 +379,9 @@
       "source_file": "package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "package_dependencies_react_dom",
       "community": 7,
-      "norm_label": "react-dom"
+      "norm_label": "react-dom",
+      "id": "package_dependencies_react_dom"
     },
     {
       "label": "devDependencies",
@@ -169,9 +389,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "package_devdependencies",
       "community": 8,
-      "norm_label": "devdependencies"
+      "norm_label": "devdependencies",
+      "id": "package_devdependencies"
     },
     {
       "label": "@testing-library/jest-dom",
@@ -179,9 +399,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "package_devdependencies_testing_library_jest_dom",
       "community": 8,
-      "norm_label": "@testing-library/jest-dom"
+      "norm_label": "@testing-library/jest-dom",
+      "id": "package_devdependencies_testing_library_jest_dom"
     },
     {
       "label": "@testing-library/react",
@@ -189,9 +409,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "package_devdependencies_testing_library_react",
       "community": 8,
-      "norm_label": "@testing-library/react"
+      "norm_label": "@testing-library/react",
+      "id": "package_devdependencies_testing_library_react"
     },
     {
       "label": "@types/react",
@@ -199,9 +419,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "package_devdependencies_types_react",
       "community": 8,
-      "norm_label": "@types/react"
+      "norm_label": "@types/react",
+      "id": "package_devdependencies_types_react"
     },
     {
       "label": "@types/react-dom",
@@ -209,9 +429,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "package_devdependencies_types_react_dom",
       "community": 8,
-      "norm_label": "@types/react-dom"
+      "norm_label": "@types/react-dom",
+      "id": "package_devdependencies_types_react_dom"
     },
     {
       "label": "@vitejs/plugin-react",
@@ -219,9 +439,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "package_devdependencies_vitejs_plugin_react",
       "community": 8,
-      "norm_label": "@vitejs/plugin-react"
+      "norm_label": "@vitejs/plugin-react",
+      "id": "package_devdependencies_vitejs_plugin_react"
     },
     {
       "label": "jsdom",
@@ -229,9 +449,9 @@
       "source_file": "package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "package_devdependencies_jsdom",
       "community": 8,
-      "norm_label": "jsdom"
+      "norm_label": "jsdom",
+      "id": "package_devdependencies_jsdom"
     },
     {
       "label": "oxlint",
@@ -239,9 +459,9 @@
       "source_file": "package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "package_devdependencies_oxlint",
       "community": 8,
-      "norm_label": "oxlint"
+      "norm_label": "oxlint",
+      "id": "package_devdependencies_oxlint"
     },
     {
       "label": "vite",
@@ -249,9 +469,9 @@
       "source_file": "package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "package_devdependencies_vite",
       "community": 8,
-      "norm_label": "vite"
+      "norm_label": "vite",
+      "id": "package_devdependencies_vite"
     },
     {
       "label": "vitest",
@@ -259,9 +479,9 @@
       "source_file": "package.json",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "package_devdependencies_vitest",
       "community": 8,
-      "norm_label": "vitest"
+      "norm_label": "vitest",
+      "id": "package_devdependencies_vitest"
     },
     {
       "label": "Dashboard.test.jsx",
@@ -269,9 +489,9 @@
       "source_file": "src/components/layout/Dashboard.test.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "layout_dashboard_test",
       "community": 9,
-      "norm_label": "dashboard.test.jsx"
+      "norm_label": "dashboard.test.jsx",
+      "id": "layout_dashboard_test"
     },
     {
       "label": "StorageService.test.js",
@@ -279,9 +499,9 @@
       "source_file": "src/services/StorageService.test.js",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "services_storageservice_test",
       "community": 3,
-      "norm_label": "storageservice.test.js"
+      "norm_label": "storageservice.test.js",
+      "id": "services_storageservice_test"
     },
     {
       "label": "localStorageMock",
@@ -289,9 +509,9 @@
       "source_file": "src/services/StorageService.test.js",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "services_storageservice_test_localstoragemock",
       "community": 3,
-      "norm_label": "localstoragemock"
+      "norm_label": "localstoragemock",
+      "id": "services_storageservice_test_localstoragemock"
     },
     {
       "label": "TodoContext.test.jsx",
@@ -299,9 +519,9 @@
       "source_file": "src/store/TodoContext.test.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "store_todocontext_test",
       "community": 9,
-      "norm_label": "todocontext.test.jsx"
+      "norm_label": "todocontext.test.jsx",
+      "id": "store_todocontext_test"
     },
     {
       "label": "localStorageMock",
@@ -309,9 +529,9 @@
       "source_file": "src/store/TodoContext.test.jsx",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "store_todocontext_test_localstoragemock",
       "community": 9,
-      "norm_label": "localstoragemock"
+      "norm_label": "localstoragemock",
+      "id": "store_todocontext_test_localstoragemock"
     },
     {
       "label": "TestComponent()",
@@ -319,9 +539,9 @@
       "source_file": "src/store/TodoContext.test.jsx",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "store_todocontext_test_testcomponent",
       "community": 9,
-      "norm_label": "testcomponent()"
+      "norm_label": "testcomponent()",
+      "id": "store_todocontext_test_testcomponent"
     },
     {
       "label": "vite.config.js",
@@ -329,9 +549,9 @@
       "source_file": "vite.config.js",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "vite_config",
       "community": 13,
-      "norm_label": "vite.config.js"
+      "norm_label": "vite.config.js",
+      "id": "vite_config"
     },
     {
       "label": "App.jsx",
@@ -382,96 +602,6 @@
       "community": 1,
       "norm_label": "headerarea()",
       "id": "layout_headerarea_headerarea"
-    },
-    {
-      "label": "CalendarGrid.jsx",
-      "file_type": "code",
-      "source_file": "src/components/calendar/CalendarGrid.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "calendargrid.jsx",
-      "id": "calendar_calendargrid"
-    },
-    {
-      "label": "CalendarGrid()",
-      "file_type": "code",
-      "source_file": "src/components/calendar/CalendarGrid.jsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "calendargrid()",
-      "id": "calendar_calendargrid_calendargrid"
-    },
-    {
-      "label": "MonthGrid.jsx",
-      "file_type": "code",
-      "source_file": "src/components/calendar/MonthGrid.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "monthgrid.jsx",
-      "id": "calendar_monthgrid"
-    },
-    {
-      "label": "DAY_HEADERS",
-      "file_type": "code",
-      "source_file": "src/components/calendar/MonthGrid.jsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "day_headers",
-      "id": "calendar_monthgrid_day_headers"
-    },
-    {
-      "label": "CATEGORY_COLORS",
-      "file_type": "code",
-      "source_file": "src/components/calendar/MonthGrid.jsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "category_colors",
-      "id": "calendar_monthgrid_category_colors"
-    },
-    {
-      "label": "getMonthStart()",
-      "file_type": "code",
-      "source_file": "src/components/calendar/MonthGrid.jsx",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "getmonthstart()",
-      "id": "calendar_monthgrid_getmonthstart"
-    },
-    {
-      "label": "buildMonthGrid()",
-      "file_type": "code",
-      "source_file": "src/components/calendar/MonthGrid.jsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "buildmonthgrid()",
-      "id": "calendar_monthgrid_buildmonthgrid"
-    },
-    {
-      "label": "MONTH_NAMES",
-      "file_type": "code",
-      "source_file": "src/components/calendar/MonthGrid.jsx",
-      "source_location": "L41",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "month_names",
-      "id": "calendar_monthgrid_month_names"
-    },
-    {
-      "label": "MonthGrid()",
-      "file_type": "code",
-      "source_file": "src/components/calendar/MonthGrid.jsx",
-      "source_location": "L46",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "monthgrid()",
-      "id": "calendar_monthgrid_monthgrid"
     },
     {
       "label": "EventCard.jsx",
@@ -534,46 +664,6 @@
       "id": "events_eventdetail_eventdetail"
     },
     {
-      "label": "EventModal.jsx",
-      "file_type": "code",
-      "source_file": "src/components/events/EventModal.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "eventmodal.jsx",
-      "id": "events_eventmodal"
-    },
-    {
-      "label": "ICON_MAP",
-      "file_type": "code",
-      "source_file": "src/components/events/EventModal.jsx",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "icon_map",
-      "id": "events_eventmodal_icon_map"
-    },
-    {
-      "label": "COLOR_MAP",
-      "file_type": "code",
-      "source_file": "src/components/events/EventModal.jsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "color_map",
-      "id": "events_eventmodal_color_map"
-    },
-    {
-      "label": "EventModal()",
-      "file_type": "code",
-      "source_file": "src/components/events/EventModal.jsx",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "eventmodal()",
-      "id": "events_eventmodal_eventmodal"
-    },
-    {
       "label": "Dashboard.jsx",
       "file_type": "code",
       "source_file": "src/components/layout/Dashboard.jsx",
@@ -592,96 +682,6 @@
       "community": 10,
       "norm_label": "dashboard()",
       "id": "layout_dashboard_dashboard"
-    },
-    {
-      "label": "Sidebar.jsx",
-      "file_type": "code",
-      "source_file": "src/components/layout/Sidebar.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 11,
-      "norm_label": "sidebar.jsx",
-      "id": "layout_sidebar"
-    },
-    {
-      "label": "Sidebar()",
-      "file_type": "code",
-      "source_file": "src/components/layout/Sidebar.jsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 11,
-      "norm_label": "sidebar()",
-      "id": "layout_sidebar_sidebar"
-    },
-    {
-      "label": "StorageService.js",
-      "file_type": "code",
-      "source_file": "src/services/StorageService.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "storageservice.js",
-      "id": "services_storageservice"
-    },
-    {
-      "label": "defaultEvents",
-      "file_type": "code",
-      "source_file": "src/services/StorageService.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "defaultevents",
-      "id": "services_storageservice_defaultevents"
-    },
-    {
-      "label": "StorageService",
-      "file_type": "code",
-      "source_file": "src/services/StorageService.js",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "storageservice",
-      "id": "services_storageservice_storageservice"
-    },
-    {
-      "label": "TodoContext.jsx",
-      "file_type": "code",
-      "source_file": "src/store/TodoContext.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "todocontext.jsx",
-      "id": "store_todocontext"
-    },
-    {
-      "label": "TodoContext",
-      "file_type": "code",
-      "source_file": "src/store/TodoContext.jsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "todocontext",
-      "id": "store_todocontext_todocontext"
-    },
-    {
-      "label": "TodoProvider()",
-      "file_type": "code",
-      "source_file": "src/store/TodoContext.jsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "todoprovider()",
-      "id": "store_todocontext_todoprovider"
-    },
-    {
-      "label": "useTodo()",
-      "file_type": "code",
-      "source_file": "src/store/TodoContext.jsx",
-      "source_location": "L131",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "usetodo()",
-      "id": "store_todocontext_usetodo"
     },
     {
       "label": "WeeklyPlanner.jsx",
@@ -788,482 +788,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": ".agents/AGENTS.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "agents_agents",
-      "target": "agents_agents_general_guidelines",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "package",
-      "target": "package_dependencies",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "package",
-      "target": "package_devdependencies",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "package",
-      "target": "package_name",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "package",
-      "target": "package_private",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "package",
-      "target": "package_scripts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "package",
-      "target": "package_type",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "package",
-      "target": "package_version",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_build",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_dev",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_lint",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_preview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_phosphor_icons_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react_dom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_jsdom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_oxlint",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_testing_library_jest_dom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_testing_library_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vite",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vitejs_plugin_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vitest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/Dashboard.test.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "layout_dashboard_test",
-      "target": "store_todocontext_todoprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/StorageService.test.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "services_storageservice_test",
-      "target": "services_storageservice_storageservice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/StorageService.test.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "services_storageservice_test",
-      "target": "services_storageservice_test_localstoragemock",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/store/TodoContext.test.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "store_todocontext_test",
-      "target": "store_todocontext_test_localstoragemock",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/store/TodoContext.test.jsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "store_todocontext_test",
-      "target": "store_todocontext_test_testcomponent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/store/TodoContext.test.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "store_todocontext_test",
-      "target": "store_todocontext_todoprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/store/TodoContext.test.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "store_todocontext_test",
-      "target": "store_todocontext_usetodo",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "calendar_calendargrid"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "calendar_monthgrid"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "events_eventdetail"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "events_eventmodal"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "layout_dashboard"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "layout_headerarea"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "layout_sidebar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "planner_weeklyplanner"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_app_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "store_todocontext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/HeaderArea.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_headerarea",
-      "target": "layout_headerarea_filter_labels"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/HeaderArea.jsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_headerarea",
-      "target": "layout_headerarea_headerarea"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/HeaderArea.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_headerarea",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/calendar/CalendarGrid.jsx",
       "source_location": "L11",
       "weight": 1.0,
@@ -1303,6 +827,17 @@
       "confidence_score": 1.0,
       "source": "calendar_calendargrid",
       "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "calendar_calendargrid"
     },
     {
       "relation": "calls",
@@ -1398,6 +933,17 @@
       "target": "store_todocontext_usetodo"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "calendar_monthgrid"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -1406,112 +952,6 @@
       "source_location": "L47",
       "weight": 1.0,
       "source": "calendar_monthgrid_monthgrid",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/events/EventCard.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "events_eventcard",
-      "target": "events_eventcard_eventcard"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/events/EventCard.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "events_eventcard",
-      "target": "store_todocontext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/events/EventCard.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "events_eventcard",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/events/EventCard.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "events_eventcard_eventcard",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/events/EventDetail.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "events_eventdetail",
-      "target": "events_eventdetail_category_colors"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/events/EventDetail.jsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "events_eventdetail",
-      "target": "events_eventdetail_day_names"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/events/EventDetail.jsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "events_eventdetail",
-      "target": "events_eventdetail_eventdetail"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/events/EventDetail.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "events_eventdetail",
-      "target": "store_todocontext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/events/EventDetail.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "events_eventdetail",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/events/EventDetail.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "events_eventdetail_eventdetail",
       "target": "store_todocontext_usetodo"
     },
     {
@@ -1567,6 +1007,17 @@
       "target": "store_todocontext_usetodo"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "events_eventmodal"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -1575,49 +1026,6 @@
       "source_location": "L22",
       "weight": 1.0,
       "source": "events_eventmodal_eventmodal",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/Dashboard.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_dashboard",
-      "target": "layout_dashboard_dashboard"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/Dashboard.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_dashboard",
-      "target": "store_todocontext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/Dashboard.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_dashboard",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/layout/Dashboard.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "layout_dashboard_dashboard",
       "target": "store_todocontext_usetodo"
     },
     {
@@ -1651,6 +1059,17 @@
       "confidence_score": 1.0,
       "source": "layout_sidebar",
       "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "layout_sidebar"
     },
     {
       "relation": "calls",
@@ -1698,12 +1117,67 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/services/StorageService.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_test",
+      "target": "services_storageservice_storageservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/store/TodoContext.jsx",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "store_todocontext",
       "target": "services_storageservice_storageservice"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "events_eventcard",
+      "target": "store_todocontext"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "events_eventdetail",
+      "target": "store_todocontext"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_dashboard",
+      "target": "store_todocontext"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "store_todocontext"
     },
     {
       "relation": "contains",
@@ -1734,6 +1208,532 @@
       "confidence_score": 1.0,
       "source": "store_todocontext",
       "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Dashboard.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_dashboard_test",
+      "target": "store_todocontext_todoprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "store_todocontext_test",
+      "target": "store_todocontext_todoprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "events_eventcard",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "events_eventcard_eventcard",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "events_eventdetail",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "events_eventdetail_eventdetail",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_dashboard",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "layout_dashboard_dashboard",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/HeaderArea.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_headerarea",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "store_todocontext_test",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_agents",
+      "target": "agents_agents_general_guidelines"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_lint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_phosphor_icons_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_jsdom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_oxlint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_testing_library_jest_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_testing_library_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vitest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/StorageService.test.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_test",
+      "target": "services_storageservice_test_localstoragemock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "store_todocontext_test",
+      "target": "store_todocontext_test_localstoragemock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/store/TodoContext.test.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "store_todocontext_test",
+      "target": "store_todocontext_test_testcomponent"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "events_eventdetail"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "layout_dashboard"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "layout_headerarea"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "planner_weeklyplanner"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/HeaderArea.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_headerarea",
+      "target": "layout_headerarea_filter_labels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/HeaderArea.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_headerarea",
+      "target": "layout_headerarea_headerarea"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventCard.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "events_eventcard",
+      "target": "events_eventcard_eventcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "events_eventdetail",
+      "target": "events_eventdetail_category_colors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "events_eventdetail",
+      "target": "events_eventdetail_day_names"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/events/EventDetail.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "events_eventdetail",
+      "target": "events_eventdetail_eventdetail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Dashboard.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_dashboard",
+      "target": "layout_dashboard_dashboard"
     },
     {
       "relation": "contains",
@@ -1860,5 +1860,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "93ba99705492c634b395418dff09fee2b516f484"
+  "built_at_commit": "4d95afdedd26db642cce3c8509cb5b130a71b14b"
 }

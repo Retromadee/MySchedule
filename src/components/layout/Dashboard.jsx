@@ -41,10 +41,17 @@ export default function Dashboard() {
         return { total, completed, completionRate, busiestDayName, maxTasks, cats, streak };
     }, [events]);
 
-    // Today's Tasks
+    // Today's Tasks — supports date-specific and recurring weekday events
     const todayEvents = useMemo(() => {
-        const todayDayIndex = new Date().getDay() === 0 ? 7 : new Date().getDay();
-        return events.filter(e => e.day === todayDayIndex).sort((a, b) => a.start.localeCompare(b.start));
+        const now = new Date();
+        const todayDayIndex = now.getDay() === 0 ? 7 : now.getDay();
+        const yyyy = now.getFullYear();
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const dd = String(now.getDate()).padStart(2, '0');
+        const formattedToday = `${yyyy}-${mm}-${dd}`;
+        return events
+            .filter(e => e.date ? e.date === formattedToday : e.day === todayDayIndex)
+            .sort((a, b) => a.start.localeCompare(b.start));
     }, [events]);
 
     const todayCompletedCount = todayEvents.filter(e => e.completed).length;
