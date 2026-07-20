@@ -24,7 +24,8 @@
 .search-container {
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: var(--element-bg);
+    border: 1px solid var(--border-color);
     border-radius: 30px;
     padding: 8px 20px;
     width: 500px;
@@ -46,6 +47,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     background: transparent;
+    color: var(--text-main);
 }
 
 .search-results {
@@ -53,7 +55,8 @@
     top: calc(100% + 8px);
     left: 0;
     right: 0;
-    background: white;
+    background: var(--element-bg);
+    border: 1px solid var(--border-color);
     border-radius: 14px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     z-index: 50;
@@ -78,7 +81,7 @@
     transition: background 0.15s;
 }
 .search-result-item:hover {
-    background: #f7f4eb;
+    background: var(--bg-color);
 }
 
 .search-dot {

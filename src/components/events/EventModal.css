@@ -9,11 +9,12 @@
 }
 
 .modal {
-    background: white;
+    background: var(--element-bg);
     padding: 30px;
     border-radius: 20px;
     width: 400px;
-    color: #1c1c1c;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
 }
 
 .modal h2 { margin-bottom: 20px; font-weight: 600; font-size: 24px; }
@@ -23,13 +24,15 @@
 .form-group input, .form-group select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-main);
     border-radius: 8px;
     font-family: inherit;
 }
 
 .btn-submit {
-    background: #1c1c1c;
+    background: var(--sidebar-active);
     color: white;
     border: none;
     padding: 10px 20px;

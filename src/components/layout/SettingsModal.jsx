@@ -7,15 +7,8 @@ import { useTodo } from '../../store/TodoContext';
 import { StorageService } from '../../services/StorageService';
 
 export default function SettingsModal({ isOpen, onClose }) {
-    const { allEvents, resetEvents, loadEvents } = useTodo();
-    const [theme, setTheme] = useState(() => localStorage.getItem('lifesync_theme') || 'light');
+    const { allEvents, resetEvents, loadEvents, theme, setTheme } = useTodo();
     const [importStatus, setImportStatus] = useState(null); // 'success' | 'error' | null
-
-    // Apply theme to document root
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('lifesync_theme', theme);
-    }, [theme]);
 
     if (!isOpen) return null;
 

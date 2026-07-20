@@ -21,7 +21,8 @@
     height: 32px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    background: white;
+    background: var(--element-bg);
+    color: var(--text-main);
     font-size: 18px;
     cursor: pointer;
     display: flex;
@@ -30,9 +31,9 @@
     transition: all 0.15s;
 }
 .week-nav-btn:hover {
-    background: #1c1c1c;
+    background: var(--sidebar-active);
     color: white;
-    border-color: #1c1c1c;
+    border-color: var(--sidebar-active);
 }
 
 .week-nav-label {
@@ -47,7 +48,8 @@
     padding: 5px 14px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    background: white;
+    background: var(--element-bg);
+    color: var(--text-main);
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
@@ -136,7 +138,8 @@
 .grid-line-hour {
     position: absolute;
     width: 100%;
-    border-bottom: 1px dashed rgba(228, 222, 200, 0.5);
+    border-bottom: 1px dashed var(--border-color);
+    opacity: 0.5;
 }
 
 .grid-line-col-container {
@@ -146,7 +149,8 @@
 }
 .grid-line-col {
     flex: 1;
-    border-right: 1px solid rgba(228, 222, 200, 0.4);
+    border-right: 1px solid var(--border-color);
+    opacity: 0.4;
 }
 .grid-line-col:last-child {
     border-right: none;

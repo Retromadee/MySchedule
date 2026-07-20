@@ -6,6 +6,7 @@
   --text-main: #1c1c1c;
   --text-muted: #858585;
   --border-color: #e4dec8;
+  --element-bg: #ffffff;
   
   /* Card Colors */
   --card-yellow: #f8db66;
@@ -19,6 +20,27 @@
   
   --time-row-height: 80px;
   --sidebar-width: 250px;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --sidebar-bg: #1c1c1c;
+  --sidebar-text: #a0a0a0;
+  --sidebar-active: #f17c8d;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: #2e2e2e;
+  --element-bg: #1e1e1e;
+
+  /* Card Colors */
+  --card-yellow: #3c3016;
+  --card-grey: #262626;
+  --card-blue: #1b263b;
+  --card-white: #1e1e1e;
+
+  /* Tag Colors */
+  --tag-pink: #4c1d37;
+  --tag-purple: #3b1d4c;
 }
 
 * {

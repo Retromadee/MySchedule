@@ -1,7 +1,7 @@
 .dashboard-container {
     flex: 1;
     padding: 30px;
-    background: white;
+    background: var(--bg-color);
     border-radius: 14px;
     border: 1px solid var(--border-color);
     display: flex;
@@ -29,7 +29,7 @@
 }
 
 .stat-card {
-    background: #f8f9fa;
+    background: var(--element-bg);
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -39,7 +39,7 @@
 }
 
 .stat-icon {
-    background: white;
+    background: var(--bg-color);
     width: 48px;
     height: 48px;
     border-radius: 12px;
@@ -88,7 +88,8 @@
 
 /* Progress */
 .progress-container {
-    background: #f8f9fa;
+    background: var(--element-bg);
+    border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -108,7 +109,7 @@
 
 .progress-bar-bg {
     height: 10px;
-    background: #e9ecef;
+    background: var(--border-color);
     border-radius: 5px;
     overflow: hidden;
 }
@@ -140,7 +141,7 @@
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
-    background: white;
+    background: var(--element-bg);
 }
 
 .checklist-item:hover {
@@ -148,8 +149,8 @@
 }
 
 .checklist-item.completed {
-    background: #fdfdfd;
-    opacity: 0.6;
+    background: var(--element-bg);
+    opacity: 0.55;
 }
 
 .check-icon {
@@ -185,7 +186,8 @@
     text-align: center;
     padding: 40px;
     color: var(--text-muted);
-    background: #f8f9fa;
+    background: var(--element-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
 }
 
@@ -194,7 +196,8 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: #f8f9fa;
+    background: var(--element-bg);
+    border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 12px;
     flex: 1;

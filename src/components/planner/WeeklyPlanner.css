@@ -23,7 +23,7 @@
     height: 34px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
-    background: white;
+    background: var(--element-bg);
     cursor: pointer;
     font-size: 18px;
     display: flex;
@@ -34,7 +34,7 @@
 }
 .planner-week-nav-btn:hover {
     background: var(--text-main);
-    color: white;
+    color: var(--bg-color);
     border-color: var(--text-main);
 }
 
@@ -69,7 +69,7 @@
 }
 
 .planner-day-tile {
-    background: white;
+    background: var(--element-bg);
     border: 1px solid var(--border-color);
     border-radius: 14px;
     padding: 12px 10px;
@@ -95,7 +95,7 @@
 .planner-day-tile.today .planner-tile-day,
 .planner-day-tile.today .planner-tile-date,
 .planner-day-tile.today .planner-tile-count {
-    color: white;
+    color: var(--bg-color);
 }
 .planner-day-tile.today .planner-tile-bar-track {
     background: rgba(255, 255, 255, 0.2);
@@ -105,8 +105,8 @@
 }
 
 .planner-day-tile.all-done {
-    background: #f0fdf4;
-    border-color: #bbf7d0;
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.3);
 }
 .planner-day-tile.all-done .planner-tile-bar-fill {
     background: #22c55e;
@@ -166,7 +166,7 @@
 
 /* ─── Day Column Card ─────────────────────────── */
 .planner-day-card {
-    background: white;
+    background: var(--element-bg);
     border: 1px solid var(--border-color);
     border-radius: 18px;
     overflow: hidden;
@@ -188,7 +188,7 @@
     justify-content: space-between;
     padding: 18px 20px 14px;
     border-bottom: 1px solid var(--border-color);
-    background: #fafaf8;
+    background: rgba(0, 0, 0, 0.02);
 }
 
 .planner-card-header-left {
@@ -231,7 +231,7 @@
 }
 .planner-ring-bg {
     fill: none;
-    stroke: #f0f0f0;
+    stroke: var(--border-color);
     stroke-width: 4;
 }
 .planner-ring-fill {
@@ -255,7 +255,7 @@
 /* Progress Bar within card */
 .planner-card-progress-bar {
     height: 4px;
-    background: #f0f0f0;
+    background: var(--border-color);
     border-radius: 0;
     overflow: hidden;
 }
@@ -289,16 +289,16 @@
     border: 1px solid transparent;
     cursor: pointer;
     transition: all 0.18s ease;
-    background: #fafaf8;
+    background: rgba(0, 0, 0, 0.02);
     user-select: none;
 }
 .planner-task-item:hover {
-    background: #f5f3ee;
+    background: rgba(0, 0, 0, 0.05);
     border-color: var(--border-color);
 }
 .planner-task-item.completed {
     opacity: 0.55;
-    background: #f9f9f9;
+    background: rgba(0, 0, 0, 0.01);
 }
 
 /* Custom Checkbox */
@@ -306,13 +306,13 @@
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-color);
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
-    background: white;
+    background: var(--element-bg);
 }
 .planner-task-item:hover .planner-checkbox {
     border-color: var(--sidebar-active);

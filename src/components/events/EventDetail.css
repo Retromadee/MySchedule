@@ -2,7 +2,7 @@
     position: fixed;
     top: 0; right: 0; bottom: 0;
     width: 420px;
-    background: white;
+    background: var(--element-bg);
     box-shadow: -8px 0 30px rgba(0,0,0,0.1);
     z-index: 90;
     display: flex;
@@ -11,6 +11,7 @@
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     overflow: hidden;
+    border-left: 1px solid var(--border-color);
 }
 
 @keyframes slideIn {
@@ -23,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid #f0ede4;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .detail-header-left h2 {
@@ -46,18 +47,18 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: #f5f3eb;
+    background: var(--bg-color);
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    color: #555;
+    color: var(--text-main);
     transition: background 0.2s;
 }
 .detail-close-btn:hover {
-    background: #e8e5db;
+    background: var(--border-color);
 }
 
 .detail-body {
@@ -77,11 +78,11 @@
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: #f5f3eb;
+    background: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
+    color: var(--text-muted);
     flex-shrink: 0;
 }
 
@@ -107,7 +108,9 @@
 .detail-notes-input {
     width: 100%;
     min-height: 80px;
-    border: 1px solid #e4dec8;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-main);
     border-radius: 10px;
     padding: 10px 12px;
     font-family: 'Inter', sans-serif;
@@ -122,7 +125,7 @@
 
 .detail-footer {
     padding: 20px 25px;
-    border-top: 1px solid #f0ede4;
+    border-top: 1px solid var(--border-color);
     display: flex;
     gap: 10px;
 }
@@ -143,19 +146,19 @@
 }
 
 .detail-btn-edit {
-    background: #1c1c1c;
-    color: white;
+    background: var(--text-main);
+    color: var(--bg-color);
 }
 .detail-btn-edit:hover {
-    background: #333;
+    opacity: 0.9;
 }
 
 .detail-btn-delete {
-    background: #fff0f0;
+    background: rgba(229, 62, 62, 0.1);
     color: #e53e3e;
 }
 .detail-btn-delete:hover {
-    background: #ffe0e0;
+    background: rgba(229, 62, 62, 0.18);
 }
 
 .detail-backdrop {

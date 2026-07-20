@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "src/App.jsx": {
-    "mtime": 1784374599.8033752,
-    "ast_hash": "b6f9b223432835f21ac2f356802b5459",
+    "mtime": 1784549062.030888,
+    "ast_hash": "31768220bbbdfbd92994f1335280ddeb",
     "semantic_hash": ""
   },
   "src/components/calendar/CalendarGrid.jsx": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/Dashboard.jsx": {
-    "mtime": 1784373860.5678282,
-    "ast_hash": "c670361292544311ea96d0e6d208dbc4",
+    "mtime": 1784548841.7896914,
+    "ast_hash": "2cae864a2029eda1ff1e83fd9310ef3e",
     "semantic_hash": ""
   },
   "src/components/layout/HeaderArea.jsx": {
@@ -50,18 +50,18 @@
     "semantic_hash": ""
   },
   "src/components/layout/Sidebar.jsx": {
-    "mtime": 1784386613.8501318,
-    "ast_hash": "f3b3c871278d6962215f57288b5d7973",
+    "mtime": 1784549023.0366616,
+    "ast_hash": "be75bce54ec8b6b523f2425cc4b7c133",
     "semantic_hash": ""
   },
   "src/components/layout/Topbar.jsx": {
-    "mtime": 1784340495.3107555,
-    "ast_hash": "081ac7140cf2648ed38537a9fb3a8b90",
+    "mtime": 1784548977.4713845,
+    "ast_hash": "29d9fd12d99e270d74b7703bd5b60f73",
     "semantic_hash": ""
   },
   "src/components/planner/WeeklyPlanner.jsx": {
-    "mtime": 1784356252.7092552,
-    "ast_hash": "cbdeb7a8b900b1c439496da3f9be5aea",
+    "mtime": 1784548854.703528,
+    "ast_hash": "3a8e223bd55b369ec400af1fdf15a1e9",
     "semantic_hash": ""
   },
   "src/main.jsx": {
@@ -152,6 +152,16 @@
   "src/store/TodoContext.test.jsx": {
     "mtime": 1784375070.7525542,
     "ast_hash": "fd6e0ab4a1e9e0b63b7091b64107ec8c",
+    "semantic_hash": ""
+  },
+  "src/components/layout/NotificationsPanel.jsx": {
+    "mtime": 1784548929.6575665,
+    "ast_hash": "d10947e97da2a94f12b97a03b6be4d29",
+    "semantic_hash": ""
+  },
+  "src/components/layout/SettingsModal.jsx": {
+    "mtime": 1784548880.365314,
+    "ast_hash": "71c3d077d09bb050c9ca5630908f8456",
     "semantic_hash": ""
   }
 }

@@ -12,6 +12,13 @@ export function TodoProvider({ children }) {
     const [calendarView, setCalendarView] = useState('week'); // 'day', 'week', 'month'
     const [activeRoute, setActiveRoute] = useState('schedule'); // 'schedule', 'dashboard'
 
+    const [theme, setTheme] = useState(() => localStorage.getItem('lifesync_theme') || 'light');
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('lifesync_theme', theme);
+    }, [theme]);
+
     useEffect(() => {
         loadEvents();
     }, []);
@@ -131,7 +138,9 @@ export function TodoProvider({ children }) {
             setCalendarView,
             activeRoute,
             setActiveRoute,
-            resetEvents
+            resetEvents,
+            theme,
+            setTheme
         }}>
             {children}
         </TodoContext.Provider>

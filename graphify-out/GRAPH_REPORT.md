@@ -1,16 +1,16 @@
 # Graph Report - TodoUI  (2026-07-20)
 
 ## Corpus Check
-- 23 files · ~15,239 words
+- 25 files · ~16,516 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 78 nodes · 103 edges · 14 communities (9 shown, 5 thin omitted)
+- 86 nodes · 118 edges · 11 communities (7 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4d95afde`
+- Built from commit: `9d4ec29e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -21,42 +21,39 @@
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 5|Community 5]]
-- [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
 - [[_COMMUNITY_Community 9|Community 9]]
-- [[_COMMUNITY_Community 10|Community 10]]
-- [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 12|Community 12]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `useTodo()` - 19 edges
+1. `useTodo()` - 23 edges
 2. `scripts` - 5 edges
-3. `StorageService` - 3 edges
-4. `TodoProvider()` - 3 edges
+3. `StorageService` - 4 edges
+4. `useNotificationCount()` - 3 edges
 5. `TaskItem()` - 3 edges
-6. `CalendarGrid()` - 2 edges
-7. `MonthGrid()` - 2 edges
-8. `EventModal()` - 2 edges
+6. `TodoProvider()` - 3 edges
+7. `App()` - 2 edges
+8. `Dashboard()` - 2 edges
 9. `Sidebar()` - 2 edges
-10. `App()` - 2 edges
+10. `Topbar()` - 2 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `MonthGrid()` --calls--> `useTodo()`  [EXTRACTED]
   src/components/calendar/MonthGrid.jsx → src/store/TodoContext.jsx
-- `EventModal()` --calls--> `useTodo()`  [EXTRACTED]
-  src/components/events/EventModal.jsx → src/store/TodoContext.jsx
-- `Sidebar()` --calls--> `useTodo()`  [EXTRACTED]
-  src/components/layout/Sidebar.jsx → src/store/TodoContext.jsx
-- `EventDetail()` --calls--> `useTodo()`  [EXTRACTED]
-  src/components/events/EventDetail.jsx → src/store/TodoContext.jsx
+- `App()` --calls--> `useTodo()`  [EXTRACTED]
+  src/App.jsx → src/store/TodoContext.jsx
 - `Dashboard()` --calls--> `useTodo()`  [EXTRACTED]
   src/components/layout/Dashboard.jsx → src/store/TodoContext.jsx
+- `Sidebar()` --calls--> `useTodo()`  [EXTRACTED]
+  src/components/layout/Sidebar.jsx → src/store/TodoContext.jsx
+- `CalendarGrid()` --calls--> `useTodo()`  [EXTRACTED]
+  src/components/calendar/CalendarGrid.jsx → src/store/TodoContext.jsx
 
 ## Import Cycles
 - None detected.
 
-## Communities (14 total, 5 thin omitted)
+## Communities (11 total, 4 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.27
@@ -67,20 +64,12 @@ Cohesion: 0.29
 Nodes (4): CATEGORY_COLORS, DAY_HEADERS, MONTH_NAMES, MonthGrid()
 
 ### Community 3 - "Community 3"
-Cohesion: 0.40
+Cohesion: 0.29
 Nodes (3): defaultEvents, StorageService, localStorageMock
 
 ### Community 4 - "Community 4"
-Cohesion: 0.70
-Nodes (3): CalendarGrid(), EventCard(), useTodo()
-
-### Community 5 - "Community 5"
-Cohesion: 0.50
-Nodes (3): CATEGORY_COLORS, DAY_NAMES, EventDetail()
-
-### Community 6 - "Community 6"
-Cohesion: 0.50
-Nodes (3): COLOR_MAP, EventModal(), ICON_MAP
+Cohesion: 0.19
+Nodes (13): CalendarGrid(), EventCard(), CATEGORY_COLORS, DAY_NAMES, EventDetail(), COLOR_MAP, EventModal(), ICON_MAP (+5 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.14
@@ -91,20 +80,20 @@ Cohesion: 0.20
 Nodes (10): devDependencies, jsdom, oxlint, @testing-library/jest-dom, @testing-library/react, @types/react, @types/react-dom, vite (+2 more)
 
 ## Knowledge Gaps
-- **35 isolated node(s):** `DAY_HEADERS`, `CATEGORY_COLORS`, `MONTH_NAMES`, `ICON_MAP`, `COLOR_MAP` (+30 more)
+- **35 isolated node(s):** `DAY_NAMES`, `DAY_LETTERS`, `DAY_HEADERS`, `CATEGORY_COLORS`, `MONTH_NAMES` (+30 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `useTodo()` connect `Community 4` to `Community 1`, `Community 2`, `Community 5`, `Community 6`, `Community 9`, `Community 10`, `Community 11`?**
-  _High betweenness centrality (0.150) - this node is a cross-community bridge._
+- **Why does `useTodo()` connect `Community 4` to `Community 0`, `Community 1`, `Community 2`, `Community 3`, `Community 5`, `Community 9`?**
+  _High betweenness centrality (0.262) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `Community 8` to `Community 7`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
-- **Why does `StorageService` connect `Community 3` to `Community 10`?**
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+- **Why does `StorageService` connect `Community 3` to `Community 4`?**
   _High betweenness centrality (0.033) - this node is a cross-community bridge._
-- **What connects `DAY_HEADERS`, `CATEGORY_COLORS`, `MONTH_NAMES` to the rest of the system?**
+- **What connects `DAY_NAMES`, `DAY_LETTERS`, `DAY_HEADERS` to the rest of the system?**
   _35 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 7` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
