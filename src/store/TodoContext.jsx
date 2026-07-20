@@ -26,9 +26,19 @@ export function TodoProvider({ children }) {
             if ('Notification' in window && Notification.permission === 'granted') {
                 const now = new Date();
                 const todayDayIndex = now.getDay() === 0 ? 7 : now.getDay();
+                const yyyy = now.getFullYear();
+                const mm = String(now.getMonth() + 1).padStart(2, '0');
+                const dd = String(now.getDate()).padStart(2, '0');
+                const formattedToday = `${yyyy}-${mm}-${dd}`;
                 
                 events.forEach(event => {
-                    if (event.completed || event.day !== todayDayIndex) return;
+                    if (event.completed) return;
+                    
+                    if (event.date) {
+                        if (event.date !== formattedToday) return;
+                    } else {
+                        if (event.day !== todayDayIndex) return;
+                    }
                     
                     const [startH, startM] = event.start.split(':').map(Number);
                     const eventDate = new Date();

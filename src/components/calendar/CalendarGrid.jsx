@@ -77,7 +77,7 @@ export default function CalendarGrid() {
         e.dataTransfer.dropEffect = 'move';
     }, []);
 
-    const handleDrop = useCallback((e, targetDay) => {
+    const handleDrop = useCallback((e, targetDate) => {
         e.preventDefault();
         const eventId = parseInt(e.dataTransfer.getData('text/plain'));
         const droppedEvent = events.find(ev => ev.id === eventId);
@@ -90,9 +90,16 @@ export default function CalendarGrid() {
         const duration = getDurationMinutes(droppedEvent.start, droppedEvent.end);
         const newEnd = addMinutes(newStart, duration);
 
+        const realDayIndex = targetDate.getDay() === 0 ? 7 : targetDate.getDay();
+        const yyyy = targetDate.getFullYear();
+        const mm = String(targetDate.getMonth() + 1).padStart(2, '0');
+        const dd = String(targetDate.getDate()).padStart(2, '0');
+        const formattedDate = `${yyyy}-${mm}-${dd}`;
+
         updateEvent({
             ...droppedEvent,
-            day: targetDay,
+            day: realDayIndex,
+            date: droppedEvent.date ? formattedDate : undefined,
             start: newStart,
             end: newEnd
         });
@@ -184,13 +191,22 @@ export default function CalendarGrid() {
                 <div className="days-container">
                     {weekDays.map((date, idx) => {
                         const realDayIndex = date.getDay() === 0 ? 7 : date.getDay(); // 1-7 for matching events
-                        const dayEvents = events.filter(e => e.day === realDayIndex);
+                        const dayEvents = events.filter(e => {
+                            if (e.date) {
+                                const yyyy = date.getFullYear();
+                                const mm = String(date.getMonth() + 1).padStart(2, '0');
+                                const dd = String(date.getDate()).padStart(2, '0');
+                                const formattedCellDate = `${yyyy}-${mm}-${dd}`;
+                                return e.date === formattedCellDate;
+                            }
+                            return e.day === realDayIndex;
+                        });
                         return (
                             <div
                                 key={idx}
                                 className={`day-col ${dragState ? 'drag-active' : ''}`}
                                 onDragOver={handleDragOver}
-                                onDrop={(e) => handleDrop(e, realDayIndex)}
+                                onDrop={(e) => handleDrop(e, date)}
                             >
                                 {dayEvents.map(event => {
                                     const top = calcTop(event.start);

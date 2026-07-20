@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784308169.2474096,
-    "ast_hash": "32f66a9dd19092e6b0e0641da502d996",
+    "mtime": 1784375020.2130134,
+    "ast_hash": "16841161b202e2b2ed8e3b1855e2b7eb",
     "semantic_hash": ""
   },
   "src/App.jsx": {
@@ -85,13 +85,13 @@
     "semantic_hash": ""
   },
   "vite.config.js": {
-    "mtime": 1784308128.7199957,
-    "ast_hash": "88439104b3c207f17d33ef3160e3b080",
+    "mtime": 1784375025.2622252,
+    "ast_hash": "4e20210fad8c187a3fd3176398dd2990",
     "semantic_hash": ""
   },
   ".agents/AGENTS.md": {
-    "mtime": 1784342810.4875584,
-    "ast_hash": "b75e2d2841deaddabcbf8348ef49cf76",
+    "mtime": 1784374852.869095,
+    "ast_hash": "e34bad39fa1ffbfffb48ddfc13fa4343",
     "semantic_hash": ""
   },
   "README.md": {
@@ -137,6 +137,21 @@
   "src/assets/vite.svg": {
     "mtime": 1784308128.7193694,
     "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Dashboard.test.jsx": {
+    "mtime": 1784375041.8911479,
+    "ast_hash": "b7550326609448fa50d2e928b3598bc6",
+    "semantic_hash": ""
+  },
+  "src/services/StorageService.test.js": {
+    "mtime": 1784375067.0200033,
+    "ast_hash": "71fecb25e8cdc823a55f9e6ecffe34a7",
+    "semantic_hash": ""
+  },
+  "src/store/TodoContext.test.jsx": {
+    "mtime": 1784375070.7525542,
+    "ast_hash": "fd6e0ab4a1e9e0b63b7091b64107ec8c",
     "semantic_hash": ""
   }
 }

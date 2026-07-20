@@ -25,6 +25,7 @@ export default function EventModal() {
     const [loc, setLoc] = useState('');
     const [category, setCategory] = useState('projects');
     const [day, setDay] = useState(1);
+    const [date, setDate] = useState('');
     const [start, setStart] = useState('08:00');
     const [end, setEnd] = useState('09:00');
     const [priority, setPriority] = useState('medium');
@@ -36,6 +37,7 @@ export default function EventModal() {
             setLoc(editingEvent.loc || '');
             setCategory(editingEvent.category || 'projects');
             setDay(editingEvent.day || 1);
+            setDate(editingEvent.date || '');
             setStart(editingEvent.start || '08:00');
             setEnd(editingEvent.end || '09:00');
             setPriority(editingEvent.priority || 'medium');
@@ -45,6 +47,7 @@ export default function EventModal() {
             setLoc('');
             setCategory('projects');
             setDay(1);
+            setDate('');
             setStart('08:00');
             setEnd('09:00');
             setPriority('medium');
@@ -53,6 +56,17 @@ export default function EventModal() {
     }, [editingEvent, isModalOpen]);
 
     if (!isModalOpen) return null;
+
+    const handleDateChange = (val) => {
+        setDate(val);
+        if (val) {
+            const [yyyy, mm, dd] = val.split('-').map(Number);
+            const localDate = new Date(yyyy, mm - 1, dd);
+            const dayOfWeek = localDate.getDay(); // 0 = Sunday, 1 = Monday
+            const dayNum = dayOfWeek === 0 ? 7 : dayOfWeek;
+            setDay(dayNum);
+        }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -71,6 +85,7 @@ export default function EventModal() {
             loc,
             color,
             day: parseInt(day),
+            date: date || undefined,
             start,
             end,
             icon: mapping.icon,
@@ -125,6 +140,10 @@ export default function EventModal() {
                             <option value="medium">🟡 Medium</option>
                             <option value="high">🔴 High</option>
                         </select>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="taskDate">Date (Optional - for specific calendar day)</label>
+                        <input id="taskDate" type="date" value={date} onChange={(e) => handleDateChange(e.target.value)} />
                     </div>
                     <div style={{ display: 'flex', gap: '10px' }}>
                         <div className="form-group" style={{ flex: 1 }}>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { useTodo } from '../../store/TodoContext';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 import './MonthGrid.css';
@@ -55,14 +55,20 @@ export default function MonthGrid() {
 
     // Map events: day index 1-7 (Mon-Sun) → events per real date
     // Since events use day:1-7 for the current week, we show them on matching weekday
-    const eventsByWeekday = useMemo(() => {
-        const map = {};
-        events.forEach(ev => {
-            const wd = ev.day; // 1=Mon,...,7=Sun
-            if (!map[wd]) map[wd] = [];
-            map[wd].push(ev);
+    const getCellEvents = useCallback((date) => {
+        if (!date) return [];
+        const realDayIndex = date.getDay() === 0 ? 7 : date.getDay();
+        const yyyy = date.getFullYear();
+        const mm = String(date.getMonth() + 1).padStart(2, '0');
+        const dd = String(date.getDate()).padStart(2, '0');
+        const formattedCellDate = `${yyyy}-${mm}-${dd}`;
+
+        return events.filter(e => {
+            if (e.date) {
+                return e.date === formattedCellDate;
+            }
+            return e.day === realDayIndex;
         });
-        return map;
     }, [events]);
 
     function getWeekday(date) {
@@ -124,7 +130,7 @@ export default function MonthGrid() {
             <div className="month-grid">
                 {cells.map((date, i) => {
                     const wd = date ? getWeekday(date) : null;
-                    const dayEvents = wd ? (eventsByWeekday[wd] || []) : [];
+                    const dayEvents = getCellEvents(date);
                     const today_ = isToday(date);
                     const selected_ = isSelected(date);
                     const isWeekend = wd === 6 || wd === 7;
@@ -174,10 +180,10 @@ export default function MonthGrid() {
                         <button className="month-add-btn" onClick={openAddModal}>+ Add Task</button>
                     </div>
                     <div className="month-selected-events">
-                        {(eventsByWeekday[getWeekday(selectedDate)] || []).length === 0 ? (
+                        {getCellEvents(selectedDate).length === 0 ? (
                             <div className="month-selected-empty">No tasks on this day</div>
                         ) : (
-                            (eventsByWeekday[getWeekday(selectedDate)] || []).map(ev => (
+                            getCellEvents(selectedDate).map(ev => (
                                 <div key={ev.id} className="month-selected-item" onClick={() => setDetailEvent(ev)}>
                                     <span
                                         className="month-selected-dot"
