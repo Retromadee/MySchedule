@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Topbar.css';
-import { MagnifyingGlass, Bell, List, X, Gear } from '@phosphor-icons/react';
+import { MagnifyingGlass, Bell, List, X, Gear, SignOut } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
 import NotificationsPanel from './NotificationsPanel';
 import { useNotificationCount } from '../../hooks/useNotificationCount';
+import { useAuth } from '../../contexts/AuthContext';
 
 export default function Topbar({ onMenuToggle, onSettingsOpen }) {
     const { allEvents, setDetailEvent } = useTodo();
+    const { signOut } = useAuth();
     const [query, setQuery] = useState('');
     const [showResults, setShowResults] = useState(false);
     const [showNotif, setShowNotif] = useState(false);
@@ -164,6 +166,10 @@ export default function Topbar({ onMenuToggle, onSettingsOpen }) {
                             <button className="profile-drop-item" onClick={() => { setShowProfile(false); onSettingsOpen?.(); }}>
                                 <Gear size={15} />
                                 Settings & Preferences
+                            </button>
+                            <button className="profile-drop-item" onClick={signOut}>
+                                <SignOut size={15} />
+                                Sign out
                             </button>
                         </div>
                     )}

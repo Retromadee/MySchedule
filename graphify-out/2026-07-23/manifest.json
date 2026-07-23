@@ -1,0 +1,167 @@
+{
+  ".oxlintrc.json": {
+    "mtime": 1784308128.717061,
+    "ast_hash": "5e6e3cea3e89137071c142dd7835b0ef",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1784808996.3113408,
+    "ast_hash": "c1488b719bf19203b85fbf328ec85546",
+    "semantic_hash": ""
+  },
+  "src/App.jsx": {
+    "mtime": 1784549062.030888,
+    "ast_hash": "31768220bbbdfbd92994f1335280ddeb",
+    "semantic_hash": ""
+  },
+  "src/components/calendar/CalendarGrid.jsx": {
+    "mtime": 1784547203.4326124,
+    "ast_hash": "526dc09506ea75d0d722146987cc2782",
+    "semantic_hash": ""
+  },
+  "src/components/calendar/MonthGrid.jsx": {
+    "mtime": 1784810975.2024958,
+    "ast_hash": "90121859f6817b459542660c6383b5e6",
+    "semantic_hash": ""
+  },
+  "src/components/events/EventCard.jsx": {
+    "mtime": 1784810886.3666918,
+    "ast_hash": "c0cfd3c0d2a0e6850385e206fe2f94ea",
+    "semantic_hash": ""
+  },
+  "src/components/events/EventDetail.jsx": {
+    "mtime": 1784808926.6612368,
+    "ast_hash": "735741c18d5513c13ec740bd6d340192",
+    "semantic_hash": ""
+  },
+  "src/components/events/EventModal.jsx": {
+    "mtime": 1784809594.9277139,
+    "ast_hash": "6afeac709257b5568de741f46f2c7fc4",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Dashboard.jsx": {
+    "mtime": 1784810974.8065588,
+    "ast_hash": "83a8bdc58400f4bbd53dae8719b75e60",
+    "semantic_hash": ""
+  },
+  "src/components/layout/HeaderArea.jsx": {
+    "mtime": 1784810974.9381,
+    "ast_hash": "a32ab99f881ce4888f8cd14700980853",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Sidebar.jsx": {
+    "mtime": 1784549023.0366616,
+    "ast_hash": "be75bce54ec8b6b523f2425cc4b7c133",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Topbar.jsx": {
+    "mtime": 1784811022.9145725,
+    "ast_hash": "2c760e22d43a0730ccc29fa1675a9c96",
+    "semantic_hash": ""
+  },
+  "src/components/planner/WeeklyPlanner.jsx": {
+    "mtime": 1784810975.33155,
+    "ast_hash": "51756f4df3e1b8d58eb69ea5befa59bb",
+    "semantic_hash": ""
+  },
+  "src/main.jsx": {
+    "mtime": 1784308303.6936033,
+    "ast_hash": "762dfc584221b3494add122cd788cf06",
+    "semantic_hash": ""
+  },
+  "src/services/StorageService.js": {
+    "mtime": 1784810886.0195446,
+    "ast_hash": "3ccf0b7322849d4de9f24e95732d5d81",
+    "semantic_hash": ""
+  },
+  "src/store/TodoContext.jsx": {
+    "mtime": 1784811023.0418892,
+    "ast_hash": "87aa3f992ae53ea8c3f1980df266bcad",
+    "semantic_hash": ""
+  },
+  "src/utils/timeUtils.js": {
+    "mtime": 1784337780.479337,
+    "ast_hash": "7a758e4d5197e29d0ff8f494154a3480",
+    "semantic_hash": ""
+  },
+  "vite.config.js": {
+    "mtime": 1784809570.488942,
+    "ast_hash": "1f3909a8def6648b97276b6d74942805",
+    "semantic_hash": ""
+  },
+  ".agents/AGENTS.md": {
+    "mtime": 1784548042.3358727,
+    "ast_hash": "f2aaf59a953da61be1beb817a10bb4a5",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1784308128.7165,
+    "ast_hash": "75eb386f17caf77fd6fe3ce1d90968ee",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1784308128.7173543,
+    "ast_hash": "0c91463584c576dbc22f89f8eec0b5ae",
+    "semantic_hash": ""
+  },
+  "public/favicon.svg": {
+    "mtime": 1784308128.7177474,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": ""
+  },
+  "public/icons.svg": {
+    "mtime": 1784308128.718036,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": ""
+  },
+  "src/assets/hero.png": {
+    "mtime": 1784308128.718922,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": ""
+  },
+  "src/assets/react.svg": {
+    "mtime": 1784308128.7191572,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": ""
+  },
+  "src/assets/vite.svg": {
+    "mtime": 1784308128.7193694,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Dashboard.test.jsx": {
+    "mtime": 1784810975.463646,
+    "ast_hash": "507844fd997f8b2635774d7cf17c72d5",
+    "semantic_hash": ""
+  },
+  "src/services/StorageService.test.js": {
+    "mtime": 1784810975.5994449,
+    "ast_hash": "caa043de161527742b743e6b367050b0",
+    "semantic_hash": ""
+  },
+  "src/store/TodoContext.test.jsx": {
+    "mtime": 1784375070.7525542,
+    "ast_hash": "fd6e0ab4a1e9e0b63b7091b64107ec8c",
+    "semantic_hash": ""
+  },
+  "src/components/layout/NotificationsPanel.jsx": {
+    "mtime": 1784811022.7880287,
+    "ast_hash": "8914fb533f1ec2780798282a80fa5242",
+    "semantic_hash": ""
+  },
+  "src/components/layout/SettingsModal.jsx": {
+    "mtime": 1784810886.2128692,
+    "ast_hash": "d8e58d64d039e579b51590d14a9a2bfb",
+    "semantic_hash": ""
+  },
+  "src/hooks/useNotificationCount.js": {
+    "mtime": 1784811022.6619394,
+    "ast_hash": "756f6288b8ad7b44173e7f2e8c616603",
+    "semantic_hash": ""
+  },
+  "src/utils/eventUtils.js": {
+    "mtime": 1784810885.8878958,
+    "ast_hash": "e42f4be0643084e9d2dd7e080aca4b50",
+    "semantic_hash": ""
+  }
+}

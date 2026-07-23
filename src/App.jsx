@@ -10,9 +10,13 @@ import EventDetail from './components/events/EventDetail';
 import WeeklyPlanner from './components/planner/WeeklyPlanner';
 import SettingsModal from './components/layout/SettingsModal';
 import { useTodo } from './store/TodoContext';
+import { useAuth } from './contexts/AuthContext';
+import { AuthScreen, Onboarding } from './components/auth/AuthScreen';
+import { isFirebaseConfigured } from './firebase';
 import './App.css';
 
 export default function App() {
+    const { user, profile, loading } = useAuth();
     const { openAddModal, loadEvents, activeFilter, setActiveFilter, activeRoute, calendarView, setIsModalOpen, setDetailEvent } = useTodo();
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
@@ -48,6 +52,11 @@ export default function App() {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [openAddModal, setIsModalOpen, setDetailEvent]);
+
+    if (loading) return <div className="app-loading">Loading your schedule…</div>;
+    if (!isFirebaseConfigured) return <div className="app-loading">Firebase is not configured for this deployment.</div>;
+    if (!user) return <AuthScreen />;
+    if (!profile?.onboardingComplete) return <Onboarding />;
 
     return (
         <div className="app-shell">

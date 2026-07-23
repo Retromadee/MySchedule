@@ -3,6 +3,7 @@ import React from 'react';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen, act } from '@testing-library/react';
 import { TodoProvider, useTodo } from './TodoContext';
+import { AuthProvider } from '../contexts/AuthContext';
 
 const localStorageMock = (() => {
   let store = {};
@@ -40,9 +41,9 @@ describe('TodoContext & TodoProvider', () => {
 
   it('provides events list and allows adding, toggling, and deleting', () => {
     render(
-      <TodoProvider>
+      <AuthProvider><TodoProvider>
         <TestComponent />
-      </TodoProvider>
+      </TodoProvider></AuthProvider>
     );
 
     const countEl = screen.getByTestId('count');

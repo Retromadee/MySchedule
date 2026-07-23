@@ -1,9 +1,13 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { StorageService } from '../services/StorageService';
+import { get, onValue, ref, set } from 'firebase/database';
+import { database } from '../firebase';
+import { useAuth } from '../contexts/AuthContext';
 
 const TodoContext = createContext();
 
 export function TodoProvider({ children }) {
+    const { user, profile, loading: authLoading } = useAuth();
     const [events, setEvents] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingEvent, setEditingEvent] = useState(null);
@@ -17,11 +21,27 @@ export function TodoProvider({ children }) {
 
     const [theme, setTheme] = useState(() => localStorage.getItem('lifesync_theme') || 'light');
 
-    const loadEvents = useCallback(() => {
+    const loadEvents = useCallback(async () => {
+        if (user) {
+            const snapshot = await get(ref(database, `users/${user.uid}/events`));
+            const loaded = Object.values(snapshot.val() || {});
+            setEvents(loaded);
+            setDetailEvent(prev => prev ? (loaded.find(e => e.id === prev.id) || null) : null);
+            return;
+        }
         const loaded = StorageService.getEvents();
         setEvents(loaded);
         setDetailEvent(prev => prev ? (loaded.find(e => e.id === prev.id) || null) : null);
-    }, []);
+    }, [user]);
+
+    const persistEvents = useCallback((nextEvents) => {
+        setEvents(nextEvents);
+        if (user) {
+            return set(ref(database, `users/${user.uid}/events`), Object.fromEntries(nextEvents.map(event => [event.id, event])));
+        }
+        StorageService.saveEvents(nextEvents);
+        return Promise.resolve();
+    }, [user]);
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
@@ -29,8 +49,17 @@ export function TodoProvider({ children }) {
     }, [theme]);
 
     useEffect(() => {
-        loadEvents();
-    }, [loadEvents]);
+        if (authLoading) return undefined;
+        if (!user) {
+            loadEvents();
+            return undefined;
+        }
+        return onValue(ref(database, `users/${user.uid}/events`), snapshot => {
+            const loaded = Object.values(snapshot.val() || {});
+            setEvents(loaded);
+            setDetailEvent(prev => prev ? (loaded.find(event => event.id === prev.id) || null) : null);
+        });
+    }, [authLoading, user, loadEvents]);
 
     // Notification System
     useEffect(() => {
@@ -78,20 +107,18 @@ export function TodoProvider({ children }) {
     }, [events]);
 
     const addEvent = useCallback((eventData) => {
-        StorageService.addEvent(eventData);
-        loadEvents();
-    }, [loadEvents]);
+        const event = { ...eventData, id: Date.now(), subtasks: eventData.subtasks || [] };
+        persistEvents([...events, event]);
+    }, [events, persistEvents]);
 
     const updateEvent = useCallback((updatedEvent) => {
-        StorageService.updateEvent(updatedEvent);
-        loadEvents();
-    }, [loadEvents]);
+        persistEvents(events.map(event => event.id === updatedEvent.id ? { ...event, ...updatedEvent } : event));
+    }, [events, persistEvents]);
 
     const deleteEvent = useCallback((eventId) => {
-        StorageService.deleteEvent(eventId);
-        loadEvents();
+        persistEvents(events.filter(event => event.id !== eventId));
         setDetailEvent(null);
-    }, [loadEvents]);
+    }, [events, persistEvents]);
 
     const toggleEventCompletion = useCallback((eventId) => {
         const eventToUpdate = events.find(e => e.id === eventId);
@@ -101,15 +128,20 @@ export function TodoProvider({ children }) {
     }, [events, updateEvent]);
 
     const toggleSubtaskCompletion = useCallback((eventId, subtaskId) => {
-        StorageService.toggleSubtaskCompletion(eventId, subtaskId);
-        loadEvents();
-    }, [loadEvents]);
+        persistEvents(events.map(event => {
+            if (event.id !== eventId || !Array.isArray(event.subtasks)) return event;
+            const subtasks = event.subtasks.map(subtask => subtask.id === subtaskId ? { ...subtask, completed: !subtask.completed } : subtask);
+            return { ...event, subtasks, completed: subtasks.length > 0 ? subtasks.every(subtask => subtask.completed) : event.completed };
+        }));
+    }, [events, persistEvents]);
 
     const duplicateEvent = useCallback((eventId) => {
-        const dup = StorageService.duplicateEvent(eventId);
-        loadEvents();
-        if (dup) setDetailEvent(dup);
-    }, [loadEvents]);
+        const source = events.find(event => event.id === eventId);
+        if (!source) return;
+        const duplicate = { ...source, id: Date.now(), title: `${source.title} (Copy)`, completed: false, subtasks: (source.subtasks || []).map((subtask, index) => ({ ...subtask, id: `${Date.now()}-${index}`, completed: false })) };
+        persistEvents([...events, duplicate]);
+        setDetailEvent(duplicate);
+    }, [events, persistEvents]);
 
     const openEditModal = useCallback((event) => {
         setEditingEvent(event);
@@ -123,8 +155,8 @@ export function TodoProvider({ children }) {
 
     const resetEvents = useCallback(() => {
         const defaults = StorageService.resetToDefaults();
-        setEvents(defaults);
-    }, []);
+        persistEvents(defaults);
+    }, [persistEvents]);
 
     // Filtered events for display
     const filteredEvents = events.filter(e => {
@@ -166,7 +198,8 @@ export function TodoProvider({ children }) {
             setActiveRoute,
             resetEvents,
             theme,
-            setTheme
+            setTheme,
+            categories: profile?.categories || ['Personal', 'Work', 'Study']
         }}>
             {children}
         </TodoContext.Provider>

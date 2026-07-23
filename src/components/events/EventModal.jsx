@@ -19,7 +19,7 @@ const COLOR_MAP = {
 };
 
 export default function EventModal() {
-    const { isModalOpen, setIsModalOpen, addEvent, updateEvent, editingEvent, setEditingEvent } = useTodo();
+    const { isModalOpen, setIsModalOpen, addEvent, updateEvent, editingEvent, setEditingEvent, categories } = useTodo();
 
     const [title, setTitle] = useState('');
     const [loc, setLoc] = useState('');
@@ -142,11 +142,7 @@ export default function EventModal() {
                     <div className="form-group">
                         <label htmlFor="taskCategory">Category</label>
                         <select id="taskCategory" value={category} onChange={(e) => setCategory(e.target.value)}>
-                            <option value="housing">🏠 Housing Search</option>
-                            <option value="projects">💻 Projects (Mahir & Uni)</option>
-                            <option value="music">🎵 Music & Events</option>
-                            <option value="career">💼 Career & Admin</option>
-                            <option value="finance">💰 Finances & Study</option>
+                            {categories.map(category => <option key={category} value={category}>{category}</option>)}
                         </select>
                     </div>
                     <div className="form-group">
