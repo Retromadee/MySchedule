@@ -5,13 +5,13 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784808996.3113408,
-    "ast_hash": "c1488b719bf19203b85fbf328ec85546",
+    "mtime": 1784815169.165119,
+    "ast_hash": "553fc685d987f2fe0d2c58e75e74aa32",
     "semantic_hash": ""
   },
   "src/App.jsx": {
-    "mtime": 1784549062.030888,
-    "ast_hash": "31768220bbbdfbd92994f1335280ddeb",
+    "mtime": 1784816232.8996394,
+    "ast_hash": "96c2d89f78c3b3846e7ed874ce045310",
     "semantic_hash": ""
   },
   "src/components/calendar/CalendarGrid.jsx": {
@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "src/components/events/EventModal.jsx": {
-    "mtime": 1784809594.9277139,
-    "ast_hash": "6afeac709257b5568de741f46f2c7fc4",
+    "mtime": 1784816233.0330184,
+    "ast_hash": "15d04794c6b3a83bf9e8d9c09624fcb6",
     "semantic_hash": ""
   },
   "src/components/layout/Dashboard.jsx": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/Topbar.jsx": {
-    "mtime": 1784811022.9145725,
-    "ast_hash": "2c760e22d43a0730ccc29fa1675a9c96",
+    "mtime": 1784816233.167636,
+    "ast_hash": "1caa700bcf1ed381666c8d4e7cd02089",
     "semantic_hash": ""
   },
   "src/components/planner/WeeklyPlanner.jsx": {
@@ -65,8 +65,8 @@
     "semantic_hash": ""
   },
   "src/main.jsx": {
-    "mtime": 1784308303.6936033,
-    "ast_hash": "762dfc584221b3494add122cd788cf06",
+    "mtime": 1784815153.242016,
+    "ast_hash": "ca8576b748a7cfec0c73b5a54035a78c",
     "semantic_hash": ""
   },
   "src/services/StorageService.js": {
@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "src/store/TodoContext.jsx": {
-    "mtime": 1784811023.0418892,
-    "ast_hash": "87aa3f992ae53ea8c3f1980df266bcad",
+    "mtime": 1784815183.901357,
+    "ast_hash": "763614a14fb2b5a716f52cc094c6ffa6",
     "semantic_hash": ""
   },
   "src/utils/timeUtils.js": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "src/store/TodoContext.test.jsx": {
-    "mtime": 1784375070.7525542,
-    "ast_hash": "fd6e0ab4a1e9e0b63b7091b64107ec8c",
+    "mtime": 1784816233.3153896,
+    "ast_hash": "68878783ba6aca28345dcc729f035c07",
     "semantic_hash": ""
   },
   "src/components/layout/NotificationsPanel.jsx": {
@@ -162,6 +162,31 @@
   "src/utils/eventUtils.js": {
     "mtime": 1784810885.8878958,
     "ast_hash": "e42f4be0643084e9d2dd7e080aca4b50",
+    "semantic_hash": ""
+  },
+  "database.rules.json": {
+    "mtime": 1784815139.1870866,
+    "ast_hash": "b53b2dff0ca3382c57706fc93919e1bc",
+    "semantic_hash": ""
+  },
+  "src/components/auth/AuthScreen.jsx": {
+    "mtime": 1784815138.7845454,
+    "ast_hash": "3f4805b1e3fbf584524223df2112f19b",
+    "semantic_hash": ""
+  },
+  "src/contexts/AuthContext.jsx": {
+    "mtime": 1784816232.7642732,
+    "ast_hash": "8a82a412fad0e1d0c20f02ec6f161680",
+    "semantic_hash": ""
+  },
+  "src/firebase.js": {
+    "mtime": 1784816156.129529,
+    "ast_hash": "42e4b177394b37ed77e5c34950cbd068",
+    "semantic_hash": ""
+  },
+  "FIREBASE_SETUP.md": {
+    "mtime": 1784816156.4070864,
+    "ast_hash": "d95bf2968b806d1879a5f5c8f8576ebc",
     "semantic_hash": ""
   }
 }
