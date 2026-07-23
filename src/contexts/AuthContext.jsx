@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import {
-    AppleAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,
+    GoogleAuthProvider, OAuthProvider, createUserWithEmailAndPassword,
     onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut,
 } from 'firebase/auth';
 import { get, ref, set } from 'firebase/database';
@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
     };
     const signInWithProvider = (provider) => { ensureConfigured(); return signInWithPopup(auth, provider); };
     const signInWithGoogle = () => signInWithProvider(new GoogleAuthProvider());
-    const signInWithApple = () => signInWithProvider(new AppleAuthProvider());
+    const signInWithApple = () => signInWithProvider(new OAuthProvider("apple.com"));
 
     const completeOnboarding = async ({ displayName, categories, events }) => {
         const nextProfile = {
