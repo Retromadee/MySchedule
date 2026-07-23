@@ -58,4 +58,40 @@ describe('StorageService', () => {
     const newEvents = StorageService.getEvents();
     expect(newEvents.find(e => e.id === target.id)).toBeUndefined();
   });
+
+  it('should toggle subtask completion correctly', () => {
+    const newEvent = StorageService.addEvent({
+      title: 'Subtask Event',
+      start: '12:00',
+      end: '13:00',
+      day: 1,
+      subtasks: [
+        { id: 1, text: 'Step 1', completed: false },
+        { id: 2, text: 'Step 2', completed: false }
+      ]
+    });
+
+    StorageService.toggleSubtaskCompletion(newEvent.id, 1);
+    let events = StorageService.getEvents();
+    let updatedEvent = events.find(e => e.id === newEvent.id);
+    expect(updatedEvent.subtasks.find(s => s.id === 1).completed).toBe(true);
+    expect(updatedEvent.completed).toBe(false);
+
+    // Complete second subtask -> parent auto marks completed
+    StorageService.toggleSubtaskCompletion(newEvent.id, 2);
+    events = StorageService.getEvents();
+    updatedEvent = events.find(e => e.id === newEvent.id);
+    expect(updatedEvent.completed).toBe(true);
+  });
+
+  it('should duplicate an event correctly', () => {
+    const events = StorageService.getEvents();
+    const target = events[0];
+    const duplicated = StorageService.duplicateEvent(target.id);
+    expect(duplicated).not.toBeNull();
+    expect(duplicated.title).toBe(`${target.title} (Copy)`);
+    
+    const allEvents = StorageService.getEvents();
+    expect(allEvents.find(e => e.id === duplicated.id)).toBeDefined();
+  });
 });

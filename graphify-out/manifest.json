@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "src/store/TodoContext.jsx": {
-    "mtime": 1784547182.6549926,
-    "ast_hash": "9f4abc09575d6e679de1ab5b6256dea4",
+    "mtime": 1784551103.1071305,
+    "ast_hash": "d766a9566b8b34f38ecc02decd3a546b",
     "semantic_hash": ""
   },
   "src/utils/timeUtils.js": {
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/SettingsModal.jsx": {
-    "mtime": 1784548880.365314,
-    "ast_hash": "71c3d077d09bb050c9ca5630908f8456",
+    "mtime": 1784551110.8325408,
+    "ast_hash": "11a2977b896bfdf745d7c275021ed046",
     "semantic_hash": ""
   }
 }

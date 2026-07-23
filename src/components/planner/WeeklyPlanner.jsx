@@ -64,18 +64,30 @@ function ProgressRing({ percent, isToday, allDone }) {
 
 // ─── Task Checkbox Item ────────────────────────────────────────────────────────
 
-function TaskItem({ event, onToggle }) {
+function TaskItem({ event, onToggle, onSelectDetail }) {
+    const subtasks = event.subtasks || [];
+    const doneSubtasks = subtasks.filter(s => s.completed).length;
+
     return (
         <div
             className={`planner-task-item ${event.completed ? 'completed' : ''}`}
-            onClick={() => onToggle(event.id)}
         >
-            <div className={`planner-checkbox ${event.completed ? 'checked' : ''}`}>
+            <div
+                className={`planner-checkbox ${event.completed ? 'checked' : ''}`}
+                onClick={(e) => { e.stopPropagation(); onToggle(event.id); }}
+            >
                 <div className="planner-checkbox-tick" />
             </div>
-            <div className="planner-task-info">
+            <div className="planner-task-info" onClick={() => onSelectDetail(event)} style={{ cursor: 'pointer' }}>
                 <div className="planner-task-title">{event.title}</div>
-                <div className="planner-task-meta">{event.start} – {event.end} • {event.loc}</div>
+                <div className="planner-task-meta">
+                    {event.start} – {event.end} • {event.loc}
+                    {subtasks.length > 0 && (
+                        <span style={{ marginLeft: '8px', color: 'var(--text-muted)' }}>
+                            ({doneSubtasks}/{subtasks.length} subtasks)
+                        </span>
+                    )}
+                </div>
             </div>
             {getChipLabel(event) && (
                 <span className={`planner-task-chip ${getChipClass(event)}`}>
@@ -88,7 +100,7 @@ function TaskItem({ event, onToggle }) {
 
 // ─── Single Day Card ───────────────────────────────────────────────────────────
 
-function DayCard({ date, dayIndex, events, isToday, onToggle, cardRef }) {
+function DayCard({ date, dayIndex, events, isToday, onToggle, onSelectDetail, cardRef }) {
     const completed = events.filter(e => e.completed).length;
     const total = events.length;
     const percent = total === 0 ? 0 : (completed / total) * 100;
@@ -132,7 +144,7 @@ function DayCard({ date, dayIndex, events, isToday, onToggle, cardRef }) {
                     </div>
                 ) : (
                     sorted.map(event => (
-                        <TaskItem key={event.id} event={event} onToggle={onToggle} />
+                        <TaskItem key={event.id} event={event} onToggle={onToggle} onSelectDetail={onSelectDetail} />
                     ))
                 )}
             </div>
@@ -143,7 +155,7 @@ function DayCard({ date, dayIndex, events, isToday, onToggle, cardRef }) {
 // ─── Main Weekly Planner ───────────────────────────────────────────────────────
 
 export default function WeeklyPlanner() {
-    const { events, toggleEventCompletion } = useTodo();
+    const { events, toggleEventCompletion, setDetailEvent } = useTodo();
     const [weekStart, setWeekStart] = useState(() => getMonday(new Date()));
     const today = new Date();
     const weekDays = getWeekDays(weekStart);
@@ -248,6 +260,7 @@ export default function WeeklyPlanner() {
                         events={d.dayEvents}
                         isToday={d.isToday}
                         onToggle={toggleEventCompletion}
+                        onSelectDetail={setDetailEvent}
                         cardRef={el => (dayCardRefs.current[i] = el)}
                     />
                 ))}

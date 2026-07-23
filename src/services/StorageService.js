@@ -79,6 +79,7 @@ export const StorageService = {
     addEvent: (event) => {
         const events = StorageService.getEvents();
         event.id = Date.now();
+        if (!event.subtasks) event.subtasks = [];
         events.push(event);
         StorageService.saveEvents(events);
         return event;
@@ -92,6 +93,43 @@ export const StorageService = {
             StorageService.saveEvents(events);
         }
         return events;
+    },
+
+    toggleSubtaskCompletion: (eventId, subtaskId) => {
+        const events = StorageService.getEvents();
+        const event = events.find(e => e.id === eventId);
+        if (event && Array.isArray(event.subtasks)) {
+            const subtask = event.subtasks.find(s => s.id === subtaskId);
+            if (subtask) {
+                subtask.completed = !subtask.completed;
+                // Auto mark parent completed if all subtasks are completed
+                if (event.subtasks.length > 0) {
+                    event.completed = event.subtasks.every(s => s.completed);
+                }
+                StorageService.saveEvents(events);
+            }
+        }
+        return events;
+    },
+
+    duplicateEvent: (eventId) => {
+        const events = StorageService.getEvents();
+        const target = events.find(e => e.id === eventId);
+        if (target) {
+            const duplicated = {
+                ...JSON.parse(JSON.stringify(target)),
+                id: Date.now(),
+                title: `${target.title} (Copy)`,
+                completed: false
+            };
+            if (Array.isArray(duplicated.subtasks)) {
+                duplicated.subtasks = duplicated.subtasks.map(s => ({ ...s, id: Date.now() + Math.random(), completed: false }));
+            }
+            events.push(duplicated);
+            StorageService.saveEvents(events);
+            return duplicated;
+        }
+        return null;
     },
 
     deleteEvent: (eventId) => {

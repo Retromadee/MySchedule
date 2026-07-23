@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { useTodo } from '../../store/TodoContext';
-import { CheckCircle, Circle, Fire, ChartPieSlice, CalendarCheck, Trophy } from '@phosphor-icons/react';
+import { CheckCircle, Circle, Fire, ChartPieSlice, CalendarCheck, Trophy, ListChecks } from '@phosphor-icons/react';
 import './Dashboard.css';
 
 export default function Dashboard() {
-    const { events, toggleEventCompletion } = useTodo();
+    const { events, toggleEventCompletion, setDetailEvent } = useTodo();
     
     // Stats Calculations
     const stats = useMemo(() => {
@@ -12,6 +12,14 @@ export default function Dashboard() {
         const completed = events.filter(e => e.completed).length;
         const completionRate = total === 0 ? 0 : Math.round((completed / total) * 100);
         
+        // Priority breakdown
+        const priorityCounts = { high: 0, medium: 0, low: 0 };
+        events.forEach(e => {
+            if (e.priority && priorityCounts[e.priority] !== undefined) {
+                priorityCounts[e.priority]++;
+            }
+        });
+
         // Busiest Day
         const dayCounts = {};
         events.forEach(e => {
@@ -35,10 +43,10 @@ export default function Dashboard() {
             cats[c] = (cats[c] || 0) + 1;
         });
         
-        // Fake a streak based on overall completion (since we don't have historical days in this demo)
+        // Streak based on completed items
         const streak = Math.floor(completed / 3);
 
-        return { total, completed, completionRate, busiestDayName, maxTasks, cats, streak };
+        return { total, completed, completionRate, busiestDayName, maxTasks, cats, streak, priorityCounts };
     }, [events]);
 
     // Today's Tasks — supports date-specific and recurring weekday events
@@ -71,7 +79,7 @@ export default function Dashboard() {
                     <div className="stat-icon"><Trophy size={24} weight="fill" color="#f59e0b" /></div>
                     <div className="stat-info">
                         <span className="stat-value">{stats.completionRate}%</span>
-                        <span className="stat-label">Weekly Completion</span>
+                        <span className="stat-label">Overall Completion</span>
                     </div>
                 </div>
                 <div className="stat-card">
@@ -116,26 +124,34 @@ export default function Dashboard() {
                         {todayEvents.length === 0 ? (
                             <div className="empty-state">No tasks scheduled for today! Relax or add some.</div>
                         ) : (
-                            todayEvents.map(event => (
-                                <div 
-                                    key={event.id}
-                                    className={`checklist-item ${event.completed ? 'completed' : ''}`}
-                                    onClick={() => toggleEventCompletion(event.id)}
-                                >
-                                    <div className="check-icon">
-                                        {event.completed ? <CheckCircle size={28} weight="fill" color="var(--sidebar-active)" /> : <Circle size={28} color="#ccc" />}
+                            todayEvents.map(event => {
+                                const subtasks = event.subtasks || [];
+                                const doneSubtasks = subtasks.filter(s => s.completed).length;
+                                return (
+                                    <div 
+                                        key={event.id}
+                                        className={`checklist-item ${event.completed ? 'completed' : ''}`}
+                                    >
+                                        <div className="check-icon" onClick={(e) => { e.stopPropagation(); toggleEventCompletion(event.id); }}>
+                                            {event.completed ? <CheckCircle size={28} weight="fill" color="var(--sidebar-active)" /> : <Circle size={28} color="#ccc" />}
+                                        </div>
+                                        <div className="check-content" onClick={() => setDetailEvent(event)} style={{ cursor: 'pointer' }}>
+                                            <h4>{event.title}</h4>
+                                            <p>{event.start} - {event.end} • {event.loc}</p>
+                                            {subtasks.length > 0 && (
+                                                <span style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '4px', marginTop: '4px' }}>
+                                                    <ListChecks size={12} /> {doneSubtasks}/{subtasks.length} subtasks
+                                                </span>
+                                            )}
+                                        </div>
+                                        {event.priority && (
+                                            <span className="priority-dot" title={`${event.priority} priority`}>
+                                                {event.priority === 'high' ? '🔴' : event.priority === 'medium' ? '🟡' : '🟢'}
+                                            </span>
+                                        )}
                                     </div>
-                                    <div className="check-content">
-                                        <h4>{event.title}</h4>
-                                        <p>{event.start} - {event.end} • {event.loc}</p>
-                                    </div>
-                                    {event.priority && (
-                                        <span className="priority-dot" title={`${event.priority} priority`}>
-                                            {event.priority === 'high' ? '🔴' : event.priority === 'medium' ? '🟡' : '🟢'}
-                                        </span>
-                                    )}
-                                </div>
-                            ))
+                                );
+                            })
                         )}
                     </div>
                 </div>
@@ -147,7 +163,7 @@ export default function Dashboard() {
                         {Object.entries(stats.cats).map(([cat, count]) => (
                             <div key={cat} className="category-stat-item">
                                 <div className="cat-stat-label">
-                                    <span className="cat-stat-name">{cat}</span>
+                                    <span className="cat-stat-name" style={{ textTransform: 'capitalize' }}>{cat}</span>
                                     <span className="cat-stat-count">{count} tasks</span>
                                 </div>
                                 <div className="progress-bar-bg">
@@ -155,6 +171,22 @@ export default function Dashboard() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <h3 style={{ marginTop: '24px' }}>Priority Breakdown</h3>
+                    <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+                        <div style={{ flex: 1, padding: '12px', background: 'var(--card-bg, #fff)', border: '1px solid var(--border-color, #eee)', borderRadius: '10px', textAlign: 'center' }}>
+                            <div style={{ fontSize: '20px', fontWeight: 'bold', color: '#ef4444' }}>{stats.priorityCounts.high}</div>
+                            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>🔴 High</div>
+                        </div>
+                        <div style={{ flex: 1, padding: '12px', background: 'var(--card-bg, #fff)', border: '1px solid var(--border-color, #eee)', borderRadius: '10px', textAlign: 'center' }}>
+                            <div style={{ fontSize: '20px', fontWeight: 'bold', color: '#f59e0b' }}>{stats.priorityCounts.medium}</div>
+                            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>🟡 Medium</div>
+                        </div>
+                        <div style={{ flex: 1, padding: '12px', background: 'var(--card-bg, #fff)', border: '1px solid var(--border-color, #eee)', borderRadius: '10px', textAlign: 'center' }}>
+                            <div style={{ fontSize: '20px', fontWeight: 'bold', color: '#10b981' }}>{stats.priorityCounts.low}</div>
+                            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>🟢 Low</div>
+                        </div>
                     </div>
                 </div>
             </div>

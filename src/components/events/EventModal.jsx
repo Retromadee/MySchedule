@@ -30,6 +30,8 @@ export default function EventModal() {
     const [end, setEnd] = useState('09:00');
     const [priority, setPriority] = useState('medium');
     const [notes, setNotes] = useState('');
+    const [subtasks, setSubtasks] = useState([]);
+    const [newSubtaskText, setNewSubtaskText] = useState('');
 
     useEffect(() => {
         if (editingEvent) {
@@ -42,6 +44,7 @@ export default function EventModal() {
             setEnd(editingEvent.end || '09:00');
             setPriority(editingEvent.priority || 'medium');
             setNotes(editingEvent.notes || '');
+            setSubtasks(editingEvent.subtasks ? [...editingEvent.subtasks] : []);
         } else {
             setTitle('');
             setLoc('');
@@ -52,10 +55,22 @@ export default function EventModal() {
             setEnd('09:00');
             setPriority('medium');
             setNotes('');
+            setSubtasks([]);
         }
+        setNewSubtaskText('');
     }, [editingEvent, isModalOpen]);
 
     if (!isModalOpen) return null;
+
+    const handleAddSubtask = () => {
+        if (!newSubtaskText.trim()) return;
+        setSubtasks(prev => [...prev, { id: Date.now() + Math.random(), text: newSubtaskText.trim(), completed: false }]);
+        setNewSubtaskText('');
+    };
+
+    const handleRemoveSubtask = (id) => {
+        setSubtasks(prev => prev.filter(s => s.id !== id));
+    };
 
     const handleDateChange = (val) => {
         setDate(val);
@@ -93,6 +108,7 @@ export default function EventModal() {
             category,
             priority,
             notes,
+            subtasks
         };
 
         if (editingEvent) {
@@ -158,6 +174,32 @@ export default function EventModal() {
                             <label htmlFor="taskEnd">End Time</label>
                             <input id="taskEnd" type="time" value={end} onChange={(e) => setEnd(e.target.value)} required />
                         </div>
+                    </div>
+                    <div className="form-group">
+                        <label>Subtasks / Checklist</label>
+                        <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
+                            <input
+                                type="text"
+                                placeholder="Add a subtask..."
+                                value={newSubtaskText}
+                                onChange={(e) => setNewSubtaskText(e.target.value)}
+                                onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); handleAddSubtask(); } }}
+                                style={{ flex: 1, padding: '8px 12px', border: '1px solid var(--border-color, #ddd)', borderRadius: '6px' }}
+                            />
+                            <button type="button" onClick={handleAddSubtask} style={{ padding: '8px 14px', background: 'var(--sidebar-active, #f17c8d)', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: '600' }}>
+                                Add
+                            </button>
+                        </div>
+                        {subtasks.length > 0 && (
+                            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                                {subtasks.map((st) => (
+                                    <li key={st.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 10px', background: 'var(--card-bg, #f9f9f9)', borderRadius: '6px', border: '1px solid #eee' }}>
+                                        <span style={{ fontSize: '13px' }}>{st.text}</span>
+                                        <button type="button" onClick={() => handleRemoveSubtask(st.id)} style={{ border: 'none', background: 'transparent', color: '#ef4444', cursor: 'pointer', fontWeight: 'bold' }}>✕</button>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                     <div className="form-group">
                         <label htmlFor="taskNotes">Notes</label>

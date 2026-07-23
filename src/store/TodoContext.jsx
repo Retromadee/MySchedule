@@ -12,6 +12,9 @@ export function TodoProvider({ children }) {
     const [calendarView, setCalendarView] = useState('week'); // 'day', 'week', 'month'
     const [activeRoute, setActiveRoute] = useState('schedule'); // 'schedule', 'dashboard'
 
+    const [priorityFilter, setPriorityFilter] = useState('all'); // 'all', 'high', 'medium', 'low'
+    const [statusFilter, setStatusFilter] = useState('all'); // 'all', 'pending', 'completed'
+
     const [theme, setTheme] = useState(() => localStorage.getItem('lifesync_theme') || 'light');
 
     useEffect(() => {
@@ -69,7 +72,9 @@ export function TodoProvider({ children }) {
     }, [events]);
 
     const loadEvents = useCallback(() => {
-        setEvents(StorageService.getEvents());
+        const loaded = StorageService.getEvents();
+        setEvents(loaded);
+        setDetailEvent(prev => prev ? (loaded.find(e => e.id === prev.id) || null) : null);
     }, []);
 
     const addEvent = useCallback((eventData) => {
@@ -95,6 +100,17 @@ export function TodoProvider({ children }) {
         }
     }, [events, updateEvent]);
 
+    const toggleSubtaskCompletion = useCallback((eventId, subtaskId) => {
+        StorageService.toggleSubtaskCompletion(eventId, subtaskId);
+        loadEvents();
+    }, [loadEvents]);
+
+    const duplicateEvent = useCallback((eventId) => {
+        const dup = StorageService.duplicateEvent(eventId);
+        loadEvents();
+        if (dup) setDetailEvent(dup);
+    }, [loadEvents]);
+
     const openEditModal = useCallback((event) => {
         setEditingEvent(event);
         setIsModalOpen(true);
@@ -111,9 +127,13 @@ export function TodoProvider({ children }) {
     }, []);
 
     // Filtered events for display
-    const filteredEvents = activeFilter
-        ? events.filter(e => e.category === activeFilter)
-        : events;
+    const filteredEvents = events.filter(e => {
+        if (activeFilter && e.category !== activeFilter) return false;
+        if (priorityFilter !== 'all' && e.priority !== priorityFilter) return false;
+        if (statusFilter === 'pending' && e.completed) return false;
+        if (statusFilter === 'completed' && !e.completed) return false;
+        return true;
+    });
 
     return (
         <TodoContext.Provider value={{
@@ -124,6 +144,8 @@ export function TodoProvider({ children }) {
             updateEvent,
             deleteEvent,
             toggleEventCompletion,
+            toggleSubtaskCompletion,
+            duplicateEvent,
             isModalOpen,
             setIsModalOpen,
             editingEvent,
@@ -134,6 +156,10 @@ export function TodoProvider({ children }) {
             setDetailEvent,
             activeFilter,
             setActiveFilter,
+            priorityFilter,
+            setPriorityFilter,
+            statusFilter,
+            setStatusFilter,
             calendarView,
             setCalendarView,
             activeRoute,

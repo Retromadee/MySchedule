@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './EventDetail.css';
-import { X, Clock, MapPin, Notebook, PencilSimple, Trash, Tag } from '@phosphor-icons/react';
+import { X, Clock, MapPin, Notebook, PencilSimple, Trash, Tag, ListChecks, CheckSquare, Square, Copy } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
 
 const CATEGORY_COLORS = {
@@ -14,7 +14,7 @@ const CATEGORY_COLORS = {
 const DAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 export default function EventDetail() {
-    const { detailEvent, setDetailEvent, deleteEvent, openEditModal, updateEvent } = useTodo();
+    const { detailEvent, setDetailEvent, deleteEvent, openEditModal, updateEvent, toggleSubtaskCompletion, duplicateEvent } = useTodo();
     const [notes, setNotes] = useState('');
 
     useEffect(() => {
@@ -41,6 +41,13 @@ export default function EventDetail() {
         openEditModal(detailEvent);
         setDetailEvent(null);
     };
+
+    const handleDuplicate = () => {
+        duplicateEvent(detailEvent.id);
+    };
+
+    const subtasks = detailEvent.subtasks || [];
+    const completedSubtasks = subtasks.filter(s => s.completed).length;
 
     return (
         <>
@@ -106,6 +113,44 @@ export default function EventDetail() {
                         </div>
                     )}
 
+                    {subtasks.length > 0 && (
+                        <div className="detail-row">
+                            <div className="detail-row-icon"><ListChecks size={18} /></div>
+                            <div className="detail-row-content">
+                                <div className="detail-row-label" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <span>Subtasks</span>
+                                    <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{completedSubtasks}/{subtasks.length}</span>
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '6px' }}>
+                                    {subtasks.map(st => (
+                                        <div
+                                            key={st.id}
+                                            onClick={() => toggleSubtaskCompletion(detailEvent.id, st.id)}
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '8px',
+                                                cursor: 'pointer',
+                                                padding: '6px 8px',
+                                                borderRadius: '6px',
+                                                background: 'var(--card-bg, #f9f9f9)',
+                                                textDecoration: st.completed ? 'line-through' : 'none',
+                                                opacity: st.completed ? 0.7 : 1
+                                            }}
+                                        >
+                                            {st.completed ? (
+                                                <CheckSquare size={18} color="var(--sidebar-active, #f17c8d)" weight="fill" />
+                                            ) : (
+                                                <Square size={18} color="#888" />
+                                            )}
+                                            <span style={{ fontSize: '13px' }}>{st.text}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                     <div className="detail-row">
                         <div className="detail-row-icon"><Notebook size={18} /></div>
                         <div className="detail-row-content">
@@ -124,6 +169,9 @@ export default function EventDetail() {
                 <div className="detail-footer">
                     <button className="detail-btn detail-btn-edit" onClick={handleEdit}>
                         <PencilSimple size={16} /> Edit
+                    </button>
+                    <button className="detail-btn" onClick={handleDuplicate} style={{ background: '#f0f4ff', color: '#2563eb' }}>
+                        <Copy size={16} /> Duplicate
                     </button>
                     <button className="detail-btn detail-btn-delete" onClick={handleDelete}>
                         <Trash size={16} /> Delete
