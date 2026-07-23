@@ -1,14 +1,13 @@
 {
-  "0": "Community 0",
-  "1": "Community 1",
-  "2": "Community 2",
-  "3": "Community 3",
-  "4": "Community 4",
-  "5": "Community 5",
-  "6": "Community 6",
-  "7": "Community 7",
-  "8": "Community 8",
-  "9": "Community 9",
-  "12": "Community 12",
-  "13": "Community 13"
+  "0": "CalendarGrid.jsx",
+  "1": "useTodo",
+  "2": "StorageService.js",
+  "3": ".oxlintrc.json",
+  "4": "App.jsx",
+  "5": "MonthGrid.jsx",
+  "6": "React + Vite",
+  "7": "package.json",
+  "8": "devDependencies",
+  "12": "AGENTS.md",
+  "13": "vite.config.js"
 }

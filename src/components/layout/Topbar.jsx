@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Topbar.css';
-import { MagnifyingGlass, User, Bell, List, X, SignOut, Gear, ChartBar } from '@phosphor-icons/react';
+import { MagnifyingGlass, Bell, List, X, Gear } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
-import NotificationsPanel, { useNotificationCount } from './NotificationsPanel';
+import NotificationsPanel from './NotificationsPanel';
+import { useNotificationCount } from '../../hooks/useNotificationCount';
 
 export default function Topbar({ onMenuToggle, onSettingsOpen }) {
     const { allEvents, setDetailEvent } = useTodo();

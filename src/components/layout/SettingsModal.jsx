@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './SettingsModal.css';
 import {
     X, Sun, Moon, ArrowCounterClockwise, DownloadSimple, UploadSimple, Gear
@@ -29,8 +29,7 @@ export default function SettingsModal({ isOpen, onClose }) {
         reader.onload = (ev) => {
             try {
                 const parsed = JSON.parse(ev.target.result);
-                if (!Array.isArray(parsed)) throw new Error('Invalid format');
-                StorageService.saveEvents(parsed);
+                StorageService.replaceEvents(parsed);
                 loadEvents();
                 setImportStatus('success');
                 setTimeout(() => setImportStatus(null), 3000);

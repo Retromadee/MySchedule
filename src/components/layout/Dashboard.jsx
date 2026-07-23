@@ -1,20 +1,21 @@
 import React, { useMemo } from 'react';
 import { useTodo } from '../../store/TodoContext';
-import { CheckCircle, Circle, Fire, ChartPieSlice, CalendarCheck, Trophy, ListChecks } from '@phosphor-icons/react';
+import { CheckCircle, Circle, ChartPieSlice, CalendarCheck, Trophy, ListChecks } from '@phosphor-icons/react';
 import './Dashboard.css';
+import { eventsForDate } from '../../utils/eventUtils';
 
 export default function Dashboard() {
-    const { events, toggleEventCompletion, setDetailEvent } = useTodo();
+    const { events, allEvents = events, toggleEventCompletion, setDetailEvent } = useTodo();
     
     // Stats Calculations
     const stats = useMemo(() => {
-        const total = events.length;
-        const completed = events.filter(e => e.completed).length;
+        const total = allEvents.length;
+        const completed = allEvents.filter(e => e.completed).length;
         const completionRate = total === 0 ? 0 : Math.round((completed / total) * 100);
         
         // Priority breakdown
         const priorityCounts = { high: 0, medium: 0, low: 0 };
-        events.forEach(e => {
+        allEvents.forEach(e => {
             if (e.priority && priorityCounts[e.priority] !== undefined) {
                 priorityCounts[e.priority]++;
             }
@@ -22,7 +23,7 @@ export default function Dashboard() {
 
         // Busiest Day
         const dayCounts = {};
-        events.forEach(e => {
+        allEvents.forEach(e => {
             dayCounts[e.day] = (dayCounts[e.day] || 0) + 1;
         });
         let busiestDay = 1;
@@ -38,29 +39,20 @@ export default function Dashboard() {
 
         // Category Breakdown
         const cats = {};
-        events.forEach(e => {
+        allEvents.forEach(e => {
             const c = e.category || 'other';
             cats[c] = (cats[c] || 0) + 1;
         });
         
-        // Streak based on completed items
-        const streak = Math.floor(completed / 3);
-
-        return { total, completed, completionRate, busiestDayName, maxTasks, cats, streak, priorityCounts };
-    }, [events]);
+        return { total, completed, completionRate, busiestDayName, maxTasks, cats, priorityCounts };
+    }, [allEvents]);
 
     // Today's Tasks — supports date-specific and recurring weekday events
     const todayEvents = useMemo(() => {
         const now = new Date();
-        const todayDayIndex = now.getDay() === 0 ? 7 : now.getDay();
-        const yyyy = now.getFullYear();
-        const mm = String(now.getMonth() + 1).padStart(2, '0');
-        const dd = String(now.getDate()).padStart(2, '0');
-        const formattedToday = `${yyyy}-${mm}-${dd}`;
-        return events
-            .filter(e => e.date ? e.date === formattedToday : e.day === todayDayIndex)
+        return eventsForDate(allEvents, now)
             .sort((a, b) => a.start.localeCompare(b.start));
-    }, [events]);
+    }, [allEvents]);
 
     const todayCompletedCount = todayEvents.filter(e => e.completed).length;
     const todayTotalCount = todayEvents.length;
@@ -83,10 +75,10 @@ export default function Dashboard() {
                     </div>
                 </div>
                 <div className="stat-card">
-                    <div className="stat-icon"><Fire size={24} weight="fill" color="#ef4444" /></div>
+                    <div className="stat-icon"><CheckCircle size={24} weight="fill" color="var(--sidebar-active)" /></div>
                     <div className="stat-info">
-                        <span className="stat-value">{stats.streak} Days</span>
-                        <span className="stat-label">Current Streak</span>
+                        <span className="stat-value">{stats.completed}</span>
+                        <span className="stat-label">Completed Tasks</span>
                     </div>
                 </div>
                 <div className="stat-card">

@@ -2,6 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { useTodo } from '../../store/TodoContext';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 import './MonthGrid.css';
+import { eventsForDate } from '../../utils/eventUtils';
 
 const DAY_HEADERS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
@@ -12,10 +13,6 @@ const CATEGORY_COLORS = {
     career: '#ffa4da',
     finance: '#bbf7d0',
 };
-
-function getMonthStart(year, month) {
-    return new Date(year, month, 1);
-}
 
 function buildMonthGrid(year, month) {
     const firstDay = new Date(year, month, 1);
@@ -57,18 +54,7 @@ export default function MonthGrid() {
     // Since events use day:1-7 for the current week, we show them on matching weekday
     const getCellEvents = useCallback((date) => {
         if (!date) return [];
-        const realDayIndex = date.getDay() === 0 ? 7 : date.getDay();
-        const yyyy = date.getFullYear();
-        const mm = String(date.getMonth() + 1).padStart(2, '0');
-        const dd = String(date.getDate()).padStart(2, '0');
-        const formattedCellDate = `${yyyy}-${mm}-${dd}`;
-
-        return events.filter(e => {
-            if (e.date) {
-                return e.date === formattedCellDate;
-            }
-            return e.day === realDayIndex;
-        });
+        return eventsForDate(events, date);
     }, [events]);
 
     function getWeekday(date) {
@@ -92,8 +78,14 @@ export default function MonthGrid() {
 
     React.useEffect(() => {
         const handleNav = (e) => {
-            if (e.detail === 'prev') prevMonth();
-            if (e.detail === 'next') nextMonth();
+            if (e.detail === 'prev') {
+                if (viewMonth === 0) { setViewYear(y => y - 1); setViewMonth(11); }
+                else setViewMonth(m => m - 1);
+            }
+            if (e.detail === 'next') {
+                if (viewMonth === 11) { setViewYear(y => y + 1); setViewMonth(0); }
+                else setViewMonth(m => m + 1);
+            }
         };
         window.addEventListener('calendarNav', handleNav);
         return () => window.removeEventListener('calendarNav', handleNav);

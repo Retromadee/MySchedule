@@ -162,7 +162,7 @@ export default function WeeklyPlanner() {
     const dayCardRefs = useRef([]);
 
     // Build per-day stats — supports date-specific and recurring weekday events
-    const dayStats = weekDays.map((date, i) => {
+    const dayStats = weekDays.map((date) => {
         const dayIndex = date.getDay() === 0 ? 7 : date.getDay();
         const yyyy = date.getFullYear();
         const mm = String(date.getMonth() + 1).padStart(2, '0');

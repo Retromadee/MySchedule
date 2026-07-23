@@ -17,6 +17,12 @@ export function TodoProvider({ children }) {
 
     const [theme, setTheme] = useState(() => localStorage.getItem('lifesync_theme') || 'light');
 
+    const loadEvents = useCallback(() => {
+        const loaded = StorageService.getEvents();
+        setEvents(loaded);
+        setDetailEvent(prev => prev ? (loaded.find(e => e.id === prev.id) || null) : null);
+    }, []);
+
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('lifesync_theme', theme);
@@ -24,7 +30,7 @@ export function TodoProvider({ children }) {
 
     useEffect(() => {
         loadEvents();
-    }, []);
+    }, [loadEvents]);
 
     // Notification System
     useEffect(() => {
@@ -70,12 +76,6 @@ export function TodoProvider({ children }) {
         const intervalId = setInterval(checkReminders, 60000);
         return () => clearInterval(intervalId);
     }, [events]);
-
-    const loadEvents = useCallback(() => {
-        const loaded = StorageService.getEvents();
-        setEvents(loaded);
-        setDetailEvent(prev => prev ? (loaded.find(e => e.id === prev.id) || null) : null);
-    }, []);
 
     const addEvent = useCallback((eventData) => {
         StorageService.addEvent(eventData);

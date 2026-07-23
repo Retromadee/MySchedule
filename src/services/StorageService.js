@@ -53,17 +53,29 @@ const defaultEvents = [
 
 const STORAGE_KEY = 'personalEvents';
 
+function isValidTime(value) {
+    return typeof value === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(value);
+}
+
+function isValidEvent(event) {
+    return event && typeof event === 'object' && event.id != null &&
+        typeof event.title === 'string' && isValidTime(event.start) && isValidTime(event.end) &&
+        (typeof event.date === 'string' || Number.isInteger(event.day));
+}
+
+function normalizeEvents(events) {
+    if (!Array.isArray(events) || !events.every(isValidEvent)) {
+        throw new Error('Invalid event data');
+    }
+    return events.map(event => ({ ...event, subtasks: Array.isArray(event.subtasks) ? event.subtasks : [] }));
+}
+
 export const StorageService = {
     getEvents: () => {
         try {
             const stored = localStorage.getItem(STORAGE_KEY);
             if (stored) {
-                const parsed = JSON.parse(stored);
-                if (parsed.length > 0 && !parsed.some(e => e.id >= 101)) {
-                    localStorage.removeItem(STORAGE_KEY);
-                } else {
-                    return parsed;
-                }
+                return normalizeEvents(JSON.parse(stored));
             }
         } catch (e) {
             console.error("Failed to parse local storage events", e);
@@ -73,16 +85,21 @@ export const StorageService = {
     },
 
     saveEvents: (events) => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(normalizeEvents(events)));
+    },
+
+    replaceEvents: (events) => {
+        const normalized = normalizeEvents(events);
+        StorageService.saveEvents(normalized);
+        return normalized;
     },
 
     addEvent: (event) => {
         const events = StorageService.getEvents();
-        event.id = Date.now();
-        if (!event.subtasks) event.subtasks = [];
-        events.push(event);
+        const newEvent = { ...event, id: Date.now(), subtasks: event.subtasks || [] };
+        events.push(newEvent);
         StorageService.saveEvents(events);
-        return event;
+        return newEvent;
     },
 
     updateEvent: (updatedEvent) => {

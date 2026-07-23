@@ -177,25 +177,24 @@ export default function EventModal() {
                     </div>
                     <div className="form-group">
                         <label>Subtasks / Checklist</label>
-                        <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
+                        <div className="subtask-input-row">
                             <input
                                 type="text"
                                 placeholder="Add a subtask..."
                                 value={newSubtaskText}
                                 onChange={(e) => setNewSubtaskText(e.target.value)}
                                 onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); handleAddSubtask(); } }}
-                                style={{ flex: 1, padding: '8px 12px', border: '1px solid var(--border-color, #ddd)', borderRadius: '6px' }}
                             />
-                            <button type="button" onClick={handleAddSubtask} style={{ padding: '8px 14px', background: 'var(--sidebar-active, #f17c8d)', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: '600' }}>
+                            <button type="button" className="subtask-add-btn" onClick={handleAddSubtask}>
                                 Add
                             </button>
                         </div>
                         {subtasks.length > 0 && (
-                            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                            <ul className="subtask-list">
                                 {subtasks.map((st) => (
-                                    <li key={st.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 10px', background: 'var(--card-bg, #f9f9f9)', borderRadius: '6px', border: '1px solid #eee' }}>
-                                        <span style={{ fontSize: '13px' }}>{st.text}</span>
-                                        <button type="button" onClick={() => handleRemoveSubtask(st.id)} style={{ border: 'none', background: 'transparent', color: '#ef4444', cursor: 'pointer', fontWeight: 'bold' }}>✕</button>
+                                    <li key={st.id} className="subtask-item">
+                                        <span>{st.text}</span>
+                                        <button type="button" className="subtask-del-btn" onClick={() => handleRemoveSubtask(st.id)}>✕</button>
                                     </li>
                                 ))}
                             </ul>
@@ -208,11 +207,10 @@ export default function EventModal() {
                             value={notes}
                             onChange={(e) => setNotes(e.target.value)}
                             placeholder="Add notes, links, or reminders..."
-                            style={{ width: '100%', minHeight: '60px', border: '1px solid #ddd', borderRadius: '8px', padding: '10px', fontFamily: 'inherit', resize: 'vertical' }}
                         />
                     </div>
                     <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
-                        <button type="button" className="btn-submit" onClick={handleClose} style={{ background: '#eee', color: '#333' }}>Cancel</button>
+                        <button type="button" className="btn-cancel" onClick={handleClose}>Cancel</button>
                         <button type="submit" className="btn-submit">{editingEvent ? 'Update' : 'Save Task'}</button>
                     </div>
                 </form>

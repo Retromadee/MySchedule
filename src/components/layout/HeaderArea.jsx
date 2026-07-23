@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeaderArea.css';
-import { CaretDown, ArrowsClockwise, X, Funnel } from '@phosphor-icons/react';
+import { ArrowsClockwise, X } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
 
 const FILTER_LABELS = {

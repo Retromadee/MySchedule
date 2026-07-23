@@ -31,6 +31,74 @@
     font-family: inherit;
 }
 
+.form-group textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-main);
+    border-radius: 8px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.subtask-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.subtask-add-btn {
+    padding: 8px 14px;
+    background: var(--sidebar-active);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.subtask-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.subtask-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    font-size: 13px;
+}
+
+.subtask-del-btn {
+    border: none;
+    background: transparent;
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-cancel {
+    background: var(--bg-color);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
 .btn-submit {
     background: var(--sidebar-active);
     color: white;

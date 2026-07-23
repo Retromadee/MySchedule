@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { StorageService } from './StorageService';
 
 const localStorageMock = (() => {
@@ -93,5 +93,12 @@ describe('StorageService', () => {
     
     const allEvents = StorageService.getEvents();
     expect(allEvents.find(e => e.id === duplicated.id)).toBeDefined();
+  });
+
+  it('preserves valid imported events and rejects invalid event data', () => {
+    const imported = [{ id: 'custom-1', title: 'Imported event', start: '09:00', end: '10:00', date: '2026-08-01' }];
+    StorageService.replaceEvents(imported);
+    expect(StorageService.getEvents()).toEqual([{ ...imported[0], subtasks: [] }]);
+    expect(() => StorageService.replaceEvents([{ title: 'Broken' }])).toThrow('Invalid event data');
   });
 });

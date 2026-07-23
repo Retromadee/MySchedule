@@ -1,11 +1,12 @@
 import React from 'react';
 import './EventCard.css';
-import * as Icons from '@phosphor-icons/react';
+import { BookOpen, Broom, CalendarStar, CheckCircle, Code, House, VideoCamera, Wallet } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
 
 export default function EventCard({ event, top, height, onDragStart }) {
     const { setDetailEvent } = useTodo();
-    const IconComponent = event.icon ? Icons[event.icon] : null;
+    const iconMap = { BookOpen, Broom, CalendarStar, Code, House, VideoCamera, Wallet };
+    const IconComponent = iconMap[event.icon];
 
     const handleClick = (e) => {
         e.stopPropagation();
@@ -42,7 +43,7 @@ export default function EventCard({ event, top, height, onDragStart }) {
             )}
 
             <div className="event-title">
-                {event.completed ? <Icons.CheckCircle size={14} weight="fill" style={{ marginRight: '4px', verticalAlign: 'middle' }} /> : null}
+                {event.completed ? <CheckCircle size={14} weight="fill" style={{ marginRight: '4px', verticalAlign: 'middle' }} /> : null}
                 {event.title}
                 {priorityColor && <span style={{ marginLeft: '4px', fontSize: '10px' }}>{priorityColor}</span>}
             </div>

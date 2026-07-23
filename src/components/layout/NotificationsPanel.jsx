@@ -1,12 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './NotificationsPanel.css';
-import { Bell, Clock, CheckCircle, Warning, X } from '@phosphor-icons/react';
+import { Clock, CheckCircle, Warning, X } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
-
-function timeToMinutes(timeStr) {
-    const [h, m] = timeStr.split(':').map(Number);
-    return h * 60 + m;
-}
+import { eventsForDate, timeToMinutes } from '../../utils/eventUtils';
 
 export default function NotificationsPanel({ isOpen, onClose }) {
     const { allEvents, setDetailEvent } = useTodo();
@@ -23,17 +19,10 @@ export default function NotificationsPanel({ isOpen, onClose }) {
     }, [isOpen, onClose]);
 
     const now = new Date();
-    const todayDayIndex = now.getDay() === 0 ? 7 : now.getDay();
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth() + 1).padStart(2, '0');
-    const dd = String(now.getDate()).padStart(2, '0');
-    const formattedToday = `${yyyy}-${mm}-${dd}`;
     const nowMins = now.getHours() * 60 + now.getMinutes();
 
     // Today's events (date-aware)
-    const todayEvents = allEvents.filter(e =>
-        e.date ? e.date === formattedToday : e.day === todayDayIndex
-    );
+    const todayEvents = eventsForDate(allEvents, now);
 
     const upcoming = todayEvents
         .filter(e => !e.completed && timeToMinutes(e.start) > nowMins)
@@ -110,29 +99,4 @@ export default function NotificationsPanel({ isOpen, onClose }) {
             </div>
         </div>
     );
-}
-
-// Export the notification count so Topbar can show the badge
-export function useNotificationCount() {
-    const { allEvents } = useTodo();
-    const now = new Date();
-    const todayDayIndex = now.getDay() === 0 ? 7 : now.getDay();
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth() + 1).padStart(2, '0');
-    const dd = String(now.getDate()).padStart(2, '0');
-    const formattedToday = `${yyyy}-${mm}-${dd}`;
-    const nowMins = now.getHours() * 60 + now.getMinutes();
-
-    const todayEvents = allEvents.filter(e =>
-        e.date ? e.date === formattedToday : e.day === todayDayIndex
-    );
-
-    const count = todayEvents.filter(e =>
-        !e.completed && (
-            timeToMinutes(e.start) > nowMins ||   // upcoming
-            timeToMinutes(e.end) < nowMins          // overdue
-        )
-    ).length;
-
-    return count;
 }
