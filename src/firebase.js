@@ -12,7 +12,16 @@ const firebaseConfig = {
     appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const database = getDatabase(app);
-export const isFirebaseConfigured = Object.values(firebaseConfig).every(Boolean);
+const isFirebaseConfigured = Object.values(firebaseConfig).every(Boolean);
+
+let app;
+let auth;
+let database;
+
+if (isFirebaseConfigured) {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    database = getDatabase(app);
+}
+
+export { auth, database, isFirebaseConfigured };
