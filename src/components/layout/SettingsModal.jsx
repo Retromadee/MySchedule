@@ -25,10 +25,10 @@ export default function SettingsModal({ isOpen, onClose }) {
         const file = e.target.files?.[0];
         if (!file) return;
         const reader = new FileReader();
-        reader.onload = (ev) => {
+        reader.onload = async (ev) => {
             try {
                 const parsed = JSON.parse(ev.target.result);
-                replaceEvents(parsed);
+                await replaceEvents(parsed);
                 loadEvents();
                 setImportStatus('success');
                 setTimeout(() => setImportStatus(null), 3000);

@@ -158,6 +158,11 @@ export function TodoProvider({ children }) {
         persistEvents(defaults);
     }, [persistEvents]);
 
+    const replaceEvents = useCallback((newEvents) => {
+        const normalized = newEvents.map(e => ({ ...e, subtasks: e.subtasks || [] }));
+        return persistEvents(normalized);
+    }, [persistEvents]);
+
     // Filtered events for display
     const filteredEvents = events.filter(e => {
         if (activeFilter && e.category !== activeFilter) return false;
@@ -178,6 +183,7 @@ export function TodoProvider({ children }) {
             toggleEventCompletion,
             toggleSubtaskCompletion,
             duplicateEvent,
+            replaceEvents,
             isModalOpen,
             setIsModalOpen,
             editingEvent,
