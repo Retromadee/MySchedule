@@ -39,12 +39,17 @@ describe('TodoContext & TodoProvider', () => {
     localStorage.clear();
   });
 
-  it('provides events list and allows adding, toggling, and deleting', () => {
+  it('provides events list and allows adding, toggling, and deleting', async () => {
     render(
       <AuthProvider><TodoProvider>
         <TestComponent />
       </TodoProvider></AuthProvider>
     );
+
+    // Wait for events to load from localStorage
+    await act(async () => {
+      await new Promise(resolve => setTimeout(resolve, 0));
+    });
 
     const countEl = screen.getByTestId('count');
     const initialCount = parseInt(countEl.textContent);
@@ -54,6 +59,11 @@ describe('TodoContext & TodoProvider', () => {
     const addBtn = screen.getByTestId('add-btn');
     act(() => {
       addBtn.click();
+    });
+
+    // Wait for state update
+    await act(async () => {
+      await new Promise(resolve => setTimeout(resolve, 0));
     });
 
     expect(parseInt(screen.getByTestId('count').textContent)).toBe(initialCount + 1);

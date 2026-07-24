@@ -4,6 +4,26 @@
   "graph": {},
   "nodes": [
     {
+      "label": "SettingsModal.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/SettingsModal.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "layout_settingsmodal",
+      "community": 9,
+      "norm_label": "settingsmodal.jsx"
+    },
+    {
+      "label": "SettingsModal()",
+      "file_type": "code",
+      "source_file": "src/components/layout/SettingsModal.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "layout_settingsmodal_settingsmodal",
+      "community": 9,
+      "norm_label": "settingsmodal()"
+    },
+    {
       "label": "TodoContext.jsx",
       "file_type": "code",
       "source_file": "src/store/TodoContext.jsx",
@@ -37,31 +57,11 @@
       "label": "useTodo()",
       "file_type": "code",
       "source_file": "src/store/TodoContext.jsx",
-      "source_location": "L222",
+      "source_location": "L215",
       "_origin": "ast",
       "id": "store_todocontext_usetodo",
       "community": 5,
       "norm_label": "usetodo()"
-    },
-    {
-      "label": "SettingsModal.jsx",
-      "file_type": "code",
-      "source_file": "src/components/layout/SettingsModal.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "settingsmodal.jsx",
-      "id": "layout_settingsmodal"
-    },
-    {
-      "label": "SettingsModal()",
-      "file_type": "code",
-      "source_file": "src/components/layout/SettingsModal.jsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "settingsmodal()",
-      "id": "layout_settingsmodal_settingsmodal"
     },
     {
       "label": "firebase.js",
@@ -1471,6 +1471,71 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/SettingsModal.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_settingsmodal",
+      "target": "layout_settingsmodal_settingsmodal"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/SettingsModal.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_settingsmodal",
+      "target": "services_storageservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/SettingsModal.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_settingsmodal",
+      "target": "services_storageservice_storageservice"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/SettingsModal.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_settingsmodal",
+      "target": "store_todocontext"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/SettingsModal.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_settingsmodal",
+      "target": "store_todocontext_usetodo"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/SettingsModal.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "layout_settingsmodal_settingsmodal",
+      "target": "store_todocontext_usetodo"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -1545,17 +1610,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "layout_notificationspanel",
-      "target": "store_todocontext"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/SettingsModal.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_settingsmodal",
       "target": "store_todocontext"
     },
     {
@@ -1889,28 +1943,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/SettingsModal.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_settingsmodal",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/layout/SettingsModal.jsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "layout_settingsmodal_settingsmodal",
-      "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Topbar.jsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -1994,38 +2026,6 @@
       "confidence_score": 1.0,
       "source": "store_todocontext_test_testcomponent",
       "target": "store_todocontext_usetodo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/SettingsModal.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_settingsmodal",
-      "target": "layout_settingsmodal_settingsmodal"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/SettingsModal.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_settingsmodal",
-      "target": "services_storageservice"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/SettingsModal.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_settingsmodal",
-      "target": "services_storageservice_storageservice"
     },
     {
       "relation": "imports_from",
@@ -4092,5 +4092,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8efd7071f839e5186ab30d01f8da7dcb423b617a"
+  "built_at_commit": "86afe7e5dbaf8260bbcb9804e9a2f95f8d6aeb8f"
 }

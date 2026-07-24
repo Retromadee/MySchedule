@@ -1,7 +1,7 @@
 # Graph Report - TodoUI  (2026-07-24)
 
 ## Corpus Check
-- 33 files · ~15,296 words
+- 33 files · ~15,291 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8efd7071`
+- Built from commit: `86afe7e5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -41,10 +41,10 @@
 10. `Topbar()` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `EventModal()` --calls--> `useTodo()`  [EXTRACTED]
-  src/components/events/EventModal.jsx → src/store/TodoContext.jsx
 - `SettingsModal()` --calls--> `useTodo()`  [EXTRACTED]
   src/components/layout/SettingsModal.jsx → src/store/TodoContext.jsx
+- `EventModal()` --calls--> `useTodo()`  [EXTRACTED]
+  src/components/events/EventModal.jsx → src/store/TodoContext.jsx
 - `TestComponent()` --calls--> `useTodo()`  [EXTRACTED]
   src/store/TodoContext.test.jsx → src/store/TodoContext.jsx
 - `MonthGrid()` --calls--> `useTodo()`  [EXTRACTED]

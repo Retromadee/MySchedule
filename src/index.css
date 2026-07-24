@@ -147,3 +147,158 @@ body {
 
 /* Focus visible */
 :focus-visible { outline: 2px solid var(--border-focus); outline-offset: 2px; }
+
+/* ============================================================
+   MOBILE-FIRST RESPONSIVE UTILITIES
+   ============================================================ */
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+  button, [role="button"], input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Larger touch targets for common actions */
+  .action-btn, .nav-item, .toggle-btn, .icon-btn {
+    padding: 12px 16px !important;
+  }
+  
+  /* Better modal sizing */
+  .modal, .settings-modal, .auth-card, .onboarding-card {
+    width: 95vw !important;
+    max-width: 100% !important;
+    margin: 10px !important;
+    border-radius: 16px !important;
+  }
+  
+  /* Stack form fields */
+  .form-group { margin-bottom: 16px !important; }
+  .form-group label { font-size: 14px !important; }
+  .form-group input, .form-group select, .form-group textarea {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 12px 14px !important;
+  }
+  
+  /* Calendar grid mobile */
+  .calendar-grid { font-size: 12px !important; }
+  .time-slot { font-size: 11px !important; padding-right: 8px !important; }
+  .day-col { padding: 0 2px !important; }
+  .event-card { padding: 10px !important; font-size: 12px !important; }
+  .event-title { font-size: 13px !important; }
+  .event-loc, .event-time { font-size: 10px !important; }
+  
+  /* Month grid mobile */
+  .month-cell { min-height: 80px !important; padding: 4px !important; }
+  .month-event-chip { padding: 2px 4px !important; font-size: 10px !important; }
+  .month-chip-text { display: none !important; }
+  .month-chip-dot { width: 6px !important; height: 6px !important; }
+  
+  /* Planner mobile */
+  .planner-days-grid { grid-template-columns: 1fr !important; }
+  .planner-progress-map { grid-template-columns: repeat(4, 1fr) !important; }
+  .planner-day-tile { padding: 8px !important; }
+  .planner-task-item { padding: 12px !important; }
+  .planner-task-title { font-size: 14px !important; }
+  
+  /* Dashboard mobile */
+  .stats-row { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  .dashboard-content { grid-template-columns: 1fr !important; }
+  .stat-card { padding: 16px !important; }
+  
+  /* Header mobile */
+  .header-area { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+  .header-right { width: 100% !important; justify-content: space-between !important; }
+  .header-left h1 { font-size: 24px !important; }
+  .view-toggles { width: 100% !important; justify-content: space-around !important; }
+  .toggle-btn { flex: 1 !important; text-align: center !important; padding: 8px !important; }
+  
+  /* Topbar mobile */
+  .topbar { flex-wrap: wrap !important; gap: 12px !important; }
+  .search-container { width: 100% !important; order: 3 !important; }
+  .topbar-left { display: flex !important; order: 1 !important; }
+  .top-actions { order: 2 !important; }
+  .search-container input { font-size: 16px !important; }
+  
+  /* Sidebar mobile */
+  .sidebar { width: 280px !important; padding: 20px 16px !important; }
+  .nav-item { padding: 14px 12px !important; font-size: 15px !important; }
+  .section-title { font-size: 10px !important; }
+  
+  /* Modal mobile */
+  .modal-overlay { align-items: flex-end !important; }
+  .modal { border-radius: 20px 20px 0 0 !important; max-height: 85vh !important; }
+  
+  /* Event card mobile */
+  .event-card { left: 4px !important; right: 4px !important; border-radius: 12px !important; }
+  .join-btn { padding: 8px 16px !important; font-size: 13px !important; }
+  
+  /* Detail panel mobile */
+  .detail-overlay { width: 100% !important; right: 0 !important; border-radius: 20px 20px 0 0 !important; }
+  .detail-backdrop { right: 0 !important; }
+  
+  /* Notifications mobile */
+  .notif-panel { width: 95vw !important; right: 2.5vw !important; }
+  
+  /* Settings mobile */
+  .settings-modal { max-height: 90vh !important; }
+  .settings-section { padding: 16px !important; }
+  .settings-row { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+  .settings-action-btn { width: 100% !important; justify-content: center !important; }
+  
+  /* Auth mobile */
+  .auth-card, .onboarding-card { padding: 24px 16px !important; }
+  .onboarding-task { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .onboarding-task input:first-child { grid-column: span 2 !important; }
+  .onboarding-task select { font-size: 16px !important; }
+  
+  /* Search results mobile */
+  .search-results { left: 0 !important; right: 0 !important; border-radius: 0 0 14px 14px !important; }
+}
+
+/* Small mobile (< 480px) */
+@media (max-width: 480px) {
+  .header-left h1 { font-size: 22px !important; }
+  .add-event-btn { padding: 10px 16px !important; font-size: 13px !important; }
+  .date-picker-btn { padding: 4px 10px !important; font-size: 12px !important; }
+  .stat-value { font-size: 18px !important; }
+  .planner-progress-map { grid-template-columns: repeat(7, 1fr) !important; }
+  .planner-tile-day { font-size: 8px !important; }
+  .planner-tile-date { font-size: 14px !important; }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .modal { max-height: 90vh !important; overflow-y: auto !important; }
+  .auth-card, .onboarding-card { max-height: 90vh !important; overflow-y: auto !important; }
+  .settings-modal { max-height: 90vh !important; }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000;
+    --text-muted: #333;
+  }
+  [data-theme="dark"] {
+    --border-color: #fff;
+    --text-muted: #ccc;
+  }
+}
+
+/* Print styles */
+@media print {
+  .sidebar, .topbar, .header-area, .modal-overlay, .settings-backdrop, .notif-panel, .detail-backdrop, .sidebar-backdrop { display: none !important; }
+  .main-content { padding: 0 !important; border-radius: 0 !important; }
+  .app-shell { height: auto !important; overflow: visible !important; }
+  body { background: white !important; color: black !important; }
+}

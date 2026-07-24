@@ -10,16 +10,16 @@
 .week-nav {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     margin-bottom: 10px;
     padding-left: 60px;
-    min-width: 600px;
+    flex-wrap: wrap;
 }
 
 .week-nav-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
     border: 1px solid var(--border-color);
     background: var(--element-bg);
     color: var(--text-main);
@@ -29,6 +29,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.15s;
+    min-width: 40px;
 }
 .week-nav-btn:hover {
     background: var(--sidebar-active);
@@ -40,20 +41,22 @@
     font-size: 14px;
     font-weight: 600;
     color: var(--text-main);
-    min-width: 200px;
+    min-width: 180px;
     text-align: center;
+    flex: 1;
 }
 
 .week-nav-today {
-    padding: 5px 14px;
-    border-radius: 8px;
+    padding: 8px 16px;
+    border-radius: 10px;
     border: 1px solid var(--border-color);
     background: var(--element-bg);
     color: var(--text-main);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.15s;
+    min-height: 40px;
 }
 .week-nav-today:hover {
     background: var(--sidebar-active);
@@ -65,13 +68,14 @@
     display: flex;
     margin-bottom: 10px;
     padding-left: 60px;
-    min-width: 600px;
+    overflow-x: auto;
 }
 
 .day-col-header {
     flex: 1;
+    min-width: 85px;
     text-align: center;
-    padding: 12px 0;
+    padding: 12px 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +83,7 @@
 }
 
 .day-name {
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
     color: var(--text-muted);
     font-weight: 600;
@@ -87,7 +91,7 @@
 }
 
 .day-date {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text-main);
 }
@@ -109,7 +113,6 @@
     position: relative;
     overflow-y: auto;
     border-top: 1px solid var(--border-color);
-    min-width: 600px;
 }
 
 .time-col {
@@ -179,10 +182,12 @@
     display: flex;
     flex: 1;
     position: relative;
+    min-width: 700px;
 }
 
 .day-col {
     flex: 1;
+    min-width: 100px;
     position: relative;
     padding: 0 4px;
     transition: background 0.15s;
@@ -199,6 +204,150 @@
 /* Mobile */
 @media (max-width: 768px) {
     .calendar-container {
-        padding-bottom: 20px; /* space for scrollbar */
+        padding-bottom: 20px;
+    }
+    
+    .week-nav {
+        padding-left: 0;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    
+    .week-nav-label {
+        order: 3;
+        width: 100%;
+        margin-top: 8px;
+        min-width: auto;
+    }
+    
+    .week-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    .week-nav-today {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .calendar-header {
+        padding-left: 0;
+    }
+    
+    .day-col-header {
+        min-width: 70px;
+        padding: 10px 2px;
+    }
+    
+    .day-name {
+        font-size: 10px;
+    }
+    
+    .day-date {
+        font-size: 12px;
+    }
+    
+    .calendar-grid {
+        /* Allow horizontal scroll on mobile */
+    }
+    
+    .time-col {
+        width: 50px;
+        position: sticky;
+        left: 0;
+        background: var(--bg-color);
+        z-index: 5;
+        border-right: 1px solid var(--border-color);
+    }
+    
+    .time-slot {
+        font-size: 10px;
+        padding-right: 8px;
+        height: 60px; /* Compressed on mobile */
+    }
+    
+    .grid-lines-container {
+        left: 50px;
+    }
+    
+    .current-time-label {
+        left: 10px;
+        font-size: 10px;
+    }
+    
+    .days-container {
+        min-width: 560px; /* 7 days * 80px */
+    }
+    
+    .day-col {
+        min-width: 80px;
+        padding: 0 2px;
+    }
+    
+    /* Compress time row height on mobile */
+    :root {
+        --time-row-height: 60px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .week-nav {
+        gap: 4px;
+    }
+    
+    .week-nav-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .week-nav-label {
+        font-size: 13px;
+    }
+    
+    .week-nav-today {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .day-col-header {
+        min-width: 60px;
+        padding: 8px 1px;
+    }
+    
+    .day-name {
+        font-size: 9px;
+    }
+    
+    .day-date {
+        font-size: 11px;
+    }
+    
+    .time-col {
+        width: 45px;
+    }
+    
+    .time-slot {
+        font-size: 9px;
+        padding-right: 4px;
+        height: 50px;
+    }
+    
+    .grid-lines-container {
+        left: 45px;
+    }
+    
+    .days-container {
+        min-width: 490px; /* 7 * 70px */
+    }
+    
+    .day-col {
+        min-width: 70px;
+    }
+    
+    :root {
+        --time-row-height: 50px;
     }
 }

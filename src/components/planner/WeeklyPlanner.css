@@ -392,3 +392,238 @@
     font-size: 32px;
     opacity: 0.3;
 }
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+    .planner-days-grid {
+        grid-template-columns: 1fr;
+    }
+    .planner-progress-map {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .planner-wrapper {
+        gap: 16px;
+        padding-bottom: 20px;
+    }
+    
+    .planner-week-nav {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .planner-week-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    .planner-week-label {
+        font-size: 14px;
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+    }
+    
+    .planner-week-today-btn {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+    
+    .planner-progress-map {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+    }
+    
+    .planner-day-tile {
+        padding: 10px 6px;
+        border-radius: 10px;
+    }
+    
+    .planner-tile-day {
+        font-size: 9px;
+    }
+    
+    .planner-tile-date {
+        font-size: 14px;
+    }
+    
+    .planner-tile-count {
+        font-size: 9px;
+    }
+    
+    .planner-tile-bar-track {
+        height: 3px;
+    }
+    
+    .planner-days-grid {
+        gap: 12px;
+    }
+    
+    .planner-day-card {
+        border-radius: 14px;
+    }
+    
+    .planner-card-header {
+        padding: 14px 16px 10px;
+    }
+    
+    .planner-card-day-name {
+        font-size: 11px;
+    }
+    
+    .planner-card-day-date {
+        font-size: 18px;
+    }
+    
+    .planner-ring {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .planner-ring svg {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .planner-ring-text {
+        font-size: 10px;
+    }
+    
+    .planner-task-list {
+        padding: 10px 12px;
+        gap: 6px;
+    }
+    
+    .planner-task-item {
+        padding: 10px 12px;
+        border-radius: 10px;
+    }
+    
+    .planner-checkbox {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .planner-task-title {
+        font-size: 13px;
+    }
+    
+    .planner-task-meta {
+        font-size: 10px;
+    }
+    
+    .planner-task-chip {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+    
+    .planner-empty {
+        padding: 20px 16px;
+        font-size: 12px;
+    }
+    
+    .planner-empty-icon {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .planner-week-nav {
+        gap: 6px;
+    }
+    
+    .planner-week-nav-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .planner-week-label {
+        font-size: 13px;
+    }
+    
+    .planner-week-today-btn {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+    
+    .planner-progress-map {
+        gap: 4px;
+    }
+    
+    .planner-day-tile {
+        padding: 8px 4px;
+        border-radius: 8px;
+    }
+    
+    .planner-tile-day {
+        font-size: 8px;
+    }
+    
+    .planner-tile-date {
+        font-size: 12px;
+    }
+    
+    .planner-tile-count {
+        font-size: 8px;
+    }
+    
+    .planner-card-header {
+        padding: 12px 14px 8px;
+    }
+    
+    .planner-card-day-name {
+        font-size: 10px;
+    }
+    
+    .planner-card-day-date {
+        font-size: 16px;
+    }
+    
+    .planner-ring {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .planner-ring svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .planner-ring-text {
+        font-size: 9px;
+    }
+    
+    .planner-task-list {
+        padding: 8px 10px;
+    }
+    
+    .planner-task-item {
+        padding: 8px 10px;
+    }
+    
+    .planner-checkbox {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .planner-task-title {
+        font-size: 12px;
+    }
+    
+    .planner-task-meta {
+        font-size: 9px;
+    }
+    
+    .planner-task-chip {
+        font-size: 8px;
+        padding: 1px 5px;
+    }
+}

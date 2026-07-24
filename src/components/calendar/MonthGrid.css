@@ -17,27 +17,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--border-color);
     background: var(--bg-tertiary);
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .month-nav-center {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex: 1;
+    min-width: 180px;
 }
 
 .month-nav-title {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: -0.4px;
     color: var(--text-main);
+    white-space: nowrap;
 }
 
 .month-nav-btn {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     background: var(--element-bg);
@@ -47,6 +52,7 @@
     justify-content: center;
     color: var(--text-main);
     transition: all 0.15s;
+    flex-shrink: 0;
 }
 .month-nav-btn:hover { 
     background: var(--sidebar-active); 
@@ -64,6 +70,7 @@
     cursor: pointer;
     color: var(--text-main);
     transition: all 0.15s;
+    white-space: nowrap;
 }
 .month-today-btn:hover { 
     background: var(--sidebar-active); 
@@ -81,7 +88,7 @@
 
 .month-day-header {
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 2px;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -99,8 +106,8 @@
 }
 
 .month-cell {
-    min-height: 110px;
-    padding: 8px 8px 6px;
+    min-height: 100px;
+    padding: 6px 4px 4px;
     border-right: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
@@ -122,15 +129,15 @@
 }
 
 .month-cell-date {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .month-date-num {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--text-muted);
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -153,8 +160,8 @@
 .month-event-chip {
     display: flex;
     align-items: center;
-    gap: 4px;
-    padding: 2px 6px;
+    gap: 3px;
+    padding: 2px 5px;
     border-radius: 4px;
     cursor: pointer;
     transition: opacity 0.15s, transform 0.15s;
@@ -172,7 +179,7 @@
 .month-chip-dot.done { background: var(--text-muted); opacity: 0.3; }
 
 .month-chip-text {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 500;
     color: var(--text-secondary);
     white-space: nowrap;
@@ -181,20 +188,20 @@
 }
 
 .month-more-badge {
-    font-size: 10px;
+    font-size: 9px;
     color: var(--text-muted);
     font-weight: 600;
-    padding: 1px 4px;
+    padding: 1px 3px;
     margin-top: 1px;
 }
 
 /* ── Selected Day Panel ─────────────────────────── */
 .month-selected-panel {
-    padding: 14px 20px;
+    padding: 12px 16px;
     border-top: 1px solid var(--border-color);
     background: var(--bg-tertiary);
-    min-height: 80px;
-    max-height: 180px;
+    min-height: 70px;
+    max-height: 160px;
     overflow-y: auto;
 }
 
@@ -202,20 +209,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
-    font-size: 13px;
+    margin-bottom: 8px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--text-main);
 }
 
 .month-add-btn {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     background: var(--text-main);
     color: var(--bg-color);
     border: none;
     border-radius: 20px;
-    padding: 5px 14px;
+    padding: 4px 12px;
     cursor: pointer;
     transition: opacity 0.15s;
 }
@@ -224,14 +231,14 @@
 .month-selected-events {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
 }
 
 .month-selected-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 8px 10px;
+    gap: 8px;
+    padding: 6px 8px;
     background: var(--element-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -241,8 +248,8 @@
 .month-selected-item:hover { border-color: var(--sidebar-active); }
 
 .month-selected-dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -254,26 +261,190 @@
 }
 
 .month-selected-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--text-main);
 }
 
 .month-selected-time {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--text-muted);
 }
 
 .month-selected-empty {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-muted);
     text-align: center;
-    padding: 12px 0;
+    padding: 10px 0;
 }
 
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
 @media (max-width: 768px) {
-    .month-cell { min-height: 70px; padding: 4px; }
-    .month-chip-text { display: none; }
-    .month-event-chip { justify-content: center; padding: 2px 4px; }
-    .month-chip-dot { width: 7px; height: 7px; }
+    .month-nav {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .month-nav-center {
+        min-width: 140px;
+    }
+    
+    .month-nav-title {
+        font-size: 15px;
+    }
+    
+    .month-nav-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .month-today-btn {
+        font-size: 11px;
+        padding: 3px 10px;
+    }
+    
+    .month-day-header {
+        padding: 8px 1px;
+        font-size: 9px;
+    }
+    
+    .month-cell {
+        min-height: 80px;
+        padding: 4px 2px 2px;
+    }
+    
+    .month-date-num {
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+    }
+    
+    .month-event-chip {
+        justify-content: center;
+        padding: 1px 3px;
+    }
+    
+    .month-chip-text { 
+        display: none; 
+    }
+    
+    .month-chip-dot { 
+        width: 6px; 
+        height: 6px; 
+    }
+    
+    .month-selected-panel {
+        padding: 10px 12px;
+    }
+    
+    .month-selected-header {
+        font-size: 11px;
+    }
+    
+    .month-add-btn {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+    
+    .month-selected-item {
+        padding: 5px 6px;
+        gap: 6px;
+    }
+    
+    .month-selected-title {
+        font-size: 11px;
+    }
+    
+    .month-selected-time {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .month-nav {
+        padding: 10px 8px;
+    }
+    
+    .month-nav-title {
+        font-size: 14px;
+    }
+    
+    .month-nav-btn {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .month-today-btn {
+        font-size: 10px;
+        padding: 2px 8px;
+    }
+    
+    .month-day-header {
+        padding: 6px 0;
+        font-size: 8px;
+    }
+    
+    .month-cell {
+        min-height: 70px;
+        padding: 3px 1px 1px;
+    }
+    
+    .month-date-num {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+    
+    .month-chip-dot { 
+        width: 5px; 
+        height: 5px; 
+    }
+    
+    .month-more-badge {
+        font-size: 8px;
+    }
+    
+    .month-selected-panel {
+        padding: 8px 10px;
+        max-height: 140px;
+    }
+    
+    .month-selected-header {
+        font-size: 10px;
+    }
+    
+    .month-add-btn {
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+    
+    .month-selected-item {
+        padding: 4px 5px;
+    }
+    
+    .month-selected-title {
+        font-size: 10px;
+    }
+    
+    .month-selected-time {
+        font-size: 8px;
+    }
+}
+
+/* Landscape mobile - more horizontal space */
+@media (max-height: 500px) and (orientation: landscape) {
+    .month-grid-wrapper {
+        border-radius: 12px;
+    }
+    
+    .month-nav {
+        padding: 8px 12px;
+    }
+    
+    .month-cell {
+        min-height: 60px;
+    }
 }

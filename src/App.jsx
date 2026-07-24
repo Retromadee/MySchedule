@@ -53,9 +53,9 @@ export default function App() {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [openAddModal, setIsModalOpen, setDetailEvent]);
 
-    if (loading) return <div className="app-loading">Loading your schedule…</div>;
     if (!isFirebaseConfigured) return <div className="app-loading">Firebase is not configured for this deployment.</div>;
     if (!user) return <AuthScreen />;
+    if (loading) return <div className="app-loading">Loading your schedule…</div>;
     if (!profile?.onboardingComplete) return <Onboarding />;
 
     return (
