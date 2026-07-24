@@ -54,8 +54,8 @@ export default function App() {
     }, [openAddModal, setIsModalOpen, setDetailEvent]);
 
     if (!isFirebaseConfigured) return <div className="app-loading">Firebase is not configured for this deployment.</div>;
-    if (!user) return <AuthScreen />;
-    if (loading) return <div className="app-loading">Loading your schedule…</div>;
+if (!user) return <AuthScreen />;
+if (loading && !user) return <div className="app-loading">Loading your schedule…</div>;
     if (!profile?.onboardingComplete) return <Onboarding />;
 
     return (
