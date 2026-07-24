@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import './Topbar.css';
 import { MagnifyingGlass, Bell, List, X, Gear, SignOut } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
@@ -8,7 +8,7 @@ import { useAuth } from '../../contexts/AuthContext';
 
 export default function Topbar({ onMenuToggle, onSettingsOpen }) {
     const { allEvents, setDetailEvent } = useTodo();
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
     const [query, setQuery] = useState('');
     const [showResults, setShowResults] = useState(false);
     const [showNotif, setShowNotif] = useState(false);
@@ -19,6 +19,17 @@ export default function Topbar({ onMenuToggle, onSettingsOpen }) {
 
     const notifCount = useNotificationCount();
     const completedCount = allEvents.filter(e => e.completed).length;
+
+    const userInitial = useMemo(() => {
+        if (!user) return '?';
+        const name = user.displayName || user.email || 'User';
+        return name.trim().charAt(0).toUpperCase();
+    }, [user]);
+
+    const userName = useMemo(() => {
+        if (!user) return 'Guest';
+        return user.displayName || user.email?.split('@')[0] || 'User';
+    }, [user]);
 
     // Close search on click outside
     useEffect(() => {
@@ -126,16 +137,16 @@ export default function Topbar({ onMenuToggle, onSettingsOpen }) {
                         onClick={() => { setShowProfile(p => !p); setShowNotif(false); }}
                         title="Profile"
                     >
-                        <span className="profile-avatar">R</span>
+                        <span className="profile-avatar">{userInitial}</span>
                     </button>
 
                     {showProfile && (
                         <div className="profile-dropdown">
                             {/* Avatar row */}
                             <div className="profile-drop-header">
-                                <div className="profile-drop-avatar">R</div>
+                                <div className="profile-drop-avatar">{userInitial}</div>
                                 <div>
-                                    <div className="profile-drop-name">Retro</div>
+                                    <div className="profile-drop-name">{userName}</div>
                                     <div className="profile-drop-sub">Personal Dashboard</div>
                                 </div>
                             </div>
