@@ -32,7 +32,7 @@
 }
 .week-nav-btn:hover {
     background: var(--sidebar-active);
-    color: white;
+    color: var(--bg-color);
     border-color: var(--sidebar-active);
 }
 
@@ -57,7 +57,7 @@
 }
 .week-nav-today:hover {
     background: var(--sidebar-active);
-    color: white;
+    color: var(--bg-color);
     border-color: var(--sidebar-active);
 }
 
@@ -89,15 +89,16 @@
 .day-date {
     font-size: 13px;
     font-weight: 600;
+    color: var(--text-main);
 }
 
 .day-col-header.active .day-name,
 .day-col-header.active .day-date {
-    color: white;
+    color: var(--bg-color);
 }
 
 .day-col-header.active {
-    background-color: #1c1c1c;
+    background-color: var(--text-main);
     border-radius: 12px;
     padding: 12px 5px;
 }

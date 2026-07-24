@@ -48,7 +48,7 @@
 
 .planner-week-today-btn {
     background: var(--text-main);
-    color: white;
+    color: var(--bg-color);
     border: none;
     border-radius: 20px;
     padding: 6px 16px;
@@ -109,7 +109,7 @@
     border-color: rgba(34, 197, 94, 0.3);
 }
 .planner-day-tile.all-done .planner-tile-bar-fill {
-    background: #22c55e;
+    background: var(--success-color, #22c55e);
 }
 
 .planner-tile-day {
@@ -136,7 +136,7 @@
 .planner-tile-bar-track {
     width: 100%;
     height: 4px;
-    background: #f0f0f0;
+    background: var(--border-color);
     border-radius: 2px;
     overflow: hidden;
     margin-top: 2px;
@@ -174,7 +174,7 @@
     scroll-margin-top: 20px;
 }
 .planner-day-card:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-md);
 }
 .planner-day-card.today-card {
     border-color: var(--sidebar-active);
@@ -188,7 +188,7 @@
     justify-content: space-between;
     padding: 18px 20px 14px;
     border-bottom: 1px solid var(--border-color);
-    background: rgba(0, 0, 0, 0.02);
+    background: var(--bg-hover);
 }
 
 .planner-card-header-left {
@@ -261,14 +261,14 @@
 }
 .planner-card-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--sidebar-active), #ff9ab2);
+    background: linear-gradient(90deg, var(--sidebar-active), var(--sidebar-active-glow, #ff9ab2));
     transition: width 0.4s ease;
 }
 .planner-day-card.today-card .planner-card-progress-fill {
-    background: linear-gradient(90deg, var(--sidebar-active), #ff6b8a);
+    background: linear-gradient(90deg, var(--sidebar-active), var(--sidebar-active-glow, #ff6b8a));
 }
 .planner-day-card.all-done-card .planner-card-progress-fill {
-    background: linear-gradient(90deg, #22c55e, #4ade80);
+    background: linear-gradient(90deg, var(--success-color, #22c55e), var(--success-glow, #4ade80));
 }
 
 /* Task List */
@@ -289,16 +289,16 @@
     border: 1px solid transparent;
     cursor: pointer;
     transition: all 0.18s ease;
-    background: rgba(0, 0, 0, 0.02);
+    background: var(--bg-hover);
     user-select: none;
 }
 .planner-task-item:hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--border-light);
     border-color: var(--border-color);
 }
 .planner-task-item.completed {
     opacity: 0.55;
-    background: rgba(0, 0, 0, 0.01);
+    background: var(--bg-color);
 }
 
 /* Custom Checkbox */
@@ -367,15 +367,15 @@
     flex-shrink: 0;
     letter-spacing: 0.2px;
 }
-.chip-blue   { background: #dbeafe; color: #1d4ed8; }
-.chip-grey   { background: #f3f4f6; color: #374151; }
-.chip-yellow { background: #fef9c3; color: #854d0e; }
-.chip-white  { background: #f9fafb; color: #374151; border: 1px solid #e5e7eb; }
-.chip-housing { background: #dbeafe; color: #1d4ed8; }
-.chip-projects { background: #f3f4f6; color: #374151; }
-.chip-music   { background: #fce7f3; color: #9d174d; }
-.chip-career  { background: #fef9c3; color: #854d0e; }
-.chip-finance { background: #d1fae5; color: #065f46; }
+.chip-blue   { background: var(--card-blue); color: var(--card-blue-text); }
+.chip-grey   { background: var(--card-grey); color: var(--card-grey-text); }
+.chip-yellow { background: var(--card-yellow); color: var(--card-yellow-text); }
+.chip-white  { background: var(--card-white); color: var(--card-white-text); border: 1px solid var(--border-color); }
+.chip-housing { background: var(--card-blue); color: var(--card-blue-text); }
+.chip-projects { background: var(--card-grey); color: var(--card-grey-text); }
+.chip-music   { background: var(--card-pink, #ffa4da); color: var(--tag-pink-text); }
+.chip-career  { background: var(--card-yellow); color: var(--card-yellow-text); }
+.chip-finance { background: var(--card-green, #d1fae5); color: var(--card-green-text, #065f46); }
 
 /* Empty State */
 .planner-empty {

@@ -8,6 +8,7 @@
     flex-shrink: 0;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 100;
+    border-right: 1px solid var(--border-color);
 }
 
 .sidebar-header {
@@ -19,7 +20,7 @@
 }
 
 .logo {
-    color: white;
+    color: var(--text-main);
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.5px;
@@ -28,7 +29,7 @@
 .logo-icon {
     width: 24px;
     height: 24px;
-    background: #f17c8d;
+    background: var(--sidebar-active);
     border-radius: 50%;
     color: white;
     display: flex;
@@ -41,7 +42,7 @@
 .sidebar-close {
     background: none;
     border: none;
-    color: white;
+    color: var(--text-main);
     cursor: pointer;
     display: none;
 }
@@ -56,7 +57,7 @@
     letter-spacing: 1px;
     margin-bottom: 15px;
     padding: 0 10px;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .nav-item {
@@ -69,15 +70,16 @@
     transition: all 0.2s;
     font-size: 14px;
     font-weight: 500;
+    color: var(--sidebar-text);
 }
 
 .nav-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #d1d1d1;
+    background-color: var(--bg-hover);
+    color: var(--text-main);
 }
 
 .nav-item.active {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--element-hover);
     color: var(--sidebar-active);
     position: relative;
 }
