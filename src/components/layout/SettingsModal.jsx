@@ -4,11 +4,10 @@ import {
     X, Sun, Moon, ArrowCounterClockwise, DownloadSimple, UploadSimple, Gear
 } from '@phosphor-icons/react';
 import { useTodo } from '../../store/TodoContext';
-import { StorageService } from '../../services/StorageService';
 
 export default function SettingsModal({ isOpen, onClose }) {
-    const { allEvents, resetEvents, loadEvents, theme, setTheme } = useTodo();
-    const [importStatus, setImportStatus] = useState(null); // 'success' | 'error' | null
+    const { allEvents, resetEvents, loadEvents, replaceEvents, theme, setTheme } = useTodo();
+    const [importStatus, setImportStatus] = useState(null);
 
     if (!isOpen) return null;
 
@@ -29,7 +28,7 @@ export default function SettingsModal({ isOpen, onClose }) {
         reader.onload = (ev) => {
             try {
                 const parsed = JSON.parse(ev.target.result);
-                StorageService.replaceEvents(parsed);
+                replaceEvents(parsed);
                 loadEvents();
                 setImportStatus('success');
                 setTimeout(() => setImportStatus(null), 3000);
@@ -39,7 +38,6 @@ export default function SettingsModal({ isOpen, onClose }) {
             }
         };
         reader.readAsText(file);
-        // Reset input so same file can be re-imported
         e.target.value = '';
     };
 
