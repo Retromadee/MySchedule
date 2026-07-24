@@ -12,12 +12,12 @@ export function TodoProvider({ children }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingEvent, setEditingEvent] = useState(null);
     const [detailEvent, setDetailEvent] = useState(null);
-    const [activeFilter, setActiveFilter] = useState(null); // category filter from sidebar
-    const [calendarView, setCalendarView] = useState('week'); // 'day', 'week', 'month'
-    const [activeRoute, setActiveRoute] = useState('schedule'); // 'schedule', 'dashboard'
+    const [activeFilter, setActiveFilter] = useState(null);
+    const [calendarView, setCalendarView] = useState('week');
+    const [activeRoute, setActiveRoute] = useState('schedule');
 
-    const [priorityFilter, setPriorityFilter] = useState('all'); // 'all', 'high', 'medium', 'low'
-    const [statusFilter, setStatusFilter] = useState('all'); // 'all', 'pending', 'completed'
+    const [priorityFilter, setPriorityFilter] = useState('all');
+    const [statusFilter, setStatusFilter] = useState('all');
 
     const [theme, setTheme] = useState(() => localStorage.getItem('lifesync_theme') || 'light');
 
@@ -25,6 +25,13 @@ export function TodoProvider({ children }) {
         if (user) {
             const snapshot = await get(ref(database, `users/${user.uid}/events`));
             const loaded = Object.values(snapshot.val() || {});
+            if (loaded.length === 0) {
+                // Seed default events for new users
+                const defaults = StorageService.getEvents();
+                await set(ref(database, `users/${user.uid}/events`), Object.fromEntries(defaults.map(event => [event.id, event])));
+                setEvents(defaults);
+                return;
+            }
             setEvents(loaded);
             setDetailEvent(prev => prev ? (loaded.find(e => e.id === prev.id) || null) : null);
             return;
